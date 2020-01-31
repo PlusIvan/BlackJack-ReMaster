@@ -1,0 +1,153 @@
+Ôªø<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Security.Cryptography.Encoding</name>
+  </assembly>
+  <members>
+    <member name="T:System.Security.Cryptography.AsnEncodedData">
+      <summary>Repr√©sente des donn√©es encod√©es ASN.1 (Abstract Syntax Notation One).</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsnEncodedData.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Security.Cryptography.AsnEncodedData" />.</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.AsnEncodedData.#ctor(System.Byte[])">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Security.Cryptography.AsnEncodedData" /> √† l'aide d'un tableau d'octets.</summary>
+      <param name="rawData">Tableau d'octets qui contient les donn√©es encod√©es ASN.1 (Abstract Syntax Notation One).</param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsnEncodedData.#ctor(System.Security.Cryptography.AsnEncodedData)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Security.Cryptography.AsnEncodedData" /> √† l'aide d'une instance de la classe <see cref="T:System.Security.Cryptography.AsnEncodedData" />.</summary>
+      <param name="asnEncodedData">Instance de la classe <see cref="T:System.Security.Cryptography.AsnEncodedData" />.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="asnEncodedData" /> a la valeur null.</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.AsnEncodedData.#ctor(System.Security.Cryptography.Oid,System.Byte[])">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Security.Cryptography.AsnEncodedData" /> √† l'aide d'un objet <see cref="T:System.Security.Cryptography.Oid" /> et d'un tableau d'octets.</summary>
+      <param name="oid">Objet <see cref="T:System.Security.Cryptography.Oid" />.</param>
+      <param name="rawData">Tableau d'octets qui contient les donn√©es encod√©es ASN.1 (Abstract Syntax Notation One).</param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsnEncodedData.#ctor(System.String,System.Byte[])">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Security.Cryptography.AsnEncodedData" /> √† l'aide d'un tableau d'octets.</summary>
+      <param name="oid">Cha√Æne qui repr√©sente des informations <see cref="T:System.Security.Cryptography.Oid" />.</param>
+      <param name="rawData">Tableau d'octets qui contient les donn√©es encod√©es ASN.1 (Abstract Syntax Notation One).</param>
+    </member>
+    <member name="M:System.Security.Cryptography.AsnEncodedData.CopyFrom(System.Security.Cryptography.AsnEncodedData)">
+      <summary>Copie les informations d'un objet <see cref="T:System.Security.Cryptography.AsnEncodedData" />.</summary>
+      <param name="asnEncodedData">L'objet <see cref="T:System.Security.Cryptography.AsnEncodedData" /> sur lequel baser le nouvel objet.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="asnEncodedData " />est null.</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.AsnEncodedData.Format(System.Boolean)">
+      <summary>Retourne une version mise en forme des donn√©es encod√©es ASN.1 (Abstract Syntax Notation One) sous forme de cha√Æne.</summary>
+      <returns>Cha√Æne mise en forme repr√©sentant les donn√©es encod√©es ASN.1 (Abstract Syntax Notation One).</returns>
+      <param name="multiLine">true si la cha√Æne de retour doit contenir des retours chariot¬†; sinon, false.</param>
+    </member>
+    <member name="P:System.Security.Cryptography.AsnEncodedData.Oid">
+      <summary>Obtient ou d√©finit la valeur <see cref="T:System.Security.Cryptography.Oid" /> pour un objet <see cref="T:System.Security.Cryptography.AsnEncodedData" />.</summary>
+      <returns>Objet <see cref="T:System.Security.Cryptography.Oid" />.</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.AsnEncodedData.RawData">
+      <summary>Obtient ou d√©finit les donn√©es encod√©es ASN.1 (Abstract Syntax Notation One) repr√©sent√©es dans un tableau d'octets.</summary>
+      <returns>Tableau d'octets qui repr√©sente les donn√©es encod√©es ASN.1 (Abstract Syntax Notation One).</returns>
+      <exception cref="T:System.ArgumentNullException">La valeur est null.</exception>
+    </member>
+    <member name="T:System.Security.Cryptography.Oid">
+      <summary>Repr√©sente un identificateur d'objet de chiffrement.Cette classe ne peut pas √™tre h√©rit√©e.</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.Oid.#ctor(System.Security.Cryptography.Oid)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Security.Cryptography.Oid" /> √† l'aide de l'objet <see cref="T:System.Security.Cryptography.Oid" /> sp√©cifi√©.</summary>
+      <param name="oid">Les informations d'identificateur d'objet √† utiliser pour cr√©er le nouvel identificateur d'objet.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="oid " />est null.</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.Oid.#ctor(System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Security.Cryptography.Oid" /> √† l'aide d'une valeur de cha√Æne d'un objet <see cref="T:System.Security.Cryptography.Oid" />.</summary>
+      <param name="oid">Un identificateur d'objet.</param>
+    </member>
+    <member name="M:System.Security.Cryptography.Oid.#ctor(System.String,System.String)">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Security.Cryptography.Oid" /> avec la valeur et le nom convivial sp√©cifi√©s.</summary>
+      <param name="value">Le nombre s√©par√© par des points de l'identificateur.</param>
+      <param name="friendlyName">Le nom convivial de l'identificateur.</param>
+    </member>
+    <member name="P:System.Security.Cryptography.Oid.FriendlyName">
+      <summary>Obtient ou d√©finit le nom convivial de l'identificateur.</summary>
+      <returns>Le nom convivial de l'identificateur.</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.Oid.FromFriendlyName(System.String,System.Security.Cryptography.OidGroup)">
+      <summary>Cr√©e un objet <see cref="T:System.Security.Cryptography.Oid" /> √† partir d'un nom¬†OID convivial en recherchant le groupe sp√©cifi√©.</summary>
+      <returns>Objet repr√©sentant l'OID sp√©cifi√©.</returns>
+      <param name="friendlyName">Le nom convivial de l'identificateur.</param>
+      <param name="group">Groupe dans lequel effectuer la recherche.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="friendlyName " /> a la valeur null.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">OID introuvable.</exception>
+    </member>
+    <member name="M:System.Security.Cryptography.Oid.FromOidValue(System.String,System.Security.Cryptography.OidGroup)">
+      <summary>Cr√©e un objet <see cref="T:System.Security.Cryptography.Oid" /> √† l'aide du groupe et de la valeur¬†OID sp√©cifi√©s.</summary>
+      <returns>Nouvelle instance d'un objet <see cref="T:System.Security.Cryptography.Oid" />.</returns>
+      <param name="oidValue">Valeur de l'identificateur d'objet.</param>
+      <param name="group">Groupe dans lequel effectuer la recherche.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="oidValue" /> a la valeur null.</exception>
+      <exception cref="T:System.Security.Cryptography.CryptographicException">Le nom convivial de la valeur OID est introuvable.</exception>
+    </member>
+    <member name="P:System.Security.Cryptography.Oid.Value">
+      <summary>Obtient ou d√©finit le nombre s√©par√© par des points de l'identificateur.</summary>
+      <returns>Le nombre s√©par√© par des points de l'identificateur.</returns>
+    </member>
+    <member name="T:System.Security.Cryptography.OidCollection">
+      <summary>Repr√©sente une collection d'objets <see cref="T:System.Security.Cryptography.Oid" />.Cette classe ne peut pas √™tre h√©rit√©e.</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.OidCollection.#ctor">
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:System.Security.Cryptography.OidCollection" />.</summary>
+    </member>
+    <member name="M:System.Security.Cryptography.OidCollection.Add(System.Security.Cryptography.Oid)">
+      <summary>Ajoute un objet <see cref="T:System.Security.Cryptography.Oid" /> √† l'objet <see cref="T:System.Security.Cryptography.OidCollection" />.</summary>
+      <returns>Index de l'objet ajout√© <see cref="T:System.Security.Cryptography.Oid" />.</returns>
+      <param name="oid">Objet <see cref="T:System.Security.Cryptography.Oid" /> √† ajouter √† la collection.</param>
+    </member>
+    <member name="M:System.Security.Cryptography.OidCollection.CopyTo(System.Security.Cryptography.Oid[],System.Int32)">
+      <summary>Copie l'objet <see cref="T:System.Security.Cryptography.OidCollection" /> dans un tableau.</summary>
+      <param name="array">Tableau dans lequel l'objet <see cref="T:System.Security.Cryptography.OidCollection" /> est copi√©.</param>
+      <param name="index">Emplacement o√π commence l'op√©ration de copie.</param>
+    </member>
+    <member name="P:System.Security.Cryptography.OidCollection.Count">
+      <summary>Obtient le nombre d'objets <see cref="T:System.Security.Cryptography.Oid" /> figurant dans une collection. </summary>
+      <returns>Nombre d'objets <see cref="T:System.Security.Cryptography.Oid" /> dans une collection.</returns>
+    </member>
+    <member name="M:System.Security.Cryptography.OidCollection.GetEnumerator">
+      <summary>Retourne un objet <see cref="T:System.Security.Cryptography.OidEnumerator" /> qui peut √™tre utilis√© pour naviguer jusqu'√† l'objet <see cref="T:System.Security.Cryptography.OidCollection" />.</summary>
+      <returns>Objet <see cref="T:System.Security.Cryptography.OidEnumerator" />.</returns>
+    </member>
+    <member name="P:System.Security.Cryptography.OidCollection.Item(System.Int32)">
+      <summary>Obtient un objet <see cref="T:System.Security.Cryptography.Oid" /> √† partir de l'objet <see cref="T:System.Security.Cryptography.OidCollection" />.</summary>
+      <returns>Objet <see cref="T:System.Security.Cryptography.Oid" />.</returns>
+      <param name="index">Emplacement de l'objet <see cref="T:System.Security.Cryptography.Oid" /> dans la collection.</param>
+    </member>
+    <member name="P:System.Security.Cryptography.OidCollection.Item(System.String)">
+      <summary>Obtient le premier objet <see cref="T:System.Security.Cryptography.Oid" /> qui contient une valeur de la propri√©t√© <see cref="P:System.Security.Cryptography.Oid.Value" /> ou une valeur de la propri√©t√© <see cref="P:System.Security.Cryptography.Oid.FriendlyName" /> qui correspond √† la valeur de cha√Æne sp√©cifi√©e dans l'objet <see cref="T:System.Security.Cryptography.OidCollection" />.</summary>
+      <returns>Objet <see cref="T:System.Security.Cryptography.Oid" />.</returns>
+      <param name="oid">Cha√Æne qui repr√©sente une propri√©t√© <see cref="P:System.Security.Cryptography.Oid.Value" /> ou une propri√©t√© <see cref="P:System.Security.Cryptography.Oid.FriendlyName" />.</param>
+    </member>
+    <member name="M:System.Security.Cryptography.OidCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>Copie l'objet <see cref="T:System.Security.Cryptography.OidCollection" /> dans un tableau.</summary>
+      <param name="array">Tableau dans lequel copier l'objet <see cref="T:System.Security.Cryptography.OidCollection" />.</param>
+      <param name="index">Emplacement o√π commence l'op√©ration de copie.</param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="array" /> ne peut pas √™tre un tableau multidimensionnel.ou<paramref name="array" /> contient une longueur d'offset non valide.</exceptiong.WaitHandle" /> in another application domain.</exception>
+    </member>
+    <member name="M:System.Threading.WaitHandle.WaitOne(System.TimeSpan)">
+      <summary>Blocca il thread corrente finch√© l'istanza corrente non riceve un segnale, usando un valore <see cref="T:System.TimeSpan" /> per specificare l'intervallo di tempo.</summary>
+      <returns>true se l'istanza corrente riceve un segnale; in caso contrario, false.</returns>
+      <param name="timeout">Oggetto <see cref="T:System.TimeSpan" /> che rappresenta il numero di millisecondi di attesa oppure <see cref="T:System.TimeSpan" /> che rappresenta -1 millisecondi per un'attesa indefinita. </param>
+      <exception cref="T:System.ObjectDisposedException">The current instance has already been disposed. </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="timeout" /> is a negative number other than -1 milliseconds, which represents an infinite time-out.-or-<paramref name="timeout" /> is greater than <see cref="F:System.Int32.MaxValue" />. </exception>
+      <exception cref="T:System.Threading.AbandonedMutexException">The wait completed because a thread exited without releasing a mutex.This exception is not thrown on Windows 98 or Windows Millennium Edition.</exception>
+      <exception cref="T:System.InvalidOperationException">The current instance is a transparent proxy for a <see cref="T:System.Threading.WaitHandle" /> in another application domain.</exception>
+    </member>
+    <member name="F:System.Threading.WaitHandle.WaitTimeout">
+      <summary>Indica che si √® verificato il timeout di un'operazione <see cref="M:System.Threading.WaitHandle.WaitAny(System.Threading.WaitHandle[],System.Int32,System.Boolean)" /> prima della segnalazione di uno degli handle di attesa.Questo campo √® costante.</summary>
+      <filterpriority>1</filterpriority>
+    </member>
+  </members>
+</doc>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        INDX( 	 dÃ            (   P  Ë                           ˙     X F     ˜     QnJÉ◊’ÍÎJÉ◊’ÍÎJÉ◊’QnJÉ◊’                        d e s ¸     X F     ˜     –ö;JÉ◊’‘⁄<JÉ◊’‘⁄<JÉ◊’–ö;JÉ◊’                        e s s ˛     X F     ˜     zÀXJÉ◊’EFZJÉ◊’EFZJÉ◊’zÀXJÉ◊’                        f r s       X F     ˜     ˛ïwJÉ◊’€~JÉ◊’€~JÉ◊’˛ïwJÉ◊’                        i t s      X F     ˜     ^iãKÉ◊’nzéKÉ◊’nzéKÉ◊’^iãKÉ◊’                        j a s      X F     ˜     7†´KÉ◊’ÌÚ≠KÉ◊’ÌÚ≠KÉ◊’7†´KÉ◊’                        k o s      X F     ˜     p‘ KÉ◊’ı!ÕKÉ◊’ı!ÕKÉ◊’p‘ KÉ◊’                        r u s ¯     x f     ˜     ﬂA˚IÉ◊’ ∞§4æ‘˚÷Ï	◊’Á⁄ˇIÉ◊’      ¿Ó              S y s t e m . R u n t i m e . d l l   ˘     x f     ˜     w˝JÉ◊’ ∞§4æ‘%ÒÏ	◊’•AJÉ◊’       ¯              S y s t e m . R u n t i m e . x m l        ` P     ˜     +]ÚKÉ◊’}£ÛKÉ◊’}£ÛKÉ◊’+]ÚKÉ◊’                    
