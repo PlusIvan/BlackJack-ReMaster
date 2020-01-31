@@ -166,7 +166,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Setting.cs" />
     <Compile Include="Websocket.cs" />
     <EmbeddedResource Include="forms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>

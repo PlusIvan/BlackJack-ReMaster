@@ -43,7 +43,7 @@ namespace BlackJack.forms
 
         private void Solo_Load(object sender, EventArgs e)
         {
-            //  animate_chips.Start();
+            //animate_chips.Start();
             label_balance.Text = global.core.solo.balance.balance;
         }
 
