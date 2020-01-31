@@ -36,3 +36,23 @@ C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.exe
 C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.pdb
 C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\SuperSocket.ClientEngine.dll
 C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\Json.Net.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.csprojAssemblyReference.cache
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.forms.Settings.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.forms.Solo.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.Menu.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.cache
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.exe
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.pdb
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\BlackJack.pdb
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Json.Net.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\MetroSet UI.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\WebSocket4Net.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.csproj.CopyComplete

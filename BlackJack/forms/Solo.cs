@@ -13,6 +13,7 @@ namespace BlackJack.forms
 {
     public partial class Solo : Form
     {
+        Global global = new Global();
         bool drag = true;
         Point start_point = new Point(0, 0);
         public Solo()
@@ -43,7 +44,7 @@ namespace BlackJack.forms
         private void Solo_Load(object sender, EventArgs e)
         {
             //  animate_chips.Start();
-            label_balance.Text = global.solo.balance.balance;
+            label_balance.Text = global.core.solo.balance.balance;
         }
 
         private void chip_MouseHover(object sender, EventArgs e)
