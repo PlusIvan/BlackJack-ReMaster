@@ -56,3 +56,8 @@ C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\SuperSocke
 C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\WebSocket4Net.dll
 C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.csproj.CopyComplete
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\AxInterop.WMPLib.dll
