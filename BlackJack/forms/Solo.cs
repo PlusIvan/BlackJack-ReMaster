@@ -16,6 +16,9 @@ namespace BlackJack.forms
         Global global = new Global();
         bool drag = true;
         Point start_point = new Point(0, 0);
+
+        Solo_game game =  new Solo_game();
+        
         public Solo()
         {
             InitializeComponent();
@@ -23,6 +26,7 @@ namespace BlackJack.forms
 
         private void metroSetPanel1_MouseUp(object sender, MouseEventArgs e)
         {
+            
             drag = false;
         }
 
@@ -44,7 +48,23 @@ namespace BlackJack.forms
         private void Solo_Load(object sender, EventArgs e)
         {
             //animate_chips.Start();
+           // MessageBox.Show();
             label_balance.Text = global.core.solo.balance.balance;
+
+            if(game.IsGame == false)
+            {
+                solo_title.Visible = true;
+                solo_begin.Visible = true;
+            }
+            else
+            {
+                solo_title.Visible = false;
+                solo_begin.Visible = false;
+                balance_icon.Visible = true;
+                label_balance.Visible = true;
+                dealer_pts.Visible = true;
+                player_pts.Visible = true;
+            }
         }
 
         private void chip_MouseHover(object sender, EventArgs e)
@@ -199,6 +219,20 @@ this.Update();
         private void balance_minus_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void solo_begin_Click(object sender, EventArgs e)
+        {
+            if (game.IsGame == true) return;
+
+            solo_title.Visible = false;
+            solo_begin.Visible = false;
+            balance_icon.Visible = true;
+            label_balance.Visible = true;
+            dealer_pts.Visible = true;
+            player_pts.Visible = true;
+            game.IsGame = true;
+            
         }
     }
 }

@@ -14,6 +14,7 @@ namespace BlackJack.forms
 {
     public partial class Settings : Form
     {
+        Global global = new Global();
         bool drag = true;
         Point start_point = new Point(0, 0);
         public Settings()
@@ -48,7 +49,7 @@ namespace BlackJack.forms
             dialog.IsFolderPicker = true;
             if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
                 input_trackPATH.Text = dialog.FileName;
-
+            global.path_music = input_trackPATH.Text;
 
 
             string[] list = Directory.GetFiles(input_trackPATH.Text, "*.mp3");
@@ -60,14 +61,15 @@ namespace BlackJack.forms
         WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
         private void music_play_Click(object sender, EventArgs e)
         {
-            wplayer.URL = $@"{input_trackPATH.Text}\{combo_musics.SelectedItem.ToString()}";
+            wplayer.URL = $@"{global.path_music}\{combo_musics.SelectedItem.ToString()}";
             wplayer.controls.play();
-
+            global.musicEnabled = true;
         }
 
         private void music_stop_Click(object sender, EventArgs e)
         {
             wplayer.controls.stop();
+            global.musicEnabled = false;
         }
     }
 }

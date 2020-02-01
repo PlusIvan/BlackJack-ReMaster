@@ -255,7 +255,7 @@
             this.input_trackPATH.MaxLength = 32767;
             this.input_trackPATH.Multiline = false;
             this.input_trackPATH.Name = "input_trackPATH";
-            this.input_trackPATH.ReadOnly = false;
+            this.input_trackPATH.ReadOnly = true;
             this.input_trackPATH.Size = new System.Drawing.Size(778, 29);
             this.input_trackPATH.Style = MetroSet_UI.Design.Style.Light;
             this.input_trackPATH.StyleManager = null;

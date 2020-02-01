@@ -18,7 +18,7 @@ namespace BlackJack
         bool drag = true;
         Point start_point = new Point(0,0);
         Global global = new Global();
-
+        //public Solo_game game = new Solo_game();
         public Menu()
         {
             InitializeComponent();
@@ -60,7 +60,7 @@ namespace BlackJack
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            global.core.main.menu_solo[0] = menu_solo.Location.X;
+          /*  global.core.main.menu_solo[0] = menu_solo.Location.X;
             global.core.main.menu_solo[1] = menu_solo.Location.Y;
             global.core.main.menu_multiplayer[0] = menu_multiplayer.Location.X;
             global.core.main.menu_multiplayer[1] = menu_multiplayer.Location.Y;
@@ -78,7 +78,7 @@ namespace BlackJack
             oThreadone.Start();
             oThreadtwo.Start();
             //  animator_one.Start();
-
+            */
 
 
 
