@@ -93,7 +93,7 @@ namespace BlackJack.forms
         {
 
             if (chip_plus.BorderStyle.ToString() != "FixedSingle") return;
-
+            cmd_Done.Visible = false;
             int x_of_100 = chip_100.Location.X + 70;
             int x_of_50 = chip_50.Location.X + 70 *2;
             int x_of_15 = chip_15.Location.X + 70 * 3;
@@ -135,7 +135,7 @@ namespace BlackJack.forms
         {
             if (chip_minus.BorderStyle.ToString() != "FixedSingle") return;
 
-
+            
             int x_of_100 = chip_100.Location.X - 70;
             int x_of_50 = chip_50.Location.X - 70*2;
             int x_of_15 = chip_15.Location.X - 70 * 3;
@@ -173,6 +173,7 @@ this.Update();
             chip_minus.BorderStyle = BorderStyle.None;
             chip_plus.Update();
             chip_minus.Update();
+            cmd_Done.Visible = true;
         }
 
         private void balance_icon_Click(object sender, EventArgs e)
@@ -231,32 +232,142 @@ this.Update();
             label_balance.Visible = true;
             dealer_pts.Visible = true;
             player_pts.Visible = true;
-            game.IsGame = true;
+            game.Shuffle_deck();
             game.Begin_game();
             Render_Cards();
+game.IsGame = true;
+            pot_size.Visible = true;
+
+            if(game.Pot == 0)
+            {
+                panel_chips.Visible = true;
+                cmd_Double.Visible = false;
+                cmd_Hit.Visible = false;
+                cmd_Stand.Visible = false;
+                cmd_Surrender.Visible = false;
+            }
 
         }
 
         private void Render_Cards()
         {
-            int[] p1 = { card_l_player.Location.X, card_l_player.Location.Y };
-            int[] d1 = { card_l_dealer.Location.X, card_l_dealer.Location.Y };
-
+            int[] p1 = { card_l_player.Location.X-35, card_l_player.Location.Y };
+            int[] d1 = { card_l_dealer.Location.X-35, card_l_dealer.Location.Y };
+            card_l_dealer.Visible = false;
+            card_l_player.Visible = false;
+            p1[0] -= 35;
+            d1[0] -= 35;
             foreach (KeyValuePair<string,int> a in game.Dealer)
             {
                 var picture = new PictureBox
                 {
-                    Name = "card_",
-                    Size = new Size(16, 16),
-                    Location = new Point(100, 100),
-                    Image = Image.FromFile("hello.jpg"),
-
+                    Name = $"card_d_{a.Key}",
+                    Size = new Size(64, 64),
+                    Location = new Point(d1[0]+70, d1[1]),
+                    Image = (Image)Properties.Resources.ResourceManager.GetObject($"{a.Key}"),
+                    Visible = true,
+                    Anchor = AnchorStyles.None
                 };
+                dealer_pts.BadgeText = Convert.ToInt16(a.Value+ Convert.ToInt16(dealer_pts.BadgeText)).ToString();
                 this.Controls.Add(picture);
+                //picture.BringToFront();
+                d1[0] += 70;
+                picture.Update();
+                if (game.ShowOff == false) {
+                    var picture2 = new PictureBox
+                    {
+                        Name = $"card_d_hidden",
+                        Size = new Size(64, 64),
+                        Location = new Point(d1[0] + 70, d1[1]),
+                        Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker"),
+                        Visible = true,
+                        Anchor = AnchorStyles.None
+                    };
+                    this.Controls.Add(picture2);
+                    d1[0] += 70;
+                    picture.Update();
+                    break;
+                }
             }
 
+            foreach (KeyValuePair<string, int> a in game.Player)
+            {
+                var picture = new PictureBox
+                {
+                    Name = $"card_p_{a.Key}",
+                    Size = new Size(64, 64),
+                    Location = new Point(p1[0] + 70, p1[1]),
+                    Image = (Image)Properties.Resources.ResourceManager.GetObject($"{a.Key}"),
+                    Visible = true,
+                    Anchor = AnchorStyles.None
+                };
+                player_pts.BadgeText = Convert.ToInt16(a.Value + Convert.ToInt16(player_pts.BadgeText)).ToString();
+                this.Controls.Add(picture);
+                //picture.BringToFront();
+                p1[0] += 70;
+                picture.Update();
+            }
 
         }
 
+        private void Warn_NoBal()
+        {
+
+        }
+
+        private void chip_5_Click(object sender, EventArgs e)
+        {
+
+            game.Balance -= 5;
+            game.Pot += 5;
+            label_balance.Text = $"Balance: {game.Balance.ToString()}";
+        }
+
+        private void chip_10_Click(object sender, EventArgs e)
+        {
+            game.Balance -= 10;
+            game.Pot += 10;
+            label_balance.Text = $"Balance: {game.Balance.ToString()}";
+        }
+
+        private void chip_15_Click(object sender, EventArgs e)
+        {
+            game.Balance -= 15;
+            game.Pot += 15;
+            label_balance.Text = $"Balance: {game.Balance.ToString()}";
+        }
+
+        private void chip_50_Click(object sender, EventArgs e)
+        {
+            game.Balance -= 50;
+            game.Pot += 50;
+            label_balance.Text = $"Balance: {game.Balance.ToString()}";
+        }
+
+        private void chip_100_Click(object sender, EventArgs e)
+        {
+            game.Balance -= 100;
+            game.Pot += 100;
+            label_balance.Text = $"Balance: {game.Balance.ToString()}";
+        }
+
+        private void label_balance_TextChanged(object sender, EventArgs e)
+        {
+            pot_size.Text = game.Pot.ToString();
+        }
+
+        private void cmd_Done_Click(object sender, EventArgs e)
+        {
+            if (game.Pot == 0) {
+                MessageBox.Show("You must add to pot");
+                return;
+            }
+            panel_chips.Visible = false;
+            cmd_Double.Visible = true;
+            cmd_Hit.Visible = true;
+            cmd_Stand.Visible = true;
+            cmd_Surrender.Visible = true;
+
+        }
     }
 }

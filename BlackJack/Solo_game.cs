@@ -19,6 +19,18 @@ namespace BlackJack
         private static Boolean isjoker = false;
         private static Boolean isroyals = false;
         private static int balance = 10000;
+        private static Boolean show_off = false;
+        private static int pot = 0;
+        public int Pot
+        {
+            get { return pot; }
+            set { pot = value; }
+        }
+        public Boolean ShowOff
+        {
+            get { return show_off; }
+            set { show_off = value; }
+        }
         public int Balance
         {
             get { return balance; }
@@ -109,6 +121,8 @@ namespace BlackJack
                 deck.Remove(randomKey);
                 keyList.Remove(randomKey);
             }
+            forms.Solo solo = new forms.Solo();
+            IsGame = true;
         }
 
 

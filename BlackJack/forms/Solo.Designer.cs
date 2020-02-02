@@ -32,11 +32,11 @@
             this.metroSetPanel1 = new MetroSet_UI.Controls.MetroSetPanel();
             this.metroSetControlBox1 = new MetroSet_UI.Controls.MetroSetControlBox();
             this.label_balance = new MetroSet_UI.Controls.MetroSetLabel();
-            this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.pot_size = new MetroSet_UI.Controls.MetroSetLabel();
             this.dealer_pts = new MetroSet_UI.Controls.MetroSetBadge();
             this.player_pts = new MetroSet_UI.Controls.MetroSetBadge();
             this.animate_chips = new System.Windows.Forms.Timer(this.components);
-            this.metroSetPanel2 = new MetroSet_UI.Controls.MetroSetPanel();
+            this.panel_chips = new MetroSet_UI.Controls.MetroSetPanel();
             this.solo_begin = new MetroSet_UI.Controls.MetroSetButton();
             this.solo_title = new MetroSet_UI.Controls.MetroSetLabel();
             this.card_l_player = new System.Windows.Forms.PictureBox();
@@ -51,7 +51,12 @@
             this.chip_50 = new System.Windows.Forms.PictureBox();
             this.chip_5 = new System.Windows.Forms.PictureBox();
             this.chip_plus = new System.Windows.Forms.PictureBox();
-            this.metroSetPanel2.SuspendLayout();
+            this.cmd_Stand = new MetroSet_UI.Controls.MetroSetButton();
+            this.cmd_Hit = new MetroSet_UI.Controls.MetroSetButton();
+            this.cmd_Double = new MetroSet_UI.Controls.MetroSetButton();
+            this.cmd_Surrender = new MetroSet_UI.Controls.MetroSetButton();
+            this.cmd_Done = new MetroSet_UI.Controls.MetroSetButton();
+            this.panel_chips.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.card_l_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.balance_plus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.card_l_dealer)).BeginInit();
@@ -126,21 +131,23 @@
             this.label_balance.ThemeAuthor = "Narwin";
             this.label_balance.ThemeName = "MetroLite";
             this.label_balance.Visible = false;
+            this.label_balance.TextChanged += new System.EventHandler(this.label_balance_TextChanged);
             // 
-            // metroSetLabel2
+            // pot_size
             // 
-            this.metroSetLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroSetLabel2.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
-            this.metroSetLabel2.Location = new System.Drawing.Point(3, 45);
-            this.metroSetLabel2.Name = "metroSetLabel2";
-            this.metroSetLabel2.Size = new System.Drawing.Size(546, 54);
-            this.metroSetLabel2.Style = MetroSet_UI.Design.Style.Light;
-            this.metroSetLabel2.StyleManager = null;
-            this.metroSetLabel2.TabIndex = 19;
-            this.metroSetLabel2.Text = "0";
-            this.metroSetLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroSetLabel2.ThemeAuthor = "Narwin";
-            this.metroSetLabel2.ThemeName = "MetroLite";
+            this.pot_size.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pot_size.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
+            this.pot_size.Location = new System.Drawing.Point(223, 292);
+            this.pot_size.Name = "pot_size";
+            this.pot_size.Size = new System.Drawing.Size(546, 54);
+            this.pot_size.Style = MetroSet_UI.Design.Style.Light;
+            this.pot_size.StyleManager = null;
+            this.pot_size.TabIndex = 19;
+            this.pot_size.Text = "Pot: 0";
+            this.pot_size.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.pot_size.ThemeAuthor = "Narwin";
+            this.pot_size.ThemeName = "MetroLite";
+            this.pot_size.Visible = false;
             // 
             // dealer_pts
             // 
@@ -221,30 +228,30 @@
             this.animate_chips.Interval = 500;
             this.animate_chips.Tick += new System.EventHandler(this.animate_chips_Tick);
             // 
-            // metroSetPanel2
+            // panel_chips
             // 
-            this.metroSetPanel2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.metroSetPanel2.BackgroundColor = System.Drawing.Color.White;
-            this.metroSetPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.metroSetPanel2.BorderThickness = 1;
-            this.metroSetPanel2.Controls.Add(this.chip_minus);
-            this.metroSetPanel2.Controls.Add(this.metroSetLabel2);
-            this.metroSetPanel2.Controls.Add(this.chip_15);
-            this.metroSetPanel2.Controls.Add(this.chip_10);
-            this.metroSetPanel2.Controls.Add(this.chip_100);
-            this.metroSetPanel2.Controls.Add(this.chip_50);
-            this.metroSetPanel2.Controls.Add(this.chip_5);
-            this.metroSetPanel2.Controls.Add(this.chip_plus);
-            this.metroSetPanel2.Location = new System.Drawing.Point(353, 308);
-            this.metroSetPanel2.MinimumSize = new System.Drawing.Size(552, 0);
-            this.metroSetPanel2.Name = "metroSetPanel2";
-            this.metroSetPanel2.Size = new System.Drawing.Size(552, 181);
-            this.metroSetPanel2.Style = MetroSet_UI.Design.Style.Light;
-            this.metroSetPanel2.StyleManager = null;
-            this.metroSetPanel2.TabIndex = 34;
-            this.metroSetPanel2.ThemeAuthor = "Narwin";
-            this.metroSetPanel2.ThemeName = "MetroLite";
-            this.metroSetPanel2.Visible = false;
+            this.panel_chips.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel_chips.BackgroundColor = System.Drawing.Color.White;
+            this.panel_chips.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.panel_chips.BorderThickness = 1;
+            this.panel_chips.Controls.Add(this.cmd_Done);
+            this.panel_chips.Controls.Add(this.chip_minus);
+            this.panel_chips.Controls.Add(this.chip_15);
+            this.panel_chips.Controls.Add(this.chip_10);
+            this.panel_chips.Controls.Add(this.chip_100);
+            this.panel_chips.Controls.Add(this.chip_50);
+            this.panel_chips.Controls.Add(this.chip_5);
+            this.panel_chips.Controls.Add(this.chip_plus);
+            this.panel_chips.Location = new System.Drawing.Point(223, 366);
+            this.panel_chips.MinimumSize = new System.Drawing.Size(552, 0);
+            this.panel_chips.Name = "panel_chips";
+            this.panel_chips.Size = new System.Drawing.Size(552, 82);
+            this.panel_chips.Style = MetroSet_UI.Design.Style.Light;
+            this.panel_chips.StyleManager = null;
+            this.panel_chips.TabIndex = 34;
+            this.panel_chips.ThemeAuthor = "Narwin";
+            this.panel_chips.ThemeName = "MetroLite";
+            this.panel_chips.Visible = false;
             // 
             // solo_begin
             // 
@@ -300,6 +307,7 @@
             this.card_l_player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.card_l_player.TabIndex = 35;
             this.card_l_player.TabStop = false;
+            this.card_l_player.Visible = false;
             // 
             // balance_plus
             // 
@@ -367,7 +375,7 @@
             this.chip_minus.BackColor = System.Drawing.Color.Transparent;
             this.chip_minus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.chip_minus.Image = global::BlackJack.Properties.Resources._053_casino;
-            this.chip_minus.Location = new System.Drawing.Point(6, 114);
+            this.chip_minus.Location = new System.Drawing.Point(6, 15);
             this.chip_minus.Name = "chip_minus";
             this.chip_minus.Size = new System.Drawing.Size(64, 64);
             this.chip_minus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -381,13 +389,14 @@
             this.chip_15.BackColor = System.Drawing.Color.Transparent;
             this.chip_15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.chip_15.Image = global::BlackJack.Properties.Resources._055_chip_1;
-            this.chip_15.Location = new System.Drawing.Point(76, 114);
+            this.chip_15.Location = new System.Drawing.Point(76, 15);
             this.chip_15.Name = "chip_15";
             this.chip_15.Size = new System.Drawing.Size(64, 64);
             this.chip_15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.chip_15.TabIndex = 18;
             this.chip_15.TabStop = false;
             this.chip_15.Visible = false;
+            this.chip_15.Click += new System.EventHandler(this.chip_15_Click);
             this.chip_15.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
             this.chip_15.MouseHover += new System.EventHandler(this.chip_MouseHover);
             // 
@@ -396,13 +405,14 @@
             this.chip_10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.chip_10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.chip_10.Image = global::BlackJack.Properties.Resources._060_casino_2;
-            this.chip_10.Location = new System.Drawing.Point(76, 114);
+            this.chip_10.Location = new System.Drawing.Point(76, 15);
             this.chip_10.Name = "chip_10";
             this.chip_10.Size = new System.Drawing.Size(64, 64);
             this.chip_10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.chip_10.TabIndex = 14;
             this.chip_10.TabStop = false;
             this.chip_10.Visible = false;
+            this.chip_10.Click += new System.EventHandler(this.chip_10_Click);
             this.chip_10.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
             this.chip_10.MouseHover += new System.EventHandler(this.chip_MouseHover);
             // 
@@ -411,13 +421,14 @@
             this.chip_100.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.chip_100.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.chip_100.Image = global::BlackJack.Properties.Resources._059_bet;
-            this.chip_100.Location = new System.Drawing.Point(76, 114);
+            this.chip_100.Location = new System.Drawing.Point(76, 15);
             this.chip_100.Name = "chip_100";
             this.chip_100.Size = new System.Drawing.Size(64, 64);
             this.chip_100.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.chip_100.TabIndex = 15;
             this.chip_100.TabStop = false;
             this.chip_100.Visible = false;
+            this.chip_100.Click += new System.EventHandler(this.chip_100_Click);
             this.chip_100.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
             this.chip_100.MouseHover += new System.EventHandler(this.chip_MouseHover);
             // 
@@ -426,13 +437,14 @@
             this.chip_50.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.chip_50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.chip_50.Image = global::BlackJack.Properties.Resources._057_chip_3;
-            this.chip_50.Location = new System.Drawing.Point(76, 114);
+            this.chip_50.Location = new System.Drawing.Point(76, 15);
             this.chip_50.Name = "chip_50";
             this.chip_50.Size = new System.Drawing.Size(64, 64);
             this.chip_50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.chip_50.TabIndex = 16;
             this.chip_50.TabStop = false;
             this.chip_50.Visible = false;
+            this.chip_50.Click += new System.EventHandler(this.chip_50_Click);
             this.chip_50.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
             this.chip_50.MouseHover += new System.EventHandler(this.chip_MouseHover);
             // 
@@ -442,13 +454,14 @@
             this.chip_5.BackColor = System.Drawing.Color.Transparent;
             this.chip_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.chip_5.Image = global::BlackJack.Properties.Resources._056_chip_2;
-            this.chip_5.Location = new System.Drawing.Point(76, 114);
+            this.chip_5.Location = new System.Drawing.Point(76, 15);
             this.chip_5.Name = "chip_5";
             this.chip_5.Size = new System.Drawing.Size(64, 64);
             this.chip_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.chip_5.TabIndex = 17;
             this.chip_5.TabStop = false;
             this.chip_5.Visible = false;
+            this.chip_5.Click += new System.EventHandler(this.chip_5_Click);
             this.chip_5.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
             this.chip_5.MouseHover += new System.EventHandler(this.chip_MouseHover);
             // 
@@ -459,7 +472,7 @@
             this.chip_plus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.chip_plus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.chip_plus.Image = global::BlackJack.Properties.Resources._054_chip;
-            this.chip_plus.Location = new System.Drawing.Point(76, 114);
+            this.chip_plus.Location = new System.Drawing.Point(76, 15);
             this.chip_plus.Name = "chip_plus";
             this.chip_plus.Size = new System.Drawing.Size(64, 64);
             this.chip_plus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -467,13 +480,153 @@
             this.chip_plus.TabStop = false;
             this.chip_plus.Click += new System.EventHandler(this.chip_plus_Click);
             // 
+            // cmd_Stand
+            // 
+            this.cmd_Stand.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmd_Stand.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Stand.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Stand.DisabledForeColor = System.Drawing.Color.Gray;
+            this.cmd_Stand.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.cmd_Stand.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Stand.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Stand.HoverTextColor = System.Drawing.Color.White;
+            this.cmd_Stand.Location = new System.Drawing.Point(388, 349);
+            this.cmd_Stand.Name = "cmd_Stand";
+            this.cmd_Stand.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Stand.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Stand.NormalTextColor = System.Drawing.Color.White;
+            this.cmd_Stand.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Stand.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Stand.PressTextColor = System.Drawing.Color.White;
+            this.cmd_Stand.Size = new System.Drawing.Size(232, 42);
+            this.cmd_Stand.Style = MetroSet_UI.Design.Style.Light;
+            this.cmd_Stand.StyleManager = null;
+            this.cmd_Stand.TabIndex = 38;
+            this.cmd_Stand.Text = "STAND";
+            this.cmd_Stand.ThemeAuthor = "Narwin";
+            this.cmd_Stand.ThemeName = "MetroLite";
+            this.cmd_Stand.Visible = false;
+            // 
+            // cmd_Hit
+            // 
+            this.cmd_Hit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmd_Hit.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Hit.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Hit.DisabledForeColor = System.Drawing.Color.Gray;
+            this.cmd_Hit.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.cmd_Hit.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Hit.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Hit.HoverTextColor = System.Drawing.Color.White;
+            this.cmd_Hit.Location = new System.Drawing.Point(388, 397);
+            this.cmd_Hit.Name = "cmd_Hit";
+            this.cmd_Hit.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Hit.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Hit.NormalTextColor = System.Drawing.Color.White;
+            this.cmd_Hit.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Hit.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Hit.PressTextColor = System.Drawing.Color.White;
+            this.cmd_Hit.Size = new System.Drawing.Size(232, 42);
+            this.cmd_Hit.Style = MetroSet_UI.Design.Style.Light;
+            this.cmd_Hit.StyleManager = null;
+            this.cmd_Hit.TabIndex = 39;
+            this.cmd_Hit.Text = "HIT";
+            this.cmd_Hit.ThemeAuthor = "Narwin";
+            this.cmd_Hit.ThemeName = "MetroLite";
+            this.cmd_Hit.Visible = false;
+            // 
+            // cmd_Double
+            // 
+            this.cmd_Double.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmd_Double.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Double.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Double.DisabledForeColor = System.Drawing.Color.Gray;
+            this.cmd_Double.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.cmd_Double.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Double.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Double.HoverTextColor = System.Drawing.Color.White;
+            this.cmd_Double.Location = new System.Drawing.Point(388, 445);
+            this.cmd_Double.Name = "cmd_Double";
+            this.cmd_Double.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Double.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Double.NormalTextColor = System.Drawing.Color.White;
+            this.cmd_Double.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Double.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Double.PressTextColor = System.Drawing.Color.White;
+            this.cmd_Double.Size = new System.Drawing.Size(232, 42);
+            this.cmd_Double.Style = MetroSet_UI.Design.Style.Light;
+            this.cmd_Double.StyleManager = null;
+            this.cmd_Double.TabIndex = 40;
+            this.cmd_Double.Text = "DOUBLE";
+            this.cmd_Double.ThemeAuthor = "Narwin";
+            this.cmd_Double.ThemeName = "MetroLite";
+            this.cmd_Double.Visible = false;
+            // 
+            // cmd_Surrender
+            // 
+            this.cmd_Surrender.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cmd_Surrender.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Surrender.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Surrender.DisabledForeColor = System.Drawing.Color.Gray;
+            this.cmd_Surrender.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.cmd_Surrender.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Surrender.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Surrender.HoverTextColor = System.Drawing.Color.White;
+            this.cmd_Surrender.Location = new System.Drawing.Point(388, 493);
+            this.cmd_Surrender.Name = "cmd_Surrender";
+            this.cmd_Surrender.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Surrender.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Surrender.NormalTextColor = System.Drawing.Color.White;
+            this.cmd_Surrender.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Surrender.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Surrender.PressTextColor = System.Drawing.Color.White;
+            this.cmd_Surrender.Size = new System.Drawing.Size(232, 42);
+            this.cmd_Surrender.Style = MetroSet_UI.Design.Style.Light;
+            this.cmd_Surrender.StyleManager = null;
+            this.cmd_Surrender.TabIndex = 41;
+            this.cmd_Surrender.Text = "SURRENDER";
+            this.cmd_Surrender.ThemeAuthor = "Narwin";
+            this.cmd_Surrender.ThemeName = "MetroLite";
+            this.cmd_Surrender.Visible = false;
+            // 
+            // cmd_Done
+            // 
+            this.cmd_Done.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmd_Done.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Done.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Done.DisabledForeColor = System.Drawing.Color.Gray;
+            this.cmd_Done.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.cmd_Done.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Done.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Done.HoverTextColor = System.Drawing.Color.White;
+            this.cmd_Done.Location = new System.Drawing.Point(146, 24);
+            this.cmd_Done.Name = "cmd_Done";
+            this.cmd_Done.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Done.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Done.NormalTextColor = System.Drawing.Color.White;
+            this.cmd_Done.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Done.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Done.PressTextColor = System.Drawing.Color.White;
+            this.cmd_Done.Size = new System.Drawing.Size(400, 42);
+            this.cmd_Done.Style = MetroSet_UI.Design.Style.Light;
+            this.cmd_Done.StyleManager = null;
+            this.cmd_Done.TabIndex = 40;
+            this.cmd_Done.Text = "DONE";
+            this.cmd_Done.ThemeAuthor = "Narwin";
+            this.cmd_Done.ThemeName = "MetroLite";
+            this.cmd_Done.Click += new System.EventHandler(this.cmd_Done_Click);
+            // 
             // Solo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(999, 568);
+            this.Controls.Add(this.cmd_Surrender);
+            this.Controls.Add(this.cmd_Hit);
+            this.Controls.Add(this.cmd_Double);
+            this.Controls.Add(this.cmd_Stand);
             this.Controls.Add(this.solo_title);
+            this.Controls.Add(this.pot_size);
             this.Controls.Add(this.solo_begin);
             this.Controls.Add(this.card_l_player);
             this.Controls.Add(this.balance_plus);
@@ -485,7 +638,7 @@
             this.Controls.Add(this.balance_icon);
             this.Controls.Add(this.metroSetPanel1);
             this.Controls.Add(this.metroSetControlBox1);
-            this.Controls.Add(this.metroSetPanel2);
+            this.Controls.Add(this.panel_chips);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(999, 568);
@@ -494,7 +647,7 @@
             this.Text = "Solo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Solo_Load);
-            this.metroSetPanel2.ResumeLayout(false);
+            this.panel_chips.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.card_l_player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.balance_plus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.card_l_dealer)).EndInit();
@@ -522,7 +675,7 @@
         private System.Windows.Forms.PictureBox chip_50;
         private System.Windows.Forms.PictureBox chip_5;
         private System.Windows.Forms.PictureBox chip_15;
-        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
+        private MetroSet_UI.Controls.MetroSetLabel pot_size;
         private System.Windows.Forms.PictureBox balance_minus;
         private System.Windows.Forms.PictureBox chip_plus;
         private System.Windows.Forms.PictureBox card_l_dealer;
@@ -531,9 +684,14 @@
         private System.Windows.Forms.Timer animate_chips;
         private System.Windows.Forms.PictureBox balance_plus;
         private System.Windows.Forms.PictureBox chip_minus;
-        private MetroSet_UI.Controls.MetroSetPanel metroSetPanel2;
+        private MetroSet_UI.Controls.MetroSetPanel panel_chips;
         private System.Windows.Forms.PictureBox card_l_player;
         private MetroSet_UI.Controls.MetroSetButton solo_begin;
         private MetroSet_UI.Controls.MetroSetLabel solo_title;
+        private MetroSet_UI.Controls.MetroSetButton cmd_Hit;
+        private MetroSet_UI.Controls.MetroSetButton cmd_Stand;
+        private MetroSet_UI.Controls.MetroSetButton cmd_Double;
+        private MetroSet_UI.Controls.MetroSetButton cmd_Surrender;
+        private MetroSet_UI.Controls.MetroSetButton cmd_Done;
     }
 }
