@@ -9,12 +9,38 @@ namespace BlackJack
     class Solo_game
     {
         private static Dictionary<string, int> deck = new Dictionary<string, int>();
-        public string[] cards = { "A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2" };
-        public string[] suits = { "s", "c", "d", "h" };
-        public Random rand = new Random();
-        public Dictionary<string, int> player = new Dictionary<string, int>();
-        public Dictionary<string, int> dealer = new Dictionary<string, int>();
+        private static string[] cards = { "A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2" };
+        private static string[] suits = { "s", "c", "d", "h" };
+        private static Random rand = new Random();
+        private static Dictionary<string, int> player = new Dictionary<string, int>();
+        private static Dictionary<string, int> dealer = new Dictionary<string, int>();
         private static Boolean isgame = false;
+        private static int decks = 1;
+        private static Boolean isjoker = false;
+        private static Boolean isroyals = false;
+        private static int balance = 10000;
+        public int Balance
+        {
+            get { return balance; }
+            set { balance = value; }
+        }
+
+        public int Decks
+        {
+            get { return decks; }
+            set { decks = value; }
+        }
+
+        public Boolean IsRoyals
+        {
+            get { return isroyals; }
+            set { isroyals = value; }
+        }
+        public Boolean IsJoker
+        {
+            get { return isjoker; }
+            set { isjoker = value; }
+        }
 
         public Boolean IsGame
         {
@@ -25,6 +51,16 @@ namespace BlackJack
         {
             get { return deck; }
             set { deck = value; }
+        }
+        public Dictionary<string, int> Player
+        {
+            get { return player; }
+            set { player = value; }
+        }
+        public Dictionary<string, int> Dealer
+        {
+            get { return dealer; }
+            set { dealer = value; }
         }
         public void Shuffle_deck()
         {
@@ -73,10 +109,6 @@ namespace BlackJack
                 deck.Remove(randomKey);
                 keyList.Remove(randomKey);
             }
-
-
-
-
         }
 
 

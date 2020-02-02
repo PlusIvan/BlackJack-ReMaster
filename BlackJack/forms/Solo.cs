@@ -13,7 +13,7 @@ namespace BlackJack.forms
 {
     public partial class Solo : Form
     {
-        Global global = new Global();
+        
         bool drag = true;
         Point start_point = new Point(0, 0);
 
@@ -49,7 +49,7 @@ namespace BlackJack.forms
         {
             //animate_chips.Start();
            // MessageBox.Show();
-            label_balance.Text = global.core.solo.balance.balance;
+           // label_balance.Text = global.core.solo.balance.balance;
 
             if(game.IsGame == false)
             {
@@ -232,7 +232,23 @@ this.Update();
             dealer_pts.Visible = true;
             player_pts.Visible = true;
             game.IsGame = true;
-            
+            game.Begin_game();
+            Render_Cards();
+
         }
+
+        private void Render_Cards()
+        {
+            int p1 = card_1_player.Location.X;
+            int d1 = card_1_dealer.Location.X;
+
+            foreach (KeyValuePair<string,int> a in game.Dealer)
+            {
+
+            }
+
+
+        }
+
     }
 }

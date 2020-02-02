@@ -152,6 +152,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animate.cs" />
     <Compile Include="forms\Multiplayer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,7 +171,6 @@
     <Compile Include="forms\Solo.Designer.cs">
       <DependentUpon>Solo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Global.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +180,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Solo_game.cs" />
+    <Compile Include="Soundtrack.cs" />
     <Compile Include="Websocket.cs" />
     <EmbeddedResource Include="forms\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
@@ -218,160 +219,160 @@
     <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\001-poker.png" />
+    <None Include="Resources\Ah.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\002-poker-1.png" />
+    <None Include="Resources\Qh.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\003-poker-2.png" />
+    <None Include="Resources\As.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\004-poker-3.png" />
+    <None Include="Resources\Ad.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\005-poker-4.png" />
+    <None Include="Resources\Ac.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\006-poker-5.png" />
+    <None Include="Resources\Kh.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\007-poker-6.png" />
+    <None Include="Resources\Ks.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\008-poker-7.png" />
+    <None Include="Resources\Js.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\009-poker-8.png" />
+    <None Include="Resources\2h.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\010-poker-9.png" />
+    <None Include="Resources\10h.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\011-poker-10.png" />
+    <None Include="Resources\Jd.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\012-poker-11.png" />
+    <None Include="Resources\Kc.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\013-poker-12.png" />
+    <None Include="Resources\10s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\014-poker-13.png" />
+    <None Include="Resources\7d.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\015-poker-14.png" />
+    <None Include="Resources\Qs.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\016-poker-15.png" />
+    <None Include="Resources\3h.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\017-poker-16.png" />
+    <None Include="Resources\Jh.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\018-poker-17.png" />
+    <None Include="Resources\7h.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\019-poker-18.png" />
+    <None Include="Resources\2c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\020-poker-19.png" />
+    <None Include="Resources\5h.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\021-poker-20.png" />
+    <None Include="Resources\3s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\022-poker-21.png" />
+    <None Include="Resources\9h.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\023-poker-22.png" />
+    <None Include="Resources\Kd.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\024-poker-23.png" />
+    <None Include="Resources\8h.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\025-poker-24.png" />
+    <None Include="Resources\5s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\026-poker-25.png" />
+    <None Include="Resources\4h.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\027-poker-26.png" />
+    <None Include="Resources\2d.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\028-poker-27.png" />
+    <None Include="Resources\6h.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\029-poker-28.png" />
+    <None Include="Resources\3c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\030-poker-29.png" />
+    <None Include="Resources\4s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\031-poker-30.png" />
+    <None Include="Resources\10d.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\032-poker-31.png" />
+    <None Include="Resources\Qc.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\033-poker-32.png" />
+    <None Include="Resources\3d.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\034-poker-33.png" />
+    <None Include="Resources\4c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\035-poker-34.png" />
+    <None Include="Resources\9s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\036-poker-35.png" />
+    <None Include="Resources\10c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\037-poker-36.png" />
+    <None Include="Resources\Jc.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\038-poker-37.png" />
+    <None Include="Resources\5d.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\039-poker-38.png" />
+    <None Include="Resources\6c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\040-poker-39.png" />
+    <None Include="Resources\4d.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\041-poker-40.png" />
+    <None Include="Resources\Qd.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\042-poker-41.png" />
+    <None Include="Resources\8s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\043-poker-42.png" />
+    <None Include="Resources\8c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\044-poker-43.png" />
+    <None Include="Resources\6d.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\045-poker-44.png" />
+    <None Include="Resources\7c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\046-poker-45.png" />
+    <None Include="Resources\9d.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\047-poker-46.png" />
+    <None Include="Resources\7s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\048-poker-47.png" />
+    <None Include="Resources\5c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\049-poker-48.png" />
+    <None Include="Resources\6s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\050-poker-49.png" />
+    <None Include="Resources\9c.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\051-poker-50.png" />
+    <None Include="Resources\2s.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\052-poker-51.png" />
+    <None Include="Resources\8d.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\053-casino.png" />

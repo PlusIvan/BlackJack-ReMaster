@@ -45,10 +45,10 @@
             this.chip_5 = new System.Windows.Forms.PictureBox();
             this.chip_plus = new System.Windows.Forms.PictureBox();
             this.balance_plus = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.card_1_dealer = new System.Windows.Forms.PictureBox();
             this.balance_minus = new System.Windows.Forms.PictureBox();
             this.balance_icon = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.card_1_player = new System.Windows.Forms.PictureBox();
             this.solo_begin = new MetroSet_UI.Controls.MetroSetButton();
             this.solo_title = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetPanel2.SuspendLayout();
@@ -60,10 +60,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.chip_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_plus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.balance_plus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_1_dealer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.balance_minus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.balance_icon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_1_player)).BeginInit();
             this.SuspendLayout();
             // 
             // metroSetPanel1
@@ -368,19 +368,18 @@
             this.balance_plus.Visible = false;
             this.balance_plus.Click += new System.EventHandler(this.balance_plus_Click);
             // 
-            // pictureBox2
+            // card_1_dealer
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Image = global::BlackJack.Properties.Resources.poker;
-            this.pictureBox2.Location = new System.Drawing.Point(441, 87);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 25;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
+            this.card_1_dealer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.card_1_dealer.BackColor = System.Drawing.Color.Transparent;
+            this.card_1_dealer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.card_1_dealer.Image = global::BlackJack.Properties.Resources.poker;
+            this.card_1_dealer.Location = new System.Drawing.Point(441, 87);
+            this.card_1_dealer.Name = "card_1_dealer";
+            this.card_1_dealer.Size = new System.Drawing.Size(64, 64);
+            this.card_1_dealer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.card_1_dealer.TabIndex = 25;
+            this.card_1_dealer.TabStop = false;
             // 
             // balance_minus
             // 
@@ -413,19 +412,18 @@
             this.balance_icon.Visible = false;
             this.balance_icon.Click += new System.EventHandler(this.balance_icon_Click);
             // 
-            // pictureBox1
+            // card_1_player
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::BlackJack.Properties.Resources.poker;
-            this.pictureBox1.Location = new System.Drawing.Point(441, 225);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 35;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
+            this.card_1_player.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.card_1_player.BackColor = System.Drawing.Color.Transparent;
+            this.card_1_player.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.card_1_player.Image = global::BlackJack.Properties.Resources.poker;
+            this.card_1_player.Location = new System.Drawing.Point(441, 225);
+            this.card_1_player.Name = "card_1_player";
+            this.card_1_player.Size = new System.Drawing.Size(64, 64);
+            this.card_1_player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.card_1_player.TabIndex = 35;
+            this.card_1_player.TabStop = false;
             // 
             // solo_begin
             // 
@@ -458,7 +456,7 @@
             // 
             this.solo_title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.solo_title.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Italic);
-            this.solo_title.Location = new System.Drawing.Point(0, 79);
+            this.solo_title.Location = new System.Drawing.Point(0, 87);
             this.solo_title.Name = "solo_title";
             this.solo_title.Size = new System.Drawing.Size(999, 92);
             this.solo_title.Style = MetroSet_UI.Design.Style.Light;
@@ -477,11 +475,11 @@
             this.ClientSize = new System.Drawing.Size(999, 568);
             this.Controls.Add(this.solo_title);
             this.Controls.Add(this.solo_begin);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.card_1_player);
             this.Controls.Add(this.balance_plus);
             this.Controls.Add(this.player_pts);
             this.Controls.Add(this.dealer_pts);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.card_1_dealer);
             this.Controls.Add(this.balance_minus);
             this.Controls.Add(this.label_balance);
             this.Controls.Add(this.balance_icon);
@@ -505,10 +503,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.chip_5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_plus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.balance_plus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_1_dealer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.balance_minus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.balance_icon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_1_player)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -527,14 +525,14 @@
         private MetroSet_UI.Controls.MetroSetLabel metroSetLabel2;
         private System.Windows.Forms.PictureBox balance_minus;
         private System.Windows.Forms.PictureBox chip_plus;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox card_1_dealer;
         private MetroSet_UI.Controls.MetroSetBadge dealer_pts;
         private MetroSet_UI.Controls.MetroSetBadge player_pts;
         private System.Windows.Forms.Timer animate_chips;
         private System.Windows.Forms.PictureBox balance_plus;
         private System.Windows.Forms.PictureBox chip_minus;
         private MetroSet_UI.Controls.MetroSetPanel metroSetPanel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox card_1_player;
         private MetroSet_UI.Controls.MetroSetButton solo_begin;
         private MetroSet_UI.Controls.MetroSetLabel solo_title;
     }

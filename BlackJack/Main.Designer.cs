@@ -43,6 +43,7 @@
             this.animator_two = new System.Windows.Forms.Timer(this.components);
             this.music_stop = new MetroSet_UI.Controls.MetroSetButton();
             this.music_play = new MetroSet_UI.Controls.MetroSetButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.logo_heart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo_cards)).BeginInit();
             this.SuspendLayout();
@@ -298,6 +299,11 @@
             this.music_play.ThemeAuthor = "Narwin";
             this.music_play.ThemeName = "MetroLite";
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -347,6 +353,7 @@
         private System.Windows.Forms.Timer animator_two;
         private MetroSet_UI.Controls.MetroSetButton music_stop;
         private MetroSet_UI.Controls.MetroSetButton music_play;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

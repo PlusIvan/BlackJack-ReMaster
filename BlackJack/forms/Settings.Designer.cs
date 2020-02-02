@@ -32,18 +32,23 @@
             this.metroSetPanel1 = new MetroSet_UI.Controls.MetroSetPanel();
             this.metroSetTabControl1 = new MetroSet_UI.Controls.MetroSetTabControl();
             this.metroSetTabPage4 = new MetroSet_UI.Child.MetroSetTabPage();
+            this.deck_qty = new MetroSet_UI.Controls.MetroSetLabel();
+            this.metroSetTrackBar1 = new MetroSet_UI.Controls.MetroSetTrackBar();
+            this.metroSetLabel4 = new MetroSet_UI.Controls.MetroSetLabel();
+            this.solo_setting_royals = new MetroSet_UI.Controls.MetroSetSwitch();
+            this.metroSetLabel3 = new MetroSet_UI.Controls.MetroSetLabel();
             this.solo_setting_joker = new MetroSet_UI.Controls.MetroSetSwitch();
             this.metroSetLabel1 = new MetroSet_UI.Controls.MetroSetLabel();
             this.metroSetTabPage2 = new MetroSet_UI.Child.MetroSetTabPage();
+            this.music_stop = new MetroSet_UI.Controls.MetroSetButton();
+            this.music_play = new MetroSet_UI.Controls.MetroSetButton();
+            this.combo_musics = new MetroSet_UI.Controls.MetroSetComboBox();
             this.metroSetLabel2 = new MetroSet_UI.Controls.MetroSetLabel();
             this.btn_loadPATH = new MetroSet_UI.Controls.MetroSetButton();
             this.input_trackPATH = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroSetTabPage3 = new MetroSet_UI.Child.MetroSetTabPage();
             this.metroSetTextBox1 = new MetroSet_UI.Controls.MetroSetTextBox();
             this.metroSetButton1 = new MetroSet_UI.Controls.MetroSetButton();
-            this.combo_musics = new MetroSet_UI.Controls.MetroSetComboBox();
-            this.music_play = new MetroSet_UI.Controls.MetroSetButton();
-            this.music_stop = new MetroSet_UI.Controls.MetroSetButton();
             this.metroSetTabControl1.SuspendLayout();
             this.metroSetTabPage4.SuspendLayout();
             this.metroSetTabPage2.SuspendLayout();
@@ -107,7 +112,7 @@
             this.metroSetTabControl1.ItemSize = new System.Drawing.Size(100, 38);
             this.metroSetTabControl1.Location = new System.Drawing.Point(0, 25);
             this.metroSetTabControl1.Name = "metroSetTabControl1";
-            this.metroSetTabControl1.SelectedIndex = 1;
+            this.metroSetTabControl1.SelectedIndex = 0;
             this.metroSetTabControl1.Size = new System.Drawing.Size(792, 380);
             this.metroSetTabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.metroSetTabControl1.Speed = 20;
@@ -122,6 +127,11 @@
             // metroSetTabPage4
             // 
             this.metroSetTabPage4.BaseColor = System.Drawing.Color.White;
+            this.metroSetTabPage4.Controls.Add(this.deck_qty);
+            this.metroSetTabPage4.Controls.Add(this.metroSetTrackBar1);
+            this.metroSetTabPage4.Controls.Add(this.metroSetLabel4);
+            this.metroSetTabPage4.Controls.Add(this.solo_setting_royals);
+            this.metroSetTabPage4.Controls.Add(this.metroSetLabel3);
             this.metroSetTabPage4.Controls.Add(this.solo_setting_joker);
             this.metroSetTabPage4.Controls.Add(this.metroSetLabel1);
             this.metroSetTabPage4.ImageIndex = 0;
@@ -136,6 +146,94 @@
             this.metroSetTabPage4.ThemeAuthor = "Narwin";
             this.metroSetTabPage4.ThemeName = "MetroLite";
             this.metroSetTabPage4.ToolTipText = null;
+            // 
+            // deck_qty
+            // 
+            this.deck_qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.deck_qty.Location = new System.Drawing.Point(55, 127);
+            this.deck_qty.Name = "deck_qty";
+            this.deck_qty.Size = new System.Drawing.Size(86, 22);
+            this.deck_qty.Style = MetroSet_UI.Design.Style.Light;
+            this.deck_qty.StyleManager = null;
+            this.deck_qty.TabIndex = 12;
+            this.deck_qty.Text = "1";
+            this.deck_qty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.deck_qty.ThemeAuthor = "Narwin";
+            this.deck_qty.ThemeName = "MetroLite";
+            // 
+            // metroSetTrackBar1
+            // 
+            this.metroSetTrackBar1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.metroSetTrackBar1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroSetTrackBar1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.metroSetTrackBar1.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.metroSetTrackBar1.DisabledHandlerColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(196)))), ((int)(((byte)(196)))));
+            this.metroSetTrackBar1.DisabledValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.metroSetTrackBar1.HandlerColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.metroSetTrackBar1.Location = new System.Drawing.Point(8, 108);
+            this.metroSetTrackBar1.Maximum = 64;
+            this.metroSetTrackBar1.Minimum = 1;
+            this.metroSetTrackBar1.Name = "metroSetTrackBar1";
+            this.metroSetTrackBar1.Size = new System.Drawing.Size(179, 16);
+            this.metroSetTrackBar1.Style = MetroSet_UI.Design.Style.Light;
+            this.metroSetTrackBar1.StyleManager = null;
+            this.metroSetTrackBar1.TabIndex = 11;
+            this.metroSetTrackBar1.Text = "metroSetTrackBar1";
+            this.metroSetTrackBar1.ThemeAuthor = "Narwin";
+            this.metroSetTrackBar1.ThemeName = "MetroLite";
+            this.metroSetTrackBar1.Value = 1;
+            this.metroSetTrackBar1.ValueColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.metroSetTrackBar1.MouseCaptureChanged += new System.EventHandler(this.metroSetTrackBar1_MouseHover);
+            // 
+            // metroSetLabel4
+            // 
+            this.metroSetLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetLabel4.Location = new System.Drawing.Point(193, 108);
+            this.metroSetLabel4.Name = "metroSetLabel4";
+            this.metroSetLabel4.Size = new System.Drawing.Size(86, 16);
+            this.metroSetLabel4.Style = MetroSet_UI.Design.Style.Light;
+            this.metroSetLabel4.StyleManager = null;
+            this.metroSetLabel4.TabIndex = 10;
+            this.metroSetLabel4.Text = "Card Decks";
+            this.metroSetLabel4.ThemeAuthor = "Narwin";
+            this.metroSetLabel4.ThemeName = "MetroLite";
+            // 
+            // solo_setting_royals
+            // 
+            this.solo_setting_royals.BackColor = System.Drawing.Color.Transparent;
+            this.solo_setting_royals.BackgroundColor = System.Drawing.Color.Empty;
+            this.solo_setting_royals.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(159)))), ((int)(((byte)(147)))));
+            this.solo_setting_royals.CheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.solo_setting_royals.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.solo_setting_royals.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.solo_setting_royals.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.solo_setting_royals.DisabledCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.solo_setting_royals.DisabledUnCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
+            this.solo_setting_royals.Location = new System.Drawing.Point(8, 51);
+            this.solo_setting_royals.Name = "solo_setting_royals";
+            this.solo_setting_royals.Size = new System.Drawing.Size(58, 22);
+            this.solo_setting_royals.Style = MetroSet_UI.Design.Style.Light;
+            this.solo_setting_royals.StyleManager = null;
+            this.solo_setting_royals.Switched = false;
+            this.solo_setting_royals.SymbolColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(92)))), ((int)(((byte)(92)))));
+            this.solo_setting_royals.TabIndex = 8;
+            this.solo_setting_royals.Text = "metroSetSwitch1";
+            this.solo_setting_royals.ThemeAuthor = "Narwin";
+            this.solo_setting_royals.ThemeName = "MetroLite";
+            this.solo_setting_royals.UnCheckColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            // 
+            // metroSetLabel3
+            // 
+            this.metroSetLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.metroSetLabel3.Location = new System.Drawing.Point(72, 51);
+            this.metroSetLabel3.Name = "metroSetLabel3";
+            this.metroSetLabel3.Size = new System.Drawing.Size(217, 22);
+            this.metroSetLabel3.Style = MetroSet_UI.Design.Style.Light;
+            this.metroSetLabel3.StyleManager = null;
+            this.metroSetLabel3.TabIndex = 7;
+            this.metroSetLabel3.Text = "Royal Cards Only (A,K,Q,J,10)";
+            this.metroSetLabel3.ThemeAuthor = "Narwin";
+            this.metroSetLabel3.ThemeName = "MetroLite";
             // 
             // solo_setting_joker
             // 
@@ -170,7 +268,7 @@
             this.metroSetLabel1.Style = MetroSet_UI.Design.Style.Light;
             this.metroSetLabel1.StyleManager = null;
             this.metroSetLabel1.TabIndex = 2;
-            this.metroSetLabel1.Text = "Joker";
+            this.metroSetLabel1.Text = "Joker ";
             this.metroSetLabel1.ThemeAuthor = "Narwin";
             this.metroSetLabel1.ThemeName = "MetroLite";
             // 
@@ -195,6 +293,89 @@
             this.metroSetTabPage2.ThemeAuthor = "Narwin";
             this.metroSetTabPage2.ThemeName = "MetroLite";
             this.metroSetTabPage2.ToolTipText = null;
+            // 
+            // music_stop
+            // 
+            this.music_stop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.music_stop.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.music_stop.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.music_stop.DisabledForeColor = System.Drawing.Color.Gray;
+            this.music_stop.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.music_stop.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.music_stop.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.music_stop.HoverTextColor = System.Drawing.Color.White;
+            this.music_stop.Location = new System.Drawing.Point(412, 129);
+            this.music_stop.Name = "music_stop";
+            this.music_stop.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.music_stop.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.music_stop.NormalTextColor = System.Drawing.Color.White;
+            this.music_stop.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.music_stop.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.music_stop.PressTextColor = System.Drawing.Color.White;
+            this.music_stop.Size = new System.Drawing.Size(47, 26);
+            this.music_stop.Style = MetroSet_UI.Design.Style.Light;
+            this.music_stop.StyleManager = null;
+            this.music_stop.TabIndex = 6;
+            this.music_stop.Text = "Stop";
+            this.music_stop.ThemeAuthor = "Narwin";
+            this.music_stop.ThemeName = "MetroLite";
+            this.music_stop.Click += new System.EventHandler(this.music_stop_Click);
+            // 
+            // music_play
+            // 
+            this.music_play.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.music_play.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.music_play.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.music_play.DisabledForeColor = System.Drawing.Color.Gray;
+            this.music_play.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.music_play.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.music_play.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.music_play.HoverTextColor = System.Drawing.Color.White;
+            this.music_play.Location = new System.Drawing.Point(359, 129);
+            this.music_play.Name = "music_play";
+            this.music_play.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.music_play.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.music_play.NormalTextColor = System.Drawing.Color.White;
+            this.music_play.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.music_play.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.music_play.PressTextColor = System.Drawing.Color.White;
+            this.music_play.Size = new System.Drawing.Size(47, 26);
+            this.music_play.Style = MetroSet_UI.Design.Style.Light;
+            this.music_play.StyleManager = null;
+            this.music_play.TabIndex = 5;
+            this.music_play.Text = "Play";
+            this.music_play.ThemeAuthor = "Narwin";
+            this.music_play.ThemeName = "MetroLite";
+            this.music_play.Click += new System.EventHandler(this.music_play_Click);
+            // 
+            // combo_musics
+            // 
+            this.combo_musics.AllowDrop = true;
+            this.combo_musics.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.combo_musics.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.combo_musics.BackColor = System.Drawing.Color.Transparent;
+            this.combo_musics.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.combo_musics.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.combo_musics.CausesValidation = false;
+            this.combo_musics.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.combo_musics.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.combo_musics.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.combo_musics.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.combo_musics.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_musics.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.combo_musics.FormattingEnabled = true;
+            this.combo_musics.ItemHeight = 20;
+            this.combo_musics.Location = new System.Drawing.Point(3, 129);
+            this.combo_musics.Name = "combo_musics";
+            this.combo_musics.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.combo_musics.SelectedItemForeColor = System.Drawing.Color.White;
+            this.combo_musics.Size = new System.Drawing.Size(350, 26);
+            this.combo_musics.Style = MetroSet_UI.Design.Style.Light;
+            this.combo_musics.StyleManager = null;
+            this.combo_musics.TabIndex = 4;
+            this.combo_musics.ThemeAuthor = "Narwin";
+            this.combo_musics.ThemeName = "MetroLite";
             // 
             // metroSetLabel2
             // 
@@ -337,89 +518,7 @@
             this.metroSetButton1.Text = "Appeal Change";
             this.metroSetButton1.ThemeAuthor = "Narwin";
             this.metroSetButton1.ThemeName = "MetroLite";
-            // 
-            // combo_musics
-            // 
-            this.combo_musics.AllowDrop = true;
-            this.combo_musics.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.combo_musics.ArrowColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.combo_musics.BackColor = System.Drawing.Color.Transparent;
-            this.combo_musics.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.combo_musics.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.combo_musics.CausesValidation = false;
-            this.combo_musics.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.combo_musics.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.combo_musics.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.combo_musics.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.combo_musics.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_musics.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.combo_musics.FormattingEnabled = true;
-            this.combo_musics.ItemHeight = 20;
-            this.combo_musics.Location = new System.Drawing.Point(3, 129);
-            this.combo_musics.Name = "combo_musics";
-            this.combo_musics.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.combo_musics.SelectedItemForeColor = System.Drawing.Color.White;
-            this.combo_musics.Size = new System.Drawing.Size(350, 26);
-            this.combo_musics.Style = MetroSet_UI.Design.Style.Light;
-            this.combo_musics.StyleManager = null;
-            this.combo_musics.TabIndex = 4;
-            this.combo_musics.ThemeAuthor = "Narwin";
-            this.combo_musics.ThemeName = "MetroLite";
-            // 
-            // music_play
-            // 
-            this.music_play.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.music_play.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.music_play.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.music_play.DisabledForeColor = System.Drawing.Color.Gray;
-            this.music_play.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.music_play.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.music_play.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.music_play.HoverTextColor = System.Drawing.Color.White;
-            this.music_play.Location = new System.Drawing.Point(359, 129);
-            this.music_play.Name = "music_play";
-            this.music_play.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.music_play.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.music_play.NormalTextColor = System.Drawing.Color.White;
-            this.music_play.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.music_play.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.music_play.PressTextColor = System.Drawing.Color.White;
-            this.music_play.Size = new System.Drawing.Size(47, 26);
-            this.music_play.Style = MetroSet_UI.Design.Style.Light;
-            this.music_play.StyleManager = null;
-            this.music_play.TabIndex = 5;
-            this.music_play.Text = "Play";
-            this.music_play.ThemeAuthor = "Narwin";
-            this.music_play.ThemeName = "MetroLite";
-            this.music_play.Click += new System.EventHandler(this.music_play_Click);
-            // 
-            // music_stop
-            // 
-            this.music_stop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.music_stop.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.music_stop.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.music_stop.DisabledForeColor = System.Drawing.Color.Gray;
-            this.music_stop.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.music_stop.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.music_stop.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.music_stop.HoverTextColor = System.Drawing.Color.White;
-            this.music_stop.Location = new System.Drawing.Point(412, 129);
-            this.music_stop.Name = "music_stop";
-            this.music_stop.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.music_stop.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.music_stop.NormalTextColor = System.Drawing.Color.White;
-            this.music_stop.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.music_stop.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.music_stop.PressTextColor = System.Drawing.Color.White;
-            this.music_stop.Size = new System.Drawing.Size(47, 26);
-            this.music_stop.Style = MetroSet_UI.Design.Style.Light;
-            this.music_stop.StyleManager = null;
-            this.music_stop.TabIndex = 6;
-            this.music_stop.Text = "Stop";
-            this.music_stop.ThemeAuthor = "Narwin";
-            this.music_stop.ThemeName = "MetroLite";
-            this.music_stop.Click += new System.EventHandler(this.music_stop_Click);
+            this.metroSetButton1.Click += new System.EventHandler(this.metroSetButton1_Click);
             // 
             // Settings
             // 
@@ -436,6 +535,7 @@
             this.MinimumSize = new System.Drawing.Size(792, 378);
             this.Name = "Settings";
             this.Text = "Settings";
+            this.Load += new System.EventHandler(this.Settings_Load);
             this.metroSetTabControl1.ResumeLayout(false);
             this.metroSetTabPage4.ResumeLayout(false);
             this.metroSetTabPage2.ResumeLayout(false);
@@ -462,5 +562,10 @@
         private MetroSet_UI.Controls.MetroSetButton music_stop;
         private MetroSet_UI.Controls.MetroSetButton music_play;
         private MetroSet_UI.Controls.MetroSetComboBox combo_musics;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel4;
+        private MetroSet_UI.Controls.MetroSetSwitch solo_setting_royals;
+        private MetroSet_UI.Controls.MetroSetLabel metroSetLabel3;
+        private MetroSet_UI.Controls.MetroSetLabel deck_qty;
+        private MetroSet_UI.Controls.MetroSetTrackBar metroSetTrackBar1;
     }
 }
