@@ -239,12 +239,20 @@ this.Update();
 
         private void Render_Cards()
         {
-            int p1 = card_1_player.Location.X;
-            int d1 = card_1_dealer.Location.X;
+            int[] p1 = { card_l_player.Location.X, card_l_player.Location.Y };
+            int[] d1 = { card_l_dealer.Location.X, card_l_dealer.Location.Y };
 
             foreach (KeyValuePair<string,int> a in game.Dealer)
             {
+                var picture = new PictureBox
+                {
+                    Name = "card_",
+                    Size = new Size(16, 16),
+                    Location = new Point(100, 100),
+                    Image = Image.FromFile("hello.jpg"),
 
+                };
+                this.Controls.Add(picture);
             }
 
 
