@@ -106,6 +106,8 @@ namespace BlackJack
         public void Begin_game()
         {
             if (IsGame == true) return;
+
+
             List<string> keyList = new List<string>(deck.Keys);
             while (player.Count != 2)
             {
@@ -121,12 +123,30 @@ namespace BlackJack
                 deck.Remove(randomKey);
                 keyList.Remove(randomKey);
             }
-            forms.Solo solo = new forms.Solo();
+            
             IsGame = true;
         }
 
-
-
+        public void cmd_Hit()
+        {
+            List<string> keyList = new List<string>(deck.Keys);
+            string randomKey = keyList[rand.Next(keyList.Count)];
+            player.Add(randomKey, deck[randomKey]);
+            deck.Remove(randomKey);
+            keyList.Remove(randomKey);
+            if (player.ContainsValue(11) && player.Values.Sum() > 21)//over 21, look up for aces with 11
+                player[player.Where(pair => pair.Value == 11).Select(pair => pair.Key).FirstOrDefault()] = 1;
+        }
+        public void cmd_Hit_Dealer()
+        {
+            List<string> keyList = new List<string>(deck.Keys);
+            string randomKey = keyList[rand.Next(keyList.Count)];
+            dealer.Add(randomKey, deck[randomKey]);
+            deck.Remove(randomKey);
+            keyList.Remove(randomKey);
+            if (dealer.ContainsValue(11) && dealer.Values.Sum() > 21)//over 21, look up for aces with 11
+                dealer[dealer.Where(pair => pair.Value == 11).Select(pair => pair.Key).FirstOrDefault()] = 1;
+        }
 
     }
 }

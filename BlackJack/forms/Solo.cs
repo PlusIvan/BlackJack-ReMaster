@@ -226,30 +226,39 @@ this.Update();
         {
             if (game.IsGame == true) return;
 
+            game.Shuffle_deck();
+
             solo_title.Visible = false;
             solo_begin.Visible = false;
             balance_icon.Visible = true;
             label_balance.Visible = true;
             dealer_pts.Visible = true;
             player_pts.Visible = true;
-            game.Shuffle_deck();
-            game.Begin_game();
-            Render_Cards();
-game.IsGame = true;
-            pot_size.Visible = true;
 
             if(game.Pot == 0)
             {
+                pot_size.Visible = true;
                 panel_chips.Visible = true;
                 cmd_Double.Visible = false;
                 cmd_Hit.Visible = false;
                 cmd_Stand.Visible = false;
                 cmd_Surrender.Visible = false;
             }
+            else
+            {
+                game.IsGame = true;
+                pot_size.Visible = true;
+
+                panel_chips.Visible = false;
+                cmd_Double.Visible = true;
+                cmd_Hit.Visible = true;
+                cmd_Stand.Visible = true;
+                cmd_Surrender.Visible = true;
+            }
 
         }
 
-        private void Render_Cards()
+        public void Render_Cards()
         {
             int[] p1 = { card_l_player.Location.X-35, card_l_player.Location.Y };
             int[] d1 = { card_l_dealer.Location.X-35, card_l_dealer.Location.Y };
@@ -266,14 +275,14 @@ game.IsGame = true;
                     Location = new Point(d1[0]+70, d1[1]),
                     Image = (Image)Properties.Resources.ResourceManager.GetObject($"{a.Key}"),
                     Visible = true,
-                    Anchor = AnchorStyles.None
+                    Anchor = AnchorStyles.None,
+                    Tag = "card"
                 };
-                dealer_pts.BadgeText = Convert.ToInt16(a.Value+ Convert.ToInt16(dealer_pts.BadgeText)).ToString();
                 this.Controls.Add(picture);
                 //picture.BringToFront();
                 d1[0] += 70;
-                picture.Update();
                 if (game.ShowOff == false) {
+                    dealer_pts.BadgeText = game.Dealer.Values.First().ToString();
                     var picture2 = new PictureBox
                     {
                         Name = $"card_d_hidden",
@@ -281,15 +290,29 @@ game.IsGame = true;
                         Location = new Point(d1[0] + 70, d1[1]),
                         Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker"),
                         Visible = true,
-                        Anchor = AnchorStyles.None
+                        Anchor = AnchorStyles.None,
+                        Tag = "card"
                     };
                     this.Controls.Add(picture2);
                     d1[0] += 70;
-                    picture.Update();
                     break;
                 }
-            }
+                else if (game.ShowOff == true)
+                {
+                    foreach (Control item in this.Controls)
+                    {
+                        if (item.Name == "card_d_hidden")
+                        {
+                            this.Controls.Remove(item);
+                            break; 
+                        }
+                    }
 
+
+                }
+
+
+            }
             foreach (KeyValuePair<string, int> a in game.Player)
             {
                 var picture = new PictureBox
@@ -299,14 +322,20 @@ game.IsGame = true;
                     Location = new Point(p1[0] + 70, p1[1]),
                     Image = (Image)Properties.Resources.ResourceManager.GetObject($"{a.Key}"),
                     Visible = true,
-                    Anchor = AnchorStyles.None
+                    Anchor = AnchorStyles.None,
+                    Tag = "card"
                 };
-                player_pts.BadgeText = Convert.ToInt16(a.Value + Convert.ToInt16(player_pts.BadgeText)).ToString();
+               
                 this.Controls.Add(picture);
                 //picture.BringToFront();
                 p1[0] += 70;
-                picture.Update();
             }
+
+
+            if (game.ShowOff == true)  dealer_pts.BadgeText = game.Dealer.Values.Sum().ToString();
+            player_pts.BadgeText = game.Player.Values.Sum().ToString();
+            this.Update();
+            this.UpdateStyles();
 
         }
 
@@ -317,7 +346,11 @@ game.IsGame = true;
 
         private void chip_5_Click(object sender, EventArgs e)
         {
-
+            if (game.Balance < 5)
+            {
+                Warn_NoBal();
+                return;
+            }
             game.Balance -= 5;
             game.Pot += 5;
             label_balance.Text = $"Balance: {game.Balance.ToString()}";
@@ -325,6 +358,11 @@ game.IsGame = true;
 
         private void chip_10_Click(object sender, EventArgs e)
         {
+            if (game.Balance < 10)
+            {
+                Warn_NoBal();
+                return;
+            }
             game.Balance -= 10;
             game.Pot += 10;
             label_balance.Text = $"Balance: {game.Balance.ToString()}";
@@ -332,6 +370,11 @@ game.IsGame = true;
 
         private void chip_15_Click(object sender, EventArgs e)
         {
+            if (game.Balance < 15)
+            {
+                Warn_NoBal();
+                return;
+            }
             game.Balance -= 15;
             game.Pot += 15;
             label_balance.Text = $"Balance: {game.Balance.ToString()}";
@@ -339,6 +382,11 @@ game.IsGame = true;
 
         private void chip_50_Click(object sender, EventArgs e)
         {
+            if (game.Balance < 50)
+            {
+                Warn_NoBal();
+                return;
+            }
             game.Balance -= 50;
             game.Pot += 50;
             label_balance.Text = $"Balance: {game.Balance.ToString()}";
@@ -346,6 +394,11 @@ game.IsGame = true;
 
         private void chip_100_Click(object sender, EventArgs e)
         {
+            if (game.Balance < 100)
+            {
+                Warn_NoBal();
+                return;
+            }
             game.Balance -= 100;
             game.Pot += 100;
             label_balance.Text = $"Balance: {game.Balance.ToString()}";
@@ -358,7 +411,8 @@ game.IsGame = true;
 
         private void cmd_Done_Click(object sender, EventArgs e)
         {
-            if (game.Pot == 0) {
+            if (game.Pot == 0)
+            {
                 MessageBox.Show("You must add to pot");
                 return;
             }
@@ -367,6 +421,193 @@ game.IsGame = true;
             cmd_Hit.Visible = true;
             cmd_Stand.Visible = true;
             cmd_Surrender.Visible = true;
+
+
+            // game.Shuffle_deck();
+            game.Begin_game();
+            Render_Cards();
+            game.IsGame = true;
+            return;
+
+        }
+        private void Continue()
+        {
+            pot_size.Text = "0";
+            label_balance.Text = $"Balance: {game.Balance}";
+            if (game.Pot > 0) return;
+            panel_chips.Visible = true;
+            cmd_Double.Visible = false;
+            cmd_Hit.Visible = false;
+            cmd_Stand.Visible = false;
+            cmd_Surrender.Visible = false;
+            return;
+        }
+
+        private void Remove_Cards()
+        {
+
+            for (int x = 0; x < game.Dealer.Count()+game.Player.Count(); x++)
+            {
+                foreach (Control item in this.Controls)
+                {
+                    if (item.Tag != null)
+                    {
+                        if (item.Tag.ToString() == "card")
+                        {
+                            this.Controls.Remove(item);
+                            item.Dispose();
+                            continue;
+                        }
+                    }
+                }
+            }
+
+
+
+
+        }
+        private void cmd_Stand_Click(object sender, EventArgs e)
+        {
+            if (cmd_Stand.Text == "BUSTED")
+            {
+                Remove_Cards();
+                game.ShowOff = false;
+                game.Deck.Clear();
+                game.Player.Clear();
+                game.Dealer.Clear();
+                game.Shuffle_deck();
+                player_pts.BadgeText = "0";
+                dealer_pts.BadgeText = "0";
+                this.Update();
+                this.UpdateStyles();
+                cmd_Stand.Text = "HIT";
+                Continue();
+                return;
+            }
+            game.cmd_Hit();
+            Remove_Cards();
+            Render_Cards();
+
+            if (game.Dealer.Values.Sum() > game.Player.Values.Sum())
+            {
+                //Dealer have way more than player
+                Remove_Cards();
+                game.Pot = 0;
+                game.IsGame = false;
+                game.ShowOff = true;
+
+                cmd_Double.Visible = false;
+                cmd_Hit.Visible = false;
+                cmd_Surrender.Visible = false;
+
+                cmd_Stand.Text = "BUSTED";
+
+                Render_Cards();
+                return;
+            }
+
+            if (game.Dealer.Values.Sum() == game.Player.Values.Sum())
+            {
+                //Dealer have way more than player
+                Remove_Cards();
+                game.Balance += game.Pot;
+                game.Pot = 0;
+                game.IsGame = false;
+                game.ShowOff = true;
+
+                cmd_Double.Visible = false;
+                cmd_Stand.Visible = false;
+                cmd_Surrender.Visible = false;
+                cmd_Hit.Visible = false;
+                cmd_Stand.Text = "TIE";
+
+                Render_Cards();
+                return;
+            }
+                if (game.Dealer.Values.Sum() < 16)
+                {
+                    while (game.Dealer.Values.Sum() < 16)
+                    {
+                        game.cmd_Hit_Dealer();
+                    }
+                }
+
+
+            if (game.Dealer.Values.Sum() < game.Player.Values.Sum())
+            {
+                
+            }
+
+
+            Remove_Cards();
+                game.Balance += game.Pot;
+                game.Pot = 0;
+                game.IsGame = false;
+                game.ShowOff = true;
+
+                cmd_Double.Visible = false;
+                cmd_Stand.Visible = false;
+                cmd_Surrender.Visible = false;
+                cmd_Hit.Visible = false;
+                cmd_Stand.Text = "TIE";
+
+                Render_Cards();
+                return;
+            
+
+        }
+        private void cmd_Hit_Click(object sender, EventArgs e)
+        {
+            //extra card
+           
+            if(cmd_Hit.Text == "BUSTED")
+            {
+                Remove_Cards();
+                game.ShowOff = false;
+                game.Deck.Clear();
+                game.Player.Clear();
+                game.Dealer.Clear();
+                game.Shuffle_deck();
+                player_pts.BadgeText = "0";
+                dealer_pts.BadgeText = "0";
+                this.Update();
+                this.UpdateStyles();
+                cmd_Hit.Text = "HIT";
+                Continue();
+                return;
+            }
+
+           
+            game.cmd_Hit();
+
+            if (game.Player.Values.Sum() > 21)
+            {
+                //Busted, end game
+                Remove_Cards();
+                game.Pot = 0;
+                game.IsGame = false;
+                game.ShowOff = true;
+
+                cmd_Double.Visible = false;
+                cmd_Stand.Visible = false;
+                cmd_Surrender.Visible = false;
+
+                cmd_Hit.Text = "BUSTED";
+
+                Render_Cards();
+                return;
+            }
+
+           /*
+            Finish black
+            if (game.Player.Values.Sum() == 21)
+            {
+
+            }*/
+                Render_Cards();
+          
+
+
 
         }
     }

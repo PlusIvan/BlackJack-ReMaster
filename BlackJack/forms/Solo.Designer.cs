@@ -137,7 +137,7 @@
             // 
             this.pot_size.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pot_size.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold);
-            this.pot_size.Location = new System.Drawing.Point(223, 292);
+            this.pot_size.Location = new System.Drawing.Point(226, 292);
             this.pot_size.Name = "pot_size";
             this.pot_size.Size = new System.Drawing.Size(546, 54);
             this.pot_size.Style = MetroSet_UI.Design.Style.Light;
@@ -165,7 +165,7 @@
             this.dealer_pts.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.dealer_pts.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.dealer_pts.HoverTextColor = System.Drawing.Color.White;
-            this.dealer_pts.Location = new System.Drawing.Point(441, 36);
+            this.dealer_pts.Location = new System.Drawing.Point(431, 36);
             this.dealer_pts.Name = "dealer_pts";
             this.dealer_pts.NormalBadgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.dealer_pts.NormalBadgeTextColor = System.Drawing.Color.White;
@@ -202,7 +202,7 @@
             this.player_pts.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.player_pts.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.player_pts.HoverTextColor = System.Drawing.Color.White;
-            this.player_pts.Location = new System.Drawing.Point(441, 174);
+            this.player_pts.Location = new System.Drawing.Point(431, 174);
             this.player_pts.Name = "player_pts";
             this.player_pts.NormalBadgeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.player_pts.NormalBadgeTextColor = System.Drawing.Color.White;
@@ -284,7 +284,7 @@
             // 
             this.solo_title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.solo_title.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Italic);
-            this.solo_title.Location = new System.Drawing.Point(0, 87);
+            this.solo_title.Location = new System.Drawing.Point(0, 84);
             this.solo_title.Name = "solo_title";
             this.solo_title.Size = new System.Drawing.Size(999, 92);
             this.solo_title.Style = MetroSet_UI.Design.Style.Light;
@@ -301,12 +301,13 @@
             this.card_l_player.BackColor = System.Drawing.Color.Transparent;
             this.card_l_player.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.card_l_player.Image = global::BlackJack.Properties.Resources.poker;
-            this.card_l_player.Location = new System.Drawing.Point(441, 225);
+            this.card_l_player.Location = new System.Drawing.Point(431, 225);
             this.card_l_player.Name = "card_l_player";
             this.card_l_player.Size = new System.Drawing.Size(64, 64);
             this.card_l_player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.card_l_player.TabIndex = 35;
             this.card_l_player.TabStop = false;
+            this.card_l_player.Tag = "";
             this.card_l_player.Visible = false;
             // 
             // balance_plus
@@ -331,12 +332,14 @@
             this.card_l_dealer.BackColor = System.Drawing.Color.Transparent;
             this.card_l_dealer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.card_l_dealer.Image = global::BlackJack.Properties.Resources.poker;
-            this.card_l_dealer.Location = new System.Drawing.Point(441, 87);
+            this.card_l_dealer.Location = new System.Drawing.Point(431, 87);
             this.card_l_dealer.Name = "card_l_dealer";
             this.card_l_dealer.Size = new System.Drawing.Size(64, 64);
             this.card_l_dealer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.card_l_dealer.TabIndex = 25;
             this.card_l_dealer.TabStop = false;
+            this.card_l_dealer.Tag = "";
+            this.card_l_dealer.Visible = false;
             // 
             // balance_minus
             // 
@@ -490,7 +493,7 @@
             this.cmd_Stand.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.cmd_Stand.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.cmd_Stand.HoverTextColor = System.Drawing.Color.White;
-            this.cmd_Stand.Location = new System.Drawing.Point(388, 349);
+            this.cmd_Stand.Location = new System.Drawing.Point(383, 349);
             this.cmd_Stand.Name = "cmd_Stand";
             this.cmd_Stand.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cmd_Stand.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -506,6 +509,7 @@
             this.cmd_Stand.ThemeAuthor = "Narwin";
             this.cmd_Stand.ThemeName = "MetroLite";
             this.cmd_Stand.Visible = false;
+            this.cmd_Stand.Click += new System.EventHandler(this.cmd_Stand_Click);
             // 
             // cmd_Hit
             // 
@@ -517,7 +521,7 @@
             this.cmd_Hit.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.cmd_Hit.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.cmd_Hit.HoverTextColor = System.Drawing.Color.White;
-            this.cmd_Hit.Location = new System.Drawing.Point(388, 397);
+            this.cmd_Hit.Location = new System.Drawing.Point(383, 397);
             this.cmd_Hit.Name = "cmd_Hit";
             this.cmd_Hit.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cmd_Hit.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -533,6 +537,7 @@
             this.cmd_Hit.ThemeAuthor = "Narwin";
             this.cmd_Hit.ThemeName = "MetroLite";
             this.cmd_Hit.Visible = false;
+            this.cmd_Hit.Click += new System.EventHandler(this.cmd_Hit_Click);
             // 
             // cmd_Double
             // 
@@ -544,7 +549,7 @@
             this.cmd_Double.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.cmd_Double.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.cmd_Double.HoverTextColor = System.Drawing.Color.White;
-            this.cmd_Double.Location = new System.Drawing.Point(388, 445);
+            this.cmd_Double.Location = new System.Drawing.Point(383, 445);
             this.cmd_Double.Name = "cmd_Double";
             this.cmd_Double.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cmd_Double.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
@@ -571,7 +576,7 @@
             this.cmd_Surrender.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.cmd_Surrender.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
             this.cmd_Surrender.HoverTextColor = System.Drawing.Color.White;
-            this.cmd_Surrender.Location = new System.Drawing.Point(388, 493);
+            this.cmd_Surrender.Location = new System.Drawing.Point(383, 493);
             this.cmd_Surrender.Name = "cmd_Surrender";
             this.cmd_Surrender.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
             this.cmd_Surrender.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
