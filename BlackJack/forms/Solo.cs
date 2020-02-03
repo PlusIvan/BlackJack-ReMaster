@@ -468,7 +468,7 @@ this.Update();
         }
         private void cmd_Stand_Click(object sender, EventArgs e)
         {
-            if (cmd_Stand.Text == "BUSTED")
+            if (cmd_Stand.Text != "STAND")
             {
                 Remove_Cards();
                 game.ShowOff = false;
@@ -480,13 +480,13 @@ this.Update();
                 dealer_pts.BadgeText = "0";
                 this.Update();
                 this.UpdateStyles();
-                cmd_Stand.Text = "HIT";
+                cmd_Stand.Text = "STAND";
                 Continue();
                 return;
             }
-            game.cmd_Hit();
-            Remove_Cards();
-            Render_Cards();
+          //  game.cmd_Hit();
+          //  Remove_Cards();
+         //   Render_Cards();
 
             if (game.Dealer.Values.Sum() > game.Player.Values.Sum())
             {
@@ -516,7 +516,6 @@ this.Update();
                 game.ShowOff = true;
 
                 cmd_Double.Visible = false;
-                cmd_Stand.Visible = false;
                 cmd_Surrender.Visible = false;
                 cmd_Hit.Visible = false;
                 cmd_Stand.Text = "TIE";
@@ -534,25 +533,28 @@ this.Update();
 
 
             if (game.Dealer.Values.Sum() < game.Player.Values.Sum())
-            {
-                
-            }
+            { //dealer delt cards yet lower than player
+                Remove_Cards();
+                if(game.Player.Values.Sum() == 21 && game.Dealer.Values.Sum() < game.Player.Values.Sum())
+                game.Balance += game.Pot*3;
+                else
+                game.Balance += game.Pot * 2;
 
-
-            Remove_Cards();
-                game.Balance += game.Pot;
                 game.Pot = 0;
                 game.IsGame = false;
                 game.ShowOff = true;
 
                 cmd_Double.Visible = false;
-                cmd_Stand.Visible = false;
                 cmd_Surrender.Visible = false;
                 cmd_Hit.Visible = false;
-                cmd_Stand.Text = "TIE";
+                cmd_Stand.Text = "WIN";
 
                 Render_Cards();
                 return;
+            }
+
+
+
             
 
         }

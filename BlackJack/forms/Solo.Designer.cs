@@ -37,13 +37,7 @@
             this.player_pts = new MetroSet_UI.Controls.MetroSetBadge();
             this.animate_chips = new System.Windows.Forms.Timer(this.components);
             this.panel_chips = new MetroSet_UI.Controls.MetroSetPanel();
-            this.solo_begin = new MetroSet_UI.Controls.MetroSetButton();
-            this.solo_title = new MetroSet_UI.Controls.MetroSetLabel();
-            this.card_l_player = new System.Windows.Forms.PictureBox();
-            this.balance_plus = new System.Windows.Forms.PictureBox();
-            this.card_l_dealer = new System.Windows.Forms.PictureBox();
-            this.balance_minus = new System.Windows.Forms.PictureBox();
-            this.balance_icon = new System.Windows.Forms.PictureBox();
+            this.cmd_Done = new MetroSet_UI.Controls.MetroSetButton();
             this.chip_minus = new System.Windows.Forms.PictureBox();
             this.chip_15 = new System.Windows.Forms.PictureBox();
             this.chip_10 = new System.Windows.Forms.PictureBox();
@@ -51,17 +45,18 @@
             this.chip_50 = new System.Windows.Forms.PictureBox();
             this.chip_5 = new System.Windows.Forms.PictureBox();
             this.chip_plus = new System.Windows.Forms.PictureBox();
+            this.solo_begin = new MetroSet_UI.Controls.MetroSetButton();
+            this.solo_title = new MetroSet_UI.Controls.MetroSetLabel();
+            this.card_l_player = new System.Windows.Forms.PictureBox();
+            this.balance_plus = new System.Windows.Forms.PictureBox();
+            this.card_l_dealer = new System.Windows.Forms.PictureBox();
+            this.balance_minus = new System.Windows.Forms.PictureBox();
+            this.balance_icon = new System.Windows.Forms.PictureBox();
             this.cmd_Stand = new MetroSet_UI.Controls.MetroSetButton();
             this.cmd_Hit = new MetroSet_UI.Controls.MetroSetButton();
             this.cmd_Double = new MetroSet_UI.Controls.MetroSetButton();
             this.cmd_Surrender = new MetroSet_UI.Controls.MetroSetButton();
-            this.cmd_Done = new MetroSet_UI.Controls.MetroSetButton();
             this.panel_chips.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.card_l_player)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.balance_plus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card_l_dealer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.balance_minus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.balance_icon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_minus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_10)).BeginInit();
@@ -69,6 +64,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.chip_50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_plus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_l_player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.balance_plus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_l_dealer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.balance_minus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.balance_icon)).BeginInit();
             this.SuspendLayout();
             // 
             // metroSetPanel1
@@ -253,6 +253,144 @@
             this.panel_chips.ThemeName = "MetroLite";
             this.panel_chips.Visible = false;
             // 
+            // cmd_Done
+            // 
+            this.cmd_Done.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmd_Done.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Done.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Done.DisabledForeColor = System.Drawing.Color.Gray;
+            this.cmd_Done.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.cmd_Done.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Done.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
+            this.cmd_Done.HoverTextColor = System.Drawing.Color.White;
+            this.cmd_Done.Location = new System.Drawing.Point(146, 24);
+            this.cmd_Done.Name = "cmd_Done";
+            this.cmd_Done.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Done.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.cmd_Done.NormalTextColor = System.Drawing.Color.White;
+            this.cmd_Done.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Done.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
+            this.cmd_Done.PressTextColor = System.Drawing.Color.White;
+            this.cmd_Done.Size = new System.Drawing.Size(400, 42);
+            this.cmd_Done.Style = MetroSet_UI.Design.Style.Light;
+            this.cmd_Done.StyleManager = null;
+            this.cmd_Done.TabIndex = 40;
+            this.cmd_Done.Text = "DONE";
+            this.cmd_Done.ThemeAuthor = "Narwin";
+            this.cmd_Done.ThemeName = "MetroLite";
+            this.cmd_Done.Click += new System.EventHandler(this.cmd_Done_Click);
+            // 
+            // chip_minus
+            // 
+            this.chip_minus.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chip_minus.BackColor = System.Drawing.Color.Transparent;
+            this.chip_minus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chip_minus.Image = global::BlackJack.Properties.Resources._053_casino;
+            this.chip_minus.Location = new System.Drawing.Point(6, 15);
+            this.chip_minus.Name = "chip_minus";
+            this.chip_minus.Size = new System.Drawing.Size(64, 64);
+            this.chip_minus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.chip_minus.TabIndex = 33;
+            this.chip_minus.TabStop = false;
+            this.chip_minus.Click += new System.EventHandler(this.chip_minus_Click);
+            // 
+            // chip_15
+            // 
+            this.chip_15.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chip_15.BackColor = System.Drawing.Color.Transparent;
+            this.chip_15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chip_15.Image = global::BlackJack.Properties.Resources._055_chip_1;
+            this.chip_15.Location = new System.Drawing.Point(76, 15);
+            this.chip_15.Name = "chip_15";
+            this.chip_15.Size = new System.Drawing.Size(64, 64);
+            this.chip_15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.chip_15.TabIndex = 18;
+            this.chip_15.TabStop = false;
+            this.chip_15.Visible = false;
+            this.chip_15.Click += new System.EventHandler(this.chip_15_Click);
+            this.chip_15.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
+            this.chip_15.MouseHover += new System.EventHandler(this.chip_MouseHover);
+            // 
+            // chip_10
+            // 
+            this.chip_10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chip_10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chip_10.Image = global::BlackJack.Properties.Resources._060_casino_2;
+            this.chip_10.Location = new System.Drawing.Point(76, 15);
+            this.chip_10.Name = "chip_10";
+            this.chip_10.Size = new System.Drawing.Size(64, 64);
+            this.chip_10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.chip_10.TabIndex = 14;
+            this.chip_10.TabStop = false;
+            this.chip_10.Visible = false;
+            this.chip_10.Click += new System.EventHandler(this.chip_10_Click);
+            this.chip_10.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
+            this.chip_10.MouseHover += new System.EventHandler(this.chip_MouseHover);
+            // 
+            // chip_100
+            // 
+            this.chip_100.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chip_100.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chip_100.Image = global::BlackJack.Properties.Resources._059_bet;
+            this.chip_100.Location = new System.Drawing.Point(76, 15);
+            this.chip_100.Name = "chip_100";
+            this.chip_100.Size = new System.Drawing.Size(64, 64);
+            this.chip_100.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.chip_100.TabIndex = 15;
+            this.chip_100.TabStop = false;
+            this.chip_100.Visible = false;
+            this.chip_100.Click += new System.EventHandler(this.chip_100_Click);
+            this.chip_100.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
+            this.chip_100.MouseHover += new System.EventHandler(this.chip_MouseHover);
+            // 
+            // chip_50
+            // 
+            this.chip_50.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chip_50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chip_50.Image = global::BlackJack.Properties.Resources._057_chip_3;
+            this.chip_50.Location = new System.Drawing.Point(76, 15);
+            this.chip_50.Name = "chip_50";
+            this.chip_50.Size = new System.Drawing.Size(64, 64);
+            this.chip_50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.chip_50.TabIndex = 16;
+            this.chip_50.TabStop = false;
+            this.chip_50.Visible = false;
+            this.chip_50.Click += new System.EventHandler(this.chip_50_Click);
+            this.chip_50.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
+            this.chip_50.MouseHover += new System.EventHandler(this.chip_MouseHover);
+            // 
+            // chip_5
+            // 
+            this.chip_5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chip_5.BackColor = System.Drawing.Color.Transparent;
+            this.chip_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chip_5.Image = global::BlackJack.Properties.Resources._056_chip_2;
+            this.chip_5.Location = new System.Drawing.Point(76, 15);
+            this.chip_5.Name = "chip_5";
+            this.chip_5.Size = new System.Drawing.Size(64, 64);
+            this.chip_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.chip_5.TabIndex = 17;
+            this.chip_5.TabStop = false;
+            this.chip_5.Visible = false;
+            this.chip_5.Click += new System.EventHandler(this.chip_5_Click);
+            this.chip_5.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
+            this.chip_5.MouseHover += new System.EventHandler(this.chip_MouseHover);
+            // 
+            // chip_plus
+            // 
+            this.chip_plus.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.chip_plus.BackColor = System.Drawing.Color.Transparent;
+            this.chip_plus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.chip_plus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.chip_plus.Image = global::BlackJack.Properties.Resources._054_chip;
+            this.chip_plus.Location = new System.Drawing.Point(76, 15);
+            this.chip_plus.Name = "chip_plus";
+            this.chip_plus.Size = new System.Drawing.Size(64, 64);
+            this.chip_plus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.chip_plus.TabIndex = 23;
+            this.chip_plus.TabStop = false;
+            this.chip_plus.Click += new System.EventHandler(this.chip_plus_Click);
+            // 
             // solo_begin
             // 
             this.solo_begin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -372,117 +510,6 @@
             this.balance_icon.Visible = false;
             this.balance_icon.Click += new System.EventHandler(this.balance_icon_Click);
             // 
-            // chip_minus
-            // 
-            this.chip_minus.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.chip_minus.BackColor = System.Drawing.Color.Transparent;
-            this.chip_minus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chip_minus.Image = global::BlackJack.Properties.Resources._053_casino;
-            this.chip_minus.Location = new System.Drawing.Point(6, 15);
-            this.chip_minus.Name = "chip_minus";
-            this.chip_minus.Size = new System.Drawing.Size(64, 64);
-            this.chip_minus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.chip_minus.TabIndex = 33;
-            this.chip_minus.TabStop = false;
-            this.chip_minus.Click += new System.EventHandler(this.chip_minus_Click);
-            // 
-            // chip_15
-            // 
-            this.chip_15.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.chip_15.BackColor = System.Drawing.Color.Transparent;
-            this.chip_15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chip_15.Image = global::BlackJack.Properties.Resources._055_chip_1;
-            this.chip_15.Location = new System.Drawing.Point(76, 15);
-            this.chip_15.Name = "chip_15";
-            this.chip_15.Size = new System.Drawing.Size(64, 64);
-            this.chip_15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.chip_15.TabIndex = 18;
-            this.chip_15.TabStop = false;
-            this.chip_15.Visible = false;
-            this.chip_15.Click += new System.EventHandler(this.chip_15_Click);
-            this.chip_15.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
-            this.chip_15.MouseHover += new System.EventHandler(this.chip_MouseHover);
-            // 
-            // chip_10
-            // 
-            this.chip_10.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.chip_10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chip_10.Image = global::BlackJack.Properties.Resources._060_casino_2;
-            this.chip_10.Location = new System.Drawing.Point(76, 15);
-            this.chip_10.Name = "chip_10";
-            this.chip_10.Size = new System.Drawing.Size(64, 64);
-            this.chip_10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.chip_10.TabIndex = 14;
-            this.chip_10.TabStop = false;
-            this.chip_10.Visible = false;
-            this.chip_10.Click += new System.EventHandler(this.chip_10_Click);
-            this.chip_10.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
-            this.chip_10.MouseHover += new System.EventHandler(this.chip_MouseHover);
-            // 
-            // chip_100
-            // 
-            this.chip_100.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.chip_100.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chip_100.Image = global::BlackJack.Properties.Resources._059_bet;
-            this.chip_100.Location = new System.Drawing.Point(76, 15);
-            this.chip_100.Name = "chip_100";
-            this.chip_100.Size = new System.Drawing.Size(64, 64);
-            this.chip_100.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.chip_100.TabIndex = 15;
-            this.chip_100.TabStop = false;
-            this.chip_100.Visible = false;
-            this.chip_100.Click += new System.EventHandler(this.chip_100_Click);
-            this.chip_100.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
-            this.chip_100.MouseHover += new System.EventHandler(this.chip_MouseHover);
-            // 
-            // chip_50
-            // 
-            this.chip_50.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.chip_50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chip_50.Image = global::BlackJack.Properties.Resources._057_chip_3;
-            this.chip_50.Location = new System.Drawing.Point(76, 15);
-            this.chip_50.Name = "chip_50";
-            this.chip_50.Size = new System.Drawing.Size(64, 64);
-            this.chip_50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.chip_50.TabIndex = 16;
-            this.chip_50.TabStop = false;
-            this.chip_50.Visible = false;
-            this.chip_50.Click += new System.EventHandler(this.chip_50_Click);
-            this.chip_50.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
-            this.chip_50.MouseHover += new System.EventHandler(this.chip_MouseHover);
-            // 
-            // chip_5
-            // 
-            this.chip_5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.chip_5.BackColor = System.Drawing.Color.Transparent;
-            this.chip_5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chip_5.Image = global::BlackJack.Properties.Resources._056_chip_2;
-            this.chip_5.Location = new System.Drawing.Point(76, 15);
-            this.chip_5.Name = "chip_5";
-            this.chip_5.Size = new System.Drawing.Size(64, 64);
-            this.chip_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.chip_5.TabIndex = 17;
-            this.chip_5.TabStop = false;
-            this.chip_5.Visible = false;
-            this.chip_5.Click += new System.EventHandler(this.chip_5_Click);
-            this.chip_5.MouseLeave += new System.EventHandler(this.chip_MouseLeave);
-            this.chip_5.MouseHover += new System.EventHandler(this.chip_MouseHover);
-            // 
-            // chip_plus
-            // 
-            this.chip_plus.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.chip_plus.BackColor = System.Drawing.Color.Transparent;
-            this.chip_plus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.chip_plus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.chip_plus.Image = global::BlackJack.Properties.Resources._054_chip;
-            this.chip_plus.Location = new System.Drawing.Point(76, 15);
-            this.chip_plus.Name = "chip_plus";
-            this.chip_plus.Size = new System.Drawing.Size(64, 64);
-            this.chip_plus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.chip_plus.TabIndex = 23;
-            this.chip_plus.TabStop = false;
-            this.chip_plus.Click += new System.EventHandler(this.chip_plus_Click);
-            // 
             // cmd_Stand
             // 
             this.cmd_Stand.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -593,33 +620,6 @@
             this.cmd_Surrender.ThemeName = "MetroLite";
             this.cmd_Surrender.Visible = false;
             // 
-            // cmd_Done
-            // 
-            this.cmd_Done.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmd_Done.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.cmd_Done.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.cmd_Done.DisabledForeColor = System.Drawing.Color.Gray;
-            this.cmd_Done.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.cmd_Done.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.cmd_Done.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(207)))), ((int)(((byte)(255)))));
-            this.cmd_Done.HoverTextColor = System.Drawing.Color.White;
-            this.cmd_Done.Location = new System.Drawing.Point(146, 24);
-            this.cmd_Done.Name = "cmd_Done";
-            this.cmd_Done.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.cmd_Done.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.cmd_Done.NormalTextColor = System.Drawing.Color.White;
-            this.cmd_Done.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.cmd_Done.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(147)))), ((int)(((byte)(195)))));
-            this.cmd_Done.PressTextColor = System.Drawing.Color.White;
-            this.cmd_Done.Size = new System.Drawing.Size(400, 42);
-            this.cmd_Done.Style = MetroSet_UI.Design.Style.Light;
-            this.cmd_Done.StyleManager = null;
-            this.cmd_Done.TabIndex = 40;
-            this.cmd_Done.Text = "DONE";
-            this.cmd_Done.ThemeAuthor = "Narwin";
-            this.cmd_Done.ThemeName = "MetroLite";
-            this.cmd_Done.Click += new System.EventHandler(this.cmd_Done_Click);
-            // 
             // Solo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -653,11 +653,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Solo_Load);
             this.panel_chips.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.card_l_player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.balance_plus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.card_l_dealer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.balance_minus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.balance_icon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_minus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_10)).EndInit();
@@ -665,6 +660,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.chip_50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_plus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_l_player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.balance_plus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card_l_dealer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.balance_minus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.balance_icon)).EndInit();
             this.ResumeLayout(false);
 
         }
