@@ -56,6 +56,10 @@
             this.cmd_stand = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel_settings = new System.Windows.Forms.Panel();
             this.panel_default = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.styleManager1 = new MetroSet_UI.StyleManager();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.chips_toggle = new System.Windows.Forms.PictureBox();
             this.chip_10 = new System.Windows.Forms.PictureBox();
             this.chip_reset = new System.Windows.Forms.PictureBox();
@@ -72,8 +76,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.bunifuFormFadeTransition1 = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menu_play.SuspendLayout();
@@ -82,6 +85,9 @@
             this.menu_settings.SuspendLayout();
             this.panel_play.SuspendLayout();
             this.panel_chips.SuspendLayout();
+            this.panel_settings.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chips_toggle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_reset)).BeginInit();
@@ -98,7 +104,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -326,61 +331,61 @@
             // 
             this.player_pts.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.player_pts.BorderThickness = 7;
-            this.player_pts.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.player_pts.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.player_pts.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.player_pts.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.player_pts.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.player_pts.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.player_pts.Enabled = false;
             this.player_pts.Font = new System.Drawing.Font("Segoe UI", 21F);
-            this.player_pts.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.player_pts.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.player_pts.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.player_pts.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.player_pts.HoverTextColor = System.Drawing.Color.White;
             this.player_pts.Image = null;
             this.player_pts.ImageSize = new System.Drawing.Size(64, 64);
             this.player_pts.Location = new System.Drawing.Point(26, 224);
             this.player_pts.Name = "player_pts";
-            this.player_pts.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.player_pts.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.player_pts.NormalTextColor = System.Drawing.Color.Black;
-            this.player_pts.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.player_pts.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.player_pts.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.player_pts.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.player_pts.NormalTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.player_pts.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.player_pts.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.player_pts.PressTextColor = System.Drawing.Color.White;
             this.player_pts.Size = new System.Drawing.Size(70, 70);
-            this.player_pts.Style = MetroSet_UI.Design.Style.Light;
-            this.player_pts.StyleManager = null;
+            this.player_pts.Style = MetroSet_UI.Design.Style.Dark;
+            this.player_pts.StyleManager = this.styleManager1;
             this.player_pts.TabIndex = 15;
             this.player_pts.Text = "0";
             this.player_pts.ThemeAuthor = "Narwin";
-            this.player_pts.ThemeName = "MetroLite";
+            this.player_pts.ThemeName = "MetroDark";
             // 
             // dealer_pts
             // 
             this.dealer_pts.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dealer_pts.BorderThickness = 7;
-            this.dealer_pts.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dealer_pts.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.dealer_pts.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.dealer_pts.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.dealer_pts.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.dealer_pts.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.dealer_pts.Enabled = false;
             this.dealer_pts.Font = new System.Drawing.Font("Segoe UI", 21F);
-            this.dealer_pts.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.dealer_pts.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.dealer_pts.HoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+            this.dealer_pts.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
             this.dealer_pts.HoverTextColor = System.Drawing.Color.White;
             this.dealer_pts.Image = null;
             this.dealer_pts.ImageSize = new System.Drawing.Size(64, 64);
             this.dealer_pts.Location = new System.Drawing.Point(26, 138);
             this.dealer_pts.Name = "dealer_pts";
-            this.dealer_pts.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.dealer_pts.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.dealer_pts.NormalTextColor = System.Drawing.Color.Black;
-            this.dealer_pts.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.dealer_pts.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.dealer_pts.NormalBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dealer_pts.NormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.dealer_pts.NormalTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.dealer_pts.PressBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dealer_pts.PressColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.dealer_pts.PressTextColor = System.Drawing.Color.White;
             this.dealer_pts.Size = new System.Drawing.Size(70, 70);
-            this.dealer_pts.Style = MetroSet_UI.Design.Style.Light;
-            this.dealer_pts.StyleManager = null;
+            this.dealer_pts.Style = MetroSet_UI.Design.Style.Dark;
+            this.dealer_pts.StyleManager = this.styleManager1;
             this.dealer_pts.TabIndex = 14;
             this.dealer_pts.Text = "0";
             this.dealer_pts.ThemeAuthor = "Narwin";
-            this.dealer_pts.ThemeName = "MetroLite";
+            this.dealer_pts.ThemeName = "MetroDark";
             // 
             // label_pot
             // 
@@ -413,12 +418,12 @@
             this.metroSetDivider1.Name = "metroSetDivider1";
             this.metroSetDivider1.Orientation = MetroSet_UI.Enums.DividerStyle.Horizontal;
             this.metroSetDivider1.Size = new System.Drawing.Size(722, 4);
-            this.metroSetDivider1.Style = MetroSet_UI.Design.Style.Light;
-            this.metroSetDivider1.StyleManager = null;
+            this.metroSetDivider1.Style = MetroSet_UI.Design.Style.Dark;
+            this.metroSetDivider1.StyleManager = this.styleManager1;
             this.metroSetDivider1.TabIndex = 4;
             this.metroSetDivider1.Text = "metroSetDivider1";
             this.metroSetDivider1.ThemeAuthor = "Narwin";
-            this.metroSetDivider1.ThemeName = "MetroLite";
+            this.metroSetDivider1.ThemeName = "MetroDark";
             this.metroSetDivider1.Thickness = 1;
             // 
             // cmd_surrender
@@ -578,6 +583,7 @@
             this.panel_settings.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_settings.Controls.Add(this.pictureBox5);
             this.panel_settings.Location = new System.Drawing.Point(289, 36);
             this.panel_settings.MinimumSize = new System.Drawing.Size(775, 472);
             this.panel_settings.Name = "panel_settings";
@@ -594,6 +600,47 @@
             this.panel_default.Name = "panel_default";
             this.panel_default.Size = new System.Drawing.Size(775, 568);
             this.panel_default.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(282, 608);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(794, 37);
+            this.panel3.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label6.Location = new System.Drawing.Point(7, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 21);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Music: N/A";
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.CustomTheme = "C:\\Users\\Ivan\\AppData\\Roaming\\Microsoft\\Windows\\Templates\\ThemeFile.xml";
+            this.styleManager1.MetroForm = this;
+            this.styleManager1.Style = MetroSet_UI.Design.Style.Dark;
+            this.styleManager1.ThemeAuthor = "Narwin";
+            this.styleManager1.ThemeName = "MetroDark";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox5.Image = global::BlackJack_ReMaster.Properties.Resources.poker;
+            this.pictureBox5.Location = new System.Drawing.Point(104, 30);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox5.TabIndex = 3;
+            this.pictureBox5.TabStop = false;
             // 
             // chips_toggle
             // 
@@ -776,28 +823,9 @@
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
             // 
-            // panel3
+            // bunifuFormFadeTransition1
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(282, 608);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(794, 37);
-            this.panel3.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(7, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 21);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Music: N/A";
+            this.bunifuFormFadeTransition1.Delay = 1;
             // 
             // Main
             // 
@@ -805,6 +833,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(1076, 641);
+            this.Controls.Add(this.panel_settings);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel_play);
             this.Controls.Add(this.panel_default);
@@ -813,7 +842,6 @@
             this.Controls.Add(this.menu_play);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel_settings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1076, 520);
             this.Name = "Main";
@@ -833,6 +861,10 @@
             this.panel_play.ResumeLayout(false);
             this.panel_play.PerformLayout();
             this.panel_chips.ResumeLayout(false);
+            this.panel_settings.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chips_toggle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chip_reset)).EndInit();
@@ -849,8 +881,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -902,6 +932,9 @@
         private MetroSet_UI.Controls.MetroSetEllipse dealer_pts;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label6;
+        private MetroSet_UI.StyleManager styleManager1;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private Bunifu.Framework.UI.BunifuFormFadeTransition bunifuFormFadeTransition1;
     }
 }
 

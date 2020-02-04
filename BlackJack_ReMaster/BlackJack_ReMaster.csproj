@@ -302,5 +302,35 @@
   <ItemGroup>
     <None Include="Resources\editor-1s-24px.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\001-king.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\002-game.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\003-ace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\004-black-jack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\005-gambling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\006-mahjong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\007-horseshoe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\008-poker-chips.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\009-slot-machine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\010-bonus.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

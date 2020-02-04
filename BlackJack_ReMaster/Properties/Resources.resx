@@ -124,6 +124,9 @@
   <data name="2h" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="8d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="061-poker-52" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\061-poker-52.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,20 +163,14 @@
   <data name="Kc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Qc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Qc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="8h" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Qd" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Qd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8h" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Jh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Jh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="10s" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\10s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="4h" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -201,6 +198,9 @@
   </data>
   <data name="055-chip-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\055-chip-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editor-1s-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editor-1s-24px.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="As" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\As.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,8 +259,11 @@
   <data name="7h" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="064-poker-55" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\064-poker-55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="6s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\6s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Qc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Qc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="9h" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\9h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,14 +277,11 @@
   <data name="054-chip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\054-chip.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="6s" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\6s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="064-poker-55" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\064-poker-55.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="6c" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6c.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="poker" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\poker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2s" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -291,6 +291,9 @@
   </data>
   <data name="3c" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3c.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Kh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Kh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="6h" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,8 +313,8 @@
   <data name="3s" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Kh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Kh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="10s" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\10s.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="10d" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\10d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,13 +322,40 @@
   <data name="3h" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3h.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="8d" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\8d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="poker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\poker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="060-casino-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\060-casino-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="editor-1s-24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editor-1s-24px.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="001-king" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\001-king.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="002-game" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\002-game.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="003-ace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\003-ace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="004-black-jack" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\004-black-jack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="005-gambling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\005-gambling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="006-mahjong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\006-mahjong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="007-horseshoe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\007-horseshoe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="008-poker-chips" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\008-poker-chips.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="009-slot-machine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\009-slot-machine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="010-bonus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\010-bonus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

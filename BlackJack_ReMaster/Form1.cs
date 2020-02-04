@@ -167,8 +167,8 @@ namespace BlackJack_ReMaster
 
         private void cmd_Done_Click(object sender, EventArgs e)
         {
-           card_d_aux.Location = new Point(avatar_dealer.Location.X, avatar_dealer.Location.Y+131);
-            card_p_aux.Location = new Point(avatar_dealer.Location.X, card_d_aux.Location.Y+80);
+         //  card_d_aux.Location = new Point(avatar_dealer.Location.X, avatar_dealer.Location.Y+131);
+          //  card_p_aux.Location = new Point(avatar_dealer.Location.X, card_d_aux.Location.Y+80);
             
             if (game.Surrender == false)
             {
@@ -430,8 +430,8 @@ namespace BlackJack_ReMaster
         public void Render_Cards()
         {
             
-            int[] p1 = { card_p_aux.Location.X - 35, card_p_aux.Location.Y };
-            int[] d1 = { card_d_aux.Location.X - 35, card_d_aux.Location.Y };
+            int[] p1 = { card_p_aux.Location.X - 70, card_p_aux.Location.Y };
+            int[] d1 = { card_d_aux.Location.X - 70, card_d_aux.Location.Y };
             foreach (KeyValuePair<string, int> a in game.Dealer)
             {
                 var picture = new PictureBox
