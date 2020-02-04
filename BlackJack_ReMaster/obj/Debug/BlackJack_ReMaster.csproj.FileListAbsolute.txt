@@ -10,3 +10,15 @@ C:\Users\Ivan\source\repos\BlackJack_ReMaster\BlackJack_ReMaster\obj\Debug\Black
 C:\Users\Ivan\source\repos\BlackJack_ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.pdb
 C:\Users\Ivan\source\repos\BlackJack_ReMaster\BlackJack_ReMaster\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\Ivan\source\repos\BlackJack_ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.Main.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\bin\Debug\BlackJack_ReMaster.exe.config
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\bin\Debug\BlackJack_ReMaster.exe
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\bin\Debug\BlackJack_ReMaster.pdb
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\bin\Debug\MetroSet UI.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.csprojAssemblyReference.cache
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.Main.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.Properties.Resources.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.csproj.GenerateResource.cache
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.csproj.CopyComplete
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.exe
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.pdb
