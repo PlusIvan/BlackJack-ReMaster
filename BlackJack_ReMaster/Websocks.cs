@@ -12,6 +12,19 @@ namespace BlackJack_ReMaster
     {
         private static Boolean isconnected = false;
         private static string server_ip = "";
+
+        public Websocks()
+        {
+            Form.CheckForIllegalCrossThreadCalls = false;
+            var socket = IO.Socket($"http://127.0.0.1:3000");
+            socket.On(Socket.EVENT_CONNECT, () =>
+            {
+                //socket.Emit("ping");
+                isConnected = true;
+            });
+
+
+        }
         public string ServerIP
         {
             get { return server_ip; }
@@ -24,19 +37,13 @@ namespace BlackJack_ReMaster
         }
         public void Establish_Connection()
         {
-            Form.CheckForIllegalCrossThreadCalls = false;
-            var socket = IO.Socket($"http://127.0.0.1:3000");
-            socket.On(Socket.EVENT_CONNECT, () =>
-            {
-                //socket.Emit("ping");
-                isConnected = true;
-            });
+
         }
-        private var socket = IO.Socket($"http://127.0.0.1:3000");
+        
         public void SendEvent()
         {
            
-            socket.Emit("ping");
+            //socket.Emit("ping");
         }
 
     }

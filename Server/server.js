@@ -17,7 +17,15 @@ const room = {
 io.on('connection', function(socket){
     console.log('[+] Client Connected');
 
-
+    socket.on('disconnect', (reason) => {
+       /* if (reason === 'io server disconnect') {
+          // the disconnection was initiated by the server, you need to reconnect manually
+          socket.connect();
+        }
+        // else the socket will automatically try to reconnect
+        */
+       console.log(`[-] User disconnected`);
+      });
 
     socket.on('ping', function(msg){
         console.log(`[#] User: ${msg} requested ping`);

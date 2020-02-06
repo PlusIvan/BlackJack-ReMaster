@@ -75,7 +75,10 @@ namespace BlackJack_ReMaster
         Websocks ws = new Websocks();
         private void connect_server_Click(object sender, EventArgs e)
         {
-            if (websocket_username.Text.Length < 6 || websocket_ip.Text.Length < 7)
+
+
+
+          /*  if (websocket_username.Text.Length < 6 || websocket_ip.Text.Length < 7)
             {
                 MessageBox.Show("Fix params");
                 return;
@@ -88,7 +91,7 @@ namespace BlackJack_ReMaster
             else
             {
                 ws.SendEvent();
-            }
+            }*/
 
            // string cmd = (sender as BunifuFlatButton).Tag.ToString();
 
