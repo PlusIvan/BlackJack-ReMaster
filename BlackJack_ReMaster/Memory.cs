@@ -120,7 +120,7 @@ namespace BlackJack_ReMaster
 
         public void Begin_game()
         {
-            if (IsGame == true) return;
+         //   if (IsGame == true) return;
 
 
             List<string> keyList = new List<string>(deck.Keys);
@@ -142,7 +142,7 @@ namespace BlackJack_ReMaster
 
 
 
-            IsGame = true;
+          //  IsGame = true;
         }
 
         public void cmd_Hit()
@@ -157,13 +157,28 @@ namespace BlackJack_ReMaster
         }
         public void cmd_Hit_Dealer()
         {
-            List<string> keyList = new List<string>(deck.Keys);
-            string randomKey = keyList[rand.Next(keyList.Count)];
-            dealer.Add(randomKey, deck[randomKey]);
-            deck.Remove(randomKey);
-            keyList.Remove(randomKey);
-            if (dealer.ContainsValue(11) && dealer.Values.Sum() > 21)//over 21, look up for aces with 11
-                dealer[dealer.Where(pair => pair.Value == 11).Select(pair => pair.Key).FirstOrDefault()] = 1;
+
+            while (dealer.ContainsValue(11) && dealer.Values.Sum() >= 16 || dealer.Values.Sum() < 16)
+            {
+
+                List<string> keyList = new List<string>(deck.Keys);
+                string randomKey = keyList[rand.Next(keyList.Count)];
+                dealer.Add(randomKey, deck[randomKey]);
+                deck.Remove(randomKey);
+                keyList.Remove(randomKey);
+                if (dealer.ContainsValue(11) && dealer.Values.Sum() > 21 || dealer.ContainsValue(11) && dealer.Values.Sum() < 16)//over 21, look up for aces with 11
+                    dealer[dealer.Where(pair => pair.Value == 11).Select(pair => pair.Key).FirstOrDefault()] = 1;
+
+
+            }
+
+
+        }
+        public void Reset()
+        {
+            Player.Clear();
+            Dealer.Clear();
+            Deck.Clear();
         }
     }
 }

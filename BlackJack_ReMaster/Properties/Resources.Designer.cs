@@ -63,6 +63,16 @@ namespace BlackJack_ReMaster.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _001_close {
+            get {
+                object obj = ResourceManager.GetObject("001-close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _001_king {
             get {
                 object obj = ResourceManager.GetObject("001-king", resourceCulture);
@@ -83,9 +93,29 @@ namespace BlackJack_ReMaster.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _002_screenshot {
+            get {
+                object obj = ResourceManager.GetObject("002-screenshot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _003_ace {
             get {
                 object obj = ResourceManager.GetObject("003-ace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _003_minus {
+            get {
+                object obj = ResourceManager.GetObject("003-minus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +133,39 @@ namespace BlackJack_ReMaster.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _004_stop {
+            get {
+                object obj = ResourceManager.GetObject("004-stop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _005_chat {
+            get {
+                object obj = ResourceManager.GetObject("005-chat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _005_gambling {
             get {
                 object obj = ResourceManager.GetObject("005-gambling", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _006_earth_grid {
+            get {
+                object obj = ResourceManager.GetObject("006-earth-grid", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +186,16 @@ namespace BlackJack_ReMaster.Properties {
         internal static System.Drawing.Bitmap _007_horseshoe {
             get {
                 object obj = ResourceManager.GetObject("007-horseshoe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _007_settings {
+            get {
+                object obj = ResourceManager.GetObject("007-settings", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -1,20 +1,30 @@
 ﻿using Bunifu.Framework.UI;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using Quobject.SocketIoClientDotNet.Client;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace BlackJack_ReMaster
 {
     public partial class Main : Form
     {
+
+
+
+
+
+
+        WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
         Memory game = new Memory();
+        Soundtrack soundtrack = new Soundtrack();
+        Logic logic = new Logic();
+        
+
+
         protected override CreateParams CreateParams
         {
             get
@@ -29,13 +39,102 @@ namespace BlackJack_ReMaster
         {
             InitializeComponent();
         }
+        private void Main_Shown(object sender, EventArgs e)
+        {
+            /*  int def_pos_play = menu_play.Location.Y;
+              int def_pos_multi = menu_multiplayer.Location.Y;
+              int def_pos_sett = menu_settings.Location.Y;
 
+              menu_play.Location = new Point(logo_game.Location.X, logo_game.Location.Y);
+              menu_multiplayer.Location = new Point(logo_game.Location.X, logo_game.Location.Y);
+              menu_settings.Location = new Point(logo_game.Location.X, logo_game.Location.Y);
+              menu_play.Visible = true;
+              menu_multiplayer.Visible = true;
+              menu_settings.Visible = true;
+
+              while (def_pos_play != menu_play.Location.Y || def_pos_multi != menu_multiplayer.Location.Y || def_pos_sett != menu_settings.Location.Y)
+              {
+                  if (menu_play.Location.Y != def_pos_play)
+                      menu_play.Location = new Point(menu_play.Location.X, menu_play.Location.Y + 1);
+
+                  if (menu_multiplayer.Location.Y != def_pos_multi)
+                      menu_multiplayer.Location = new Point(menu_multiplayer.Location.X, menu_multiplayer.Location.Y + 1);
+
+                  if (menu_settings.Location.Y != def_pos_sett)
+                      menu_settings.Location = new Point(menu_settings.Location.X, menu_settings.Location.Y + 1);
+                  this.Update();
+                  Thread.Sleep(1);
+              }
+              */
+            menu_play.Visible = true;
+            menu_multiplayer.Visible = true;
+            menu_settings.Visible = true;
+        }
+
+        Boolean server_status_ = false;
+        Websocks ws = new Websocks();
+        private void connect_server_Click(object sender, EventArgs e)
+        {
+            if (websocket_username.Text.Length < 6 || websocket_ip.Text.Length < 7)
+            {
+                MessageBox.Show("Fix params");
+                return;
+            }
+
+            if (ws.isConnected == false)
+            {
+                ws.Establish_Connection();
+            }
+            else
+            {
+                ws.SendEvent();
+            }
+
+           // string cmd = (sender as BunifuFlatButton).Tag.ToString();
+
+               // var socket = IO.Socket($"http://{websocket_ip.Text}:3000");
+
+
+
+
+            /*WebSocket*/
+            /*
+            string username_public = $"{websocket_username.Text}";
+            socket.On(Socket.EVENT_CONNECT, () =>
+            {
+                socket.Emit("ping");
+                server_status_ = true;
+            });
+            socket.On("ping", (data) =>
+            {
+                //Console.WriteLine(data);
+                // socket.Disconnect();
+                server_status.Text = "Connected";
+            });
+            socket.Emit("join");
+            Console.ReadLine();
+
+            */
+
+
+        }
+
+        private void WebSocket()
+        {
+
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             label_balance.Text = $"Balance: {game.Balance.ToString()}";
             panel_default.Visible = true;
             panel_play.Visible = false;
             panel_settings.Visible = false;
+
+            panel_multiplayer.Visible = false;
+
+
+
+
 
         }
 
@@ -56,6 +155,7 @@ namespace BlackJack_ReMaster
             panel_default.Visible = false;
             panel_play.Visible = true;
             panel_settings.Visible = false;
+            panel_multiplayer.Visible = false;
 
         }
         private void menu_settings_Click(object sender, EventArgs e)
@@ -63,7 +163,7 @@ namespace BlackJack_ReMaster
             panel_default.Visible = false;
             panel_play.Visible = false;
             panel_settings.Visible = true;
-
+            panel_multiplayer.Visible = false;
         }
         private void chip_Add_Click(object sender, EventArgs e)
         {
@@ -167,15 +267,8 @@ namespace BlackJack_ReMaster
 
         private void cmd_Done_Click(object sender, EventArgs e)
         {
-         //  card_d_aux.Location = new Point(avatar_dealer.Location.X, avatar_dealer.Location.Y+131);
-          //  card_p_aux.Location = new Point(avatar_dealer.Location.X, card_d_aux.Location.Y+80);
-            
-            if (game.Surrender == false)
-            {
-            cmd_surrender.Enabled = true;
-            game.Surrender = true;
-            }
-
+            //  card_d_aux.Location = new Point(avatar_dealer.Location.X, avatar_dealer.Location.Y+131);
+            //  card_p_aux.Location = new Point(avatar_dealer.Location.X, card_d_aux.Location.Y+80);
             if (game.Pot < 5)
             {
                 cmd_Done.Text = "Pot must be >= 5";
@@ -191,8 +284,8 @@ namespace BlackJack_ReMaster
             game.Begin_game();
             Render_Cards();
             game.IsGame = true;
-
-            if (game.Player.Values.Sum() == 21)//auto win
+            logic.Prize = game.Pot;
+       /*     if (game.Player.Values.Sum() == 21)//auto win
             {
                 cmd_double.Visible = false;
                 cmd_hit.Visible = false;
@@ -206,7 +299,7 @@ namespace BlackJack_ReMaster
                 Render_Cards();
 
             }
-
+            */
 
 
 
@@ -215,186 +308,155 @@ namespace BlackJack_ReMaster
         {
             label_pot.Text = "Pot: 0";
             label_balance.Text = $"Balance: {game.Balance}";
-            if (game.Pot > 0) return;
+            logic.Player_Pts = 0;
+            logic.Dealer_Pts = 0;
+            logic.Prize = 0;
+            logic.isBJ_Dlayer = false;
+            logic.isBJ_Player = false;
+            logic.isPlayer_Busted = false;
+            logic.isDealer_Busted = false;
+            logic.Status = "";
+            game.Dealer.Clear();
+            game.Player.Clear();
+            game.Pot = 0;
+            //if (game.Pot > 0) return;
             panel_chips.Visible = true;
             cmd_double.Visible = false;
             cmd_hit.Visible = false;
             cmd_stand.Visible = false;
             cmd_surrender.Visible = false;
+            cmd_double.Enabled = true;
+            cmd_surrender.Enabled = true;
+            game.ShowOff = false;
+            Remove_Cards();
+            this.Update();
             return;
         }
         private void cmd_Hit()
         {
-            game.Surrender = false;
-            cmd_surrender.Enabled = false;
-            if (cmd_hit.Text == "BUSTED")
+            Console.WriteLine("func invoke");
+            if (cmd_hit.Text.ToLower() != "hit")
             {
-                game.Pot = 0;
+                Console.WriteLine("re start");
                 Remove_Cards();
-                game.ShowOff = false;
-                game.Deck.Clear();
-                game.Player.Clear();
-                game.Dealer.Clear();
-                game.Shuffle_deck();
-                player_pts.Text = "0";
-                dealer_pts.Text = "0";
-                this.Update();
-                this.UpdateStyles();
-                cmd_hit.Text = "HIT";
                 Continue();
+                cmd_hit.Text = "hit".ToUpper();
+                return;
+            }
+            Console.WriteLine("after");
+            cmd_double.Enabled = false;
+            cmd_surrender.Enabled = false;
+            game.cmd_Hit();
+
+            logic.Player_Pts = game.Player.Values.Sum();
+            logic.Dealer_Pts = game.Dealer.Values.Sum();
+           // logic.Prize = game.Pot;
+            if(logic.Can_Player_Continue() == false)
+            {
+
+
+               // game.cmd_Hit_Dealer();
+                game.ShowOff = true;
+                logic.Player_Pts = game.Player.Values.Sum();
+                logic.Dealer_Pts = game.Dealer.Values.Sum();
+                logic.Prize = game.Pot;
+                logic.WhoWin();
+                Remove_Cards();
+                Render_Cards();
+                //possible status, "win", "tie", "lost"
+                game.Balance += logic.Prize;
+                cmd_hit.Text = $"You {logic.Status} ${logic.Prize}";
+                cmd_stand.Visible = false;
+                cmd_double.Visible = false;
+                cmd_surrender.Visible = false;
+
                 return;
             }
 
 
-            game.cmd_Hit();
             Remove_Cards();
             Render_Cards();
 
 
-
-
-            if (game.Player.Values.Sum() > 21)
-            {
-                //Busted, end game
-                game.IsGame = false;
-                game.ShowOff = true;
-                cmd_double.Visible = false;
-                cmd_stand.Visible = false;
-                cmd_surrender.Visible = false;
-                cmd_hit.Text = "BUSTED";
-                Remove_Cards();
-                Render_Cards();
-                return;
-            }
-
-
-
-            if (game.Player.Values.Sum() == 21) // blackjack
-            {
-                if (game.Dealer.Values.Sum() < 16)
-                {
-                    while (game.Dealer.Values.Sum() < 16)
-                    {
-                        game.cmd_Hit_Dealer();
-                    }
-                }
-
-                if (game.Dealer.Values.Sum() == 21)
-                {
-                    Remove_Cards();
-                    game.Balance += game.Pot;
-                    game.IsGame = false;
-                    game.ShowOff = true;
-                    cmd_double.Visible = false;
-                    cmd_surrender.Visible = false;
-                    cmd_stand.Visible = false;
-                    cmd_hit.Text = "TIE";
-                    Render_Cards();
-                    return;
-
-                }
-                else
-                {
-                    Remove_Cards();
-                    game.Balance += game.Pot * 4;
-                    game.IsGame = false;
-                    game.ShowOff = true;
-                    cmd_double.Visible = false;
-                    cmd_surrender.Visible = false;
-                    cmd_hit.Visible = false;
-                    cmd_stand.Text = "BLACKJACK";
-                    Render_Cards();
-                    return;
-                }
-
-
-
-
-
-            }
-            Render_Cards();
 
 
         }
         private void cmd_Stand()
         {
-
-            if (cmd_stand.Text != "STAND")
+            if (cmd_stand.Text.ToLower() != "stand")
             {
-                game.Pot = 0;
                 Remove_Cards();
-                game.ShowOff = false;
-                game.Deck.Clear();
-                game.Player.Clear();
-                game.Dealer.Clear();
-                game.Shuffle_deck();
-                player_pts.Text = "0";
-                dealer_pts.Text = "0";
-                this.Update();
-                this.UpdateStyles();
-                cmd_stand.Text = "STAND";
                 Continue();
+                cmd_stand.Text = "stand".ToUpper();
                 return;
             }
-            if (game.Dealer.Values.Sum() < 16)
-            {
-                while (game.Dealer.Values.Sum() < 16)
-                {
-                    game.cmd_Hit_Dealer();
-                }
-            }
-            //  game.cmd_Hit()
-
-            game.IsGame = false;
+          //  game.cmd_Hit_Dealer();
             game.ShowOff = true;
+            logic.Player_Pts = game.Player.Values.Sum();
+            logic.Dealer_Pts = game.Dealer.Values.Sum();
+            logic.Prize = game.Pot;
+            logic.WhoWin();
             Remove_Cards();
             Render_Cards();
-
-            
-            if (game.Dealer.Values.Sum() > game.Player.Values.Sum() && game.Dealer.Values.Sum() <= 21)
-            {
-                //Dealer have way more than player and might have blackjack dealer
-                cmd_double.Visible = false;
-                cmd_hit.Visible = false;
-                cmd_surrender.Visible = false;
-                cmd_stand.Text = "BUSTED";
-                return;
-            }
-
-            if (game.Dealer.Values.Sum() == game.Player.Values.Sum())
-            {
-                //Dealer have way more than player
-                game.Balance += game.Pot;
-                cmd_double.Visible = false;
-                cmd_surrender.Visible = false;
-                cmd_hit.Visible = false;
-                cmd_stand.Text = "TIE";
-                return;
-            }
-
-
-            if (game.Dealer.Values.Sum() < game.Player.Values.Sum() || game.Dealer.Values.Sum() > 21)
-            { //dealer delt cards yet lower than player
-                if (game.Player.Values.Sum() == 21)
-                    game.Balance += game.Pot * 4;
-                else
-                    game.Balance += game.Pot * 2;
-
-                cmd_double.Visible = false;
-                cmd_surrender.Visible = false;
-                cmd_hit.Visible = false;
-                cmd_stand.Text = "WIN";
-                return;
-            }
+            //possible status, "win", "tie", "lost"
+            game.Balance += logic.Prize;
+            cmd_stand.Text = $"You {logic.Status} ${logic.Prize}";
+            cmd_hit.Visible = false;
+            cmd_double.Visible = false;
+            cmd_surrender.Visible = false;
         }
         private void cmd_Surrender()
         {
-            if (game.Surrender == false) return;
-            game.Balance += game.Pot / 2;
-            game.Pot = 0;
+            if (cmd_surrender.Text.ToLower() != "surrender")
+            {
+                Remove_Cards();
+                Continue();
+                cmd_surrender.Text = "surrender".ToUpper();
+                return;
+            }
+            game.ShowOff = true;
             Remove_Cards();
             Render_Cards();
-            Continue();
+            //possible status, "win", "tie", "lost"
+            game.Balance += game.Pot/2;
+            cmd_surrender.Text = $"Return ${game.Pot/2}";
+            cmd_hit.Visible = false;
+            cmd_double.Visible = false;
+            cmd_stand.Visible = false;
+        }
+        
+        private void cmd_Double()
+        {
+
+            if (cmd_double.Text.ToLower() != "double")
+            {
+                Remove_Cards();
+                Continue();
+                cmd_double.Text = "double".ToUpper();
+                return;
+            }
+
+            if (game.Pot*2 > game.Balance) { return; }
+            game.cmd_Hit();
+           // game.cmd_Hit_Dealer();
+            game.Pot += game.Pot*2;
+            game.Balance -= game.Pot*2;
+
+            game.ShowOff = true;
+            logic.Player_Pts = game.Player.Values.Sum();
+            logic.Dealer_Pts = game.Dealer.Values.Sum();
+            logic.Prize = game.Pot;
+            logic.WhoWin();
+            Remove_Cards();
+            Render_Cards();
+            //possible status, "win", "tie", "lost"
+            game.Balance += logic.Prize;
+            cmd_double.Text = $"You {logic.Status} ${logic.Prize}";
+            cmd_hit.Visible = false;
+            cmd_stand.Visible = false;
+            cmd_surrender.Visible = false;
+
+
 
 
         }
@@ -402,12 +464,14 @@ namespace BlackJack_ReMaster
         {
             string cmd = (sender as BunifuFlatButton).Tag.ToString();
 
-            if(cmd == "stand")
+            if (cmd == "stand")
                 cmd_Stand();
             if (cmd == "hit")
                 cmd_Hit();
             if (cmd == "surrender")
                 cmd_Surrender();
+            if (cmd == "double")
+                cmd_Double();
         }
         private void Remove_Cards()
         {
@@ -426,10 +490,14 @@ namespace BlackJack_ReMaster
                     }
                 }
             }
+            dealer_pts.Text = "0".ToLower().ToString();
+            player_pts.Text = "0".ToLower().ToString();
+            this.UpdateStyles();
+            this.Update();
         }
         public void Render_Cards()
         {
-            
+
             int[] p1 = { card_p_aux.Location.X - 70, card_p_aux.Location.Y };
             int[] d1 = { card_d_aux.Location.X - 70, card_d_aux.Location.Y };
             foreach (KeyValuePair<string, int> a in game.Dealer)
@@ -503,6 +571,81 @@ namespace BlackJack_ReMaster
             player_pts.Text = game.Player.Values.Sum().ToString();
             panel_play.Update();
             this.UpdateStyles();
+            this.Update();
+        }
+
+        private void load_tracksound_Click(object sender, EventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog();
+            dialog.InitialDirectory = @"C:\";
+            dialog.IsFolderPicker = true;
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+                input_soundtrack.Text = dialog.FileName;
+            soundtrack.SoundTrack_Path = input_soundtrack.Text;
+
+            string[] list = Directory.GetFiles(input_soundtrack.Text, "*.mp3");
+            combo_musics.Items.Clear();
+            foreach (string l in list)
+                combo_musics.Items.Add(Path.GetFileName(l));
+
+
+        }
+        private void cmd_Type_Music(object sender, EventArgs e)
+        {
+            if(soundtrack.SoundTrack_Path == "" || soundtrack.SoundTrack_FileName == "")
+            {
+                MessageBox.Show("no");
+                return;
+            }
+            string cmd = (sender as BunifuFlatButton).Tag.ToString();
+
+            if (cmd == "play")
+                soundtrack.Play();
+            if (cmd == "pause")
+                soundtrack.Pause();
+            if (cmd == "previous")
+                soundtrack.Previous();
+            if (cmd == "next")
+                soundtrack.Next();
+            if (cmd == "stop")
+                soundtrack.Reset();
+        }
+
+        private void form_min_Click(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+        }
+
+        private void form_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void combo_musics_TextUpdate(object sender, EventArgs e)
+        {
+            soundtrack.SoundTrack_FileName = combo_musics.SelectedItem.ToString();
+        }
+
+        private void menu_multiplayer_Click(object sender, EventArgs e)
+        {
+            panel_default.Visible = false;
+            panel_play.Visible = false;
+            panel_settings.Visible = false;
+            panel_multiplayer.Visible = true;
+        }
+
+        private void server_status_TextChanged(object sender, EventArgs e)
+        {
+            if (server_status.Text.ToLower() == "connected")
+            {
+                server_joingame.Visible = true;
+                server_joingame.Enabled = false;
+                server_status.Text = "...Waiting for server authorization...";
+            }
+            else
+            {
+                return;
+            }
 
         }
     }

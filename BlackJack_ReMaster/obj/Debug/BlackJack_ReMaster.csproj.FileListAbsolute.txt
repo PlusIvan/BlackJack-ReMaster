@@ -22,3 +22,24 @@ C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\B
 C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.csproj.CopyComplete
 C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.exe
 C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.pdb
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\BlackJack_ReMaster.exe.config
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\BlackJack_ReMaster.exe
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\BlackJack_ReMaster.pdb
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\MetroSet UI.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.csprojAssemblyReference.cache
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.Main.resources
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.Properties.Resources.resources
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.csproj.GenerateResource.cache
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.csproj.CopyComplete
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.exe
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.pdb
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\WebSocket4Net.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack_ReMaster\bin\Debug\Newtonsoft.Json.xml

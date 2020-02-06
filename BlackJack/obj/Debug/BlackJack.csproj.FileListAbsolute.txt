@@ -1,0 +1,88 @@
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\bin\Debug\BlackJack.pdb
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\obj\Debug\BlackJack.csprojAssemblyReference.cache
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.cache
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\obj\Debug\BlackJack.exe
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\obj\Debug\BlackJack.pdb
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\bin\Debug\MetroSet UI.dll
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\bin\Debug\WebSocket4Net.dll
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\obj\Debug\BlackJack.csproj.CopyComplete
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\obj\Debug\BlackJack.Menu.resources
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\obj\Debug\BlackJack.forms.Settings.resources
+C:\Users\Ivan\source\repos\BlackJack\BlackJack\obj\Debug\BlackJack.forms.Solo.resources
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\BlackJack.pdb
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\MetroSet UI.dll
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\WebSocket4Net.dll
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.csprojAssemblyReference.cache
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.forms.Settings.resources
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.forms.Solo.resources
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.Menu.resources
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.cache
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.csproj.CopyComplete
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.exe
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\obj\Debug\BlackJack.pdb
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Ivan\Desktop\BlackJack ReMaster\BlackJack\bin\Debug\Json.Net.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.csprojAssemblyReference.cache
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.forms.Settings.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.forms.Solo.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.Menu.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.cache
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.exe
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.pdb
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\BlackJack.pdb
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Json.Net.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\MetroSet UI.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\WebSocket4Net.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\obj\Debug\BlackJack.csproj.CopyComplete
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\BlackJack.pdb
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\EngineIoClientDotNet.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\Json.Net.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\MetroSet UI.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\SocketIoClientDotNet.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\SuperSocket.ClientEngine.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\WebSocket4Net.dll
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\obj\Debug\BlackJack.csprojAssemblyReference.cache
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\obj\Debug\BlackJack.forms.Settings.resources
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\obj\Debug\BlackJack.forms.Solo.resources
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\obj\Debug\BlackJack.Menu.resources
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\obj\Debug\BlackJack.Properties.Resources.resources
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\obj\Debug\BlackJack.csproj.GenerateResource.cache
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\obj\Debug\BlackJack.csproj.CopyComplete
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\obj\Debug\BlackJack.exe
+C:\Users\Ivan\Desktop\BlackJack-ReMaster-master\BlackJack\obj\Debug\BlackJack.pdb

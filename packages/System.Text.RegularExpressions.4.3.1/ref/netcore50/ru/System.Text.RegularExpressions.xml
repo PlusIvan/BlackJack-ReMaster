@@ -1,0 +1,785 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Text.RegularExpressions</name>
+  </assembly>
+  <members>
+    <member name="T:System.Text.RegularExpressions.Capture">
+      <summary>Представляет результаты одной успешной записи части выражения. </summary>
+    </member>
+    <member name="P:System.Text.RegularExpressions.Capture.Index">
+      <summary>Позиция в исходной строке, в которой обнаружен первый символ записанной подстроки.</summary>
+      <returns>Начальная позиция с отсчетом с нуля в исходной строке, в которой обнаружена записанная подстрока.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.Capture.Length">
+      <summary>Получает длину записанной подстроки.</summary>
+      <returns>Длина записанной подстроки.</returns>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Capture.ToString">
+      <summary>Извлекает записанную подстроку из входной строки путем вызова свойства <see cref="P:System.Text.RegularExpressions.Capture.Value" />. </summary>
+      <returns>Подстрока, записанная по совпадению.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.Capture.Value">
+      <summary>Получает записанную подстроку из входной строки.</summary>
+      <returns>Подстрока, записанная по совпадению.</returns>
+    </member>
+    <member name="T:System.Text.RegularExpressions.CaptureCollection">
+      <summary>Представляет набор записей, сделанных одной группой записи. </summary>
+    </member>
+    <member name="P:System.Text.RegularExpressions.CaptureCollection.Count">
+      <summary>Получает количество подстрок, записанных группой.</summary>
+      <returns>Число элементов в объекте <see cref="T:System.Text.RegularExpressions.CaptureCollection" />.</returns>
+    </member>
+    <member name="M:System.Text.RegularExpressions.CaptureCollection.GetEnumerator">
+      <summary>Предоставляет перечислитель, выполняющий итерацию по элементам в коллекции.</summary>
+      <returns>Объект, содержащий все объекты <see cref="T:System.Text.RegularExpressions.Capture" /> коллекции <see cref="T:System.Text.RegularExpressions.CaptureCollection" />.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.CaptureCollection.Item(System.Int32)">
+      <summary>Получает отдельный член коллекции.</summary>
+      <returns>Записанная подстрока в позиции <paramref name="i" /> в коллекции.</returns>
+      <param name="i">Индекс в коллекцию записи. </param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="i" /> меньше 0 или больше <see cref="P:System.Text.RegularExpressions.CaptureCollection.Count" />. </exception>
+    </member>
+    <member name="M:System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>Копирует все элементы коллекции в данный массив, начиная с данного индекса.</summary>
+      <param name="array">Одномерный массив, в который копируется коллекция.</param>
+      <param name="arrayIndex">Начинающийся с нуля индекс в массиве назначения, с которого начинается копирование.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="array" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="arrayIndex" /> выходит за пределы массива <paramref name="array" />.– или –Сумма значений <paramref name="arrayIndex" /> и <see cref="P:System.Text.RegularExpressions.CaptureCollection.Count" /> выходит за пределы массива <paramref name="array" />.</exception>
+    </member>
+    <member name="P:System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#IsSynchronized">
+      <summary>Получает значение, указывающее, является ли доступ к коллекции синхронизированным (потокобезопасным).</summary>
+      <returns>Во всех случаях — значение false.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.CaptureCollection.System#Collections#ICollection#SyncRoot">
+      <summary>Получает объект, который может использоваться для синхронизации доступа к коллекции.</summary>
+      <returns>Объект, который можно использовать для синхронизации доступа к коллекции.</returns>
+    </member>
+    <member name="T:System.Text.RegularExpressions.Group">
+      <summary>Представляет результаты отдельной группы записи. </summary>
+    </member>
+    <member name="P:System.Text.RegularExpressions.Group.Captures">
+      <summary>Получает коллекцию всех записей, соответствующих группе записи, в порядке, в котором первыми расположены внутренние слева направо (или внутренние справа налево, если регулярное выражение изменено с помощью параметра <see cref="F:System.Text.RegularExpressions.RegexOptions.RightToLeft" />).Коллекция может иметь ноль и более элементов.</summary>
+      <returns>Коллекция подстрок, соответствующих группе.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.Group.Success">
+      <summary>Получает значение, указывающее на то, успешно ли совпадение.</summary>
+      <returns>Значение true, если совпадение успешно, иначе значение false.</returns>
+    </member>
+    <member name="T:System.Text.RegularExpressions.GroupCollection">
+      <summary>Возвращает набор записанных групп в одном сопоставлении.</summary>
+    </member>
+    <member name="P:System.Text.RegularExpressions.GroupCollection.Count">
+      <summary>Возвращает количество групп в коллекции.</summary>
+      <returns>Число групп в коллекции.</returns>
+    </member>
+    <member name="M:System.Text.RegularExpressions.GroupCollection.GetEnumerator">
+      <summary>Предоставляет перечислитель, выполняющий итерацию по элементам в коллекции.</summary>
+      <returns>Перечислитель, содержащий все объекты <see cref="T:System.Text.RegularExpressions.Group" /> в коллекции <see cref="T:System.Text.RegularExpressions.GroupCollection" />.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.GroupCollection.Item(System.Int32)">
+      <summary>Включает доступ к члену коллекции с помощью целочисленного индекса.</summary>
+      <returns>Элемент коллекции, заданный параметром <paramref name="groupnum" />.</returns>
+      <param name="groupnum">Отсчитываемый от нуля индекс извлекаемого элемента коллекции. </param>
+    </member>
+    <member name="P:System.Text.RegularExpressions.GroupCollection.Item(System.String)">
+      <summary>Включает доступ к члену коллекции с помощью строкового индекса.</summary>
+      <returns>Элемент коллекции, заданный параметром <paramref name="groupname" />.</returns>
+      <param name="groupname">Имя группы записи. </param>
+    </member>
+    <member name="M:System.Text.RegularExpressions.GroupCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>Копирует все элементы коллекции в указанный массив, начиная с указанного индекса.</summary>
+      <param name="array">Одномерный массив, в который копируется коллекция.</param>
+      <param name="arrayIndex">Начинающийся с нуля индекс в массиве назначения, с которого начинается копирование.</param>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="array" /> имеет значение null.</exception>
+      <exception cref="T:System.IndexOutOfRangeException">Значение параметра <paramref name="arrayIndex" /> выходит за пределы массива <paramref name="array" />.-или-Сумма значений <paramref name="arrayIndex" /> и <see cref="P:System.Text.RegularExpressions.GroupCollection.Count" /> выходит за пределы массива <paramref name="array" />.</exception>
+    </member>
+    <member name="P:System.Text.RegularExpressions.GroupCollection.System#Collections#ICollection#IsSynchronized">
+      <summary>Получает значение, указывающее, является ли доступ к коллекции синхронизированным (потокобезопасным).</summary>
+      <returns>Значение false во всех случаях.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.GroupCollection.System#Collections#ICollection#SyncRoot">
+      <summary>Возвращает объект, который можно использовать для синхронизации доступа к коллекции.</summary>
+      <returns>Объект, который можно использовать для синхронизации доступа к коллекции.</returns>
+    </member>
+    <member name="T:System.Text.RegularExpressions.Match">
+      <summary>Представляет результаты из отдельного совпадения регулярного выражения.</summary>
+    </member>
+    <member name="P:System.Text.RegularExpressions.Match.Empty">
+      <summary>Получает пустую группу.Все неудавшиеся совпадения возвращают это пустое совпадение.</summary>
+      <returns>Пустое совпадение.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.Match.Groups">
+      <summary>Получает коллекцию групп, соответствующих регулярному выражению.</summary>
+      <returns>Группы символов, соответствующие шаблону.</returns>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Match.NextMatch">
+      <summary>Возвращает новый объект <see cref="T:System.Text.RegularExpressions.Match" /> с результатами для следующего сопоставления, начиная с позиции, на которой завершилось последнее сопоставление (с символа после последнего сопоставленного символа).</summary>
+      <returns>Следующее сопоставление регулярному выражению.</returns>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Match.Result(System.String)">
+      <summary>Возвращает расширение указанного шаблона замены. </summary>
+      <returns>Расширенная версия параметра <paramref name="replacement" />.</returns>
+      <param name="replacement">Шаблон замены для использования. </param>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="replacement" /> имеет значение null.</exception>
+      <exception cref="T:System.NotSupportedException">Расширение для этого шаблона не разрешено.</exception>
+    </member>
+    <member name="T:System.Text.RegularExpressions.MatchCollection">
+      <summary>Представляет набор успешных совпадений, обнаруженных путем итеративного применения шаблона регулярного выражения к входной строке.</summary>
+    </member>
+    <member name="P:System.Text.RegularExpressions.MatchCollection.Count">
+      <summary>Возвращает количество соответствий.</summary>
+      <returns>Количество соответствий.</returns>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="UnmanagedCode, ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.MatchCollection.GetEnumerator">
+      <summary>Предоставляет перечислитель, выполняющий итерацию по элементам в коллекции.</summary>
+      <returns>Объект, содержащий все объекты <see cref="T:System.Text.RegularExpressions.Match" /> коллекции <see cref="T:System.Text.RegularExpressions.MatchCollection" />.</returns>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.</exception>
+    </member>
+    <member name="P:System.Text.RegularExpressions.MatchCollection.Item(System.Int32)">
+      <summary>Возвращает отдельный член коллекции.</summary>
+      <returns>Записанная подстрока в позиции <paramref name="i" /> в коллекции.</returns>
+      <param name="i">Индекс в коллекции <see cref="T:System.Text.RegularExpressions.Match" />. </param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="i" /> меньше 0 или больше либо равно <see cref="P:System.Text.RegularExpressions.MatchCollection.Count" />. </exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.</exception>
+    </member>
+    <member name="M:System.Text.RegularExpressions.MatchCollection.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">
+      <summary>Копирует все элемент o il socket creato per accettare una connessione con un metodo socket asincrono.</summary>
+      <returns>Oggetto <see cref="T:System.Net.Sockets.Socket" /> da utilizzare o socket creato per accettare una connessione con un metodo socket asincrono.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer">
+      <summary>Ottiene il buffer di dati da utilizzare con un metodo socket asincrono.</summary>
+      <returns>Matrice <see cref="T:System.Byte" /> che rappresenta il buffer di dati da utilizzare con un metodo socket asincrono.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList">
+      <summary>Ottiene o imposta una matrice di buffer di dati da utilizzare con un metodo socket asincrono.</summary>
+      <returns>Matrice <see cref="T:System.Collections.IList" /> che rappresenta una matrice di buffer di dati da utilizzare con un metodo socket asincrono.</returns>
+      <exception cref="T:System.ArgumentException">Esistono buffer ambigui specificati su un'operazione di impostazione.Questa eccezione si verifica se la proprietà <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> è stata impostata su un valore non Null e si tenta di impostare la proprietà <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> su un valore non Null.</exception>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.BytesTransferred">
+      <summary>Ottiene il numero di byte trasferiti nell'operazione socket.</summary>
+      <returns>Oggetto <see cref="T:System.Int32" /> contenente il numero di byte trasferiti nell'operazione socket.</returns>
+    </member>
+    <member name="E:System.Net.Sockets.SocketAsyncEventArgs.Completed">
+      <summary>Evento utilizzato per completare un'operazione asincrona.</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.ConnectByNameError">
+      <summary>Ottiene l'eccezione nel caso di errore di connessione quando viene utilizzato <see cref="T:System.Net.DnsEndPoint" />.</summary>
+      <returns>Oggetto <see cref="T:System.Exception" /> che indica la causa dell'errore di connessione quando è stato specificato un oggetto <see cref="T:System.Net.DnsEndPoint" /> per la proprietà <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint" />.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.ConnectSocket">
+      <summary>Oggetto <see cref="T:System.Net.Sockets.Socket" /> creato e connesso dopo il completamento del metodo <see cref="Overload:System.Net.Sockets.Socket.ConnectAsync" />.</summary>
+      <returns>Oggetto <see cref="T:System.Net.Sockets.Socket" /> connesso.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Count">
+      <summary>Ottiene la quantità massima di dati, in byte, da inviare o ricevere in un'operazione asincrona.</summary>
+      <returns>Oggetto <see cref="T:System.Int32" /> che contiene la quantità massima di dati, in byte, da inviare o ricevere.</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.Dispose">
+      <summary>Rilascia le risorse non gestite utilizzate dall'istanza <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" /> e facoltativamente elimina anche le risorse gestite.</summary>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.Finalize">
+      <summary>Libera le risorse utilizzate dalla classe <see cref="T:System.Net.Sockets.SocketAsyncEventArgs" />.</summary>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.LastOperation">
+      <summary>Ottiene il tipo di operazione socket eseguita più di recente con questo oggetto di contesto.</summary>
+      <returns>Istanza di <see cref="T:System.Net.Sockets.SocketAsyncOperation" /> che indica il tipo di operazione socket eseguita più di recente con questo oggetto di contesto.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.Offset">
+      <summary>Ottiene l'offset, in byte, nel buffer di dati a cui fa riferimento la proprietà <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />.</summary>
+      <returns>Oggetto <see cref="T:System.Int32" /> che contiene l'offset, in byte, nel buffer di dati a cui fa riferimento la proprietà <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />.</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.OnCompleted(System.Net.Sockets.SocketAsyncEventArgs)">
+      <summary>Rappresenta un metodo chiamato quando un'operazione asincrona viene completata.</summary>
+      <param name="e">Evento segnalato.</param>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.RemoteEndPoint">
+      <summary>Ottiene o imposta l'endpoint IP remoto per un'operazione asincrona.</summary>
+      <returns>Oggetto <see cref="T:System.Net.EndPoint" /> che rappresenta l'endpoint IP remoto per un'operazione asincrona.</returns>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Byte[],System.Int32,System.Int32)">
+      <summary>Imposta il buffer di dati da utilizzare con un metodo socket asincrono.</summary>
+      <param name="buffer">Buffer di dati da utilizzare con un metodo socket asincrono.</param>
+      <param name="offset">Offset, in byte, nel buffer di dati dove viene avviata l'operazione.</param>
+      <param name="count">Quantità massima di dati, in byte, da inviare o ricevere nel buffer.</param>
+      <exception cref="T:System.ArgumentException">Sono stati specificati buffer ambigui.Questa eccezione si verifica anche se le proprietà <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> e <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.BufferList" /> non sono null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Un argomento non è stato compreso nell'intervallo.Questa eccezione si verifica se il parametro <paramref name="offset" /> è minore di zero o maggiore della lunghezza della matrice nella proprietà <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />.Questa eccezione si verifica anche se il parametro <paramref name="count" /> è minore di zero o maggiore della lunghezza della matrice nella proprietà <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> meno il parametro <paramref name="offset" />.</exception>
+    </member>
+    <member name="M:System.Net.Sockets.SocketAsyncEventArgs.SetBuffer(System.Int32,System.Int32)">
+      <summary>Imposta il buffer di dati da utilizzare con un metodo socket asincrono.</summary>
+      <param name="offset">Offset, in byte, nel buffer di dati dove viene avviata l'operazione.</param>
+      <param name="count">Quantità massima di dati, in byte, da inviare o ricevere nel buffer.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">Un argomento non è stato compreso nell'intervallo.Questa eccezione si verifica se il parametro <paramref name="offset" /> è minore di zero o maggiore della lunghezza della matrice nella proprietà <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" />.Questa eccezione si verifica anche se il parametro <paramref name="count" /> è minore di zero o maggiore della lunghezza della matrice nella proprietà <see cref="P:System.Net.Sockets.SocketAsyncEventArgs.Buffer" /> meno il parametro <paramref name="offset" />.</exception>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.SocketError">
+      <summary>Ottiene o imposta i risultati dell'operazione socket asincrona.</summary>
+      <returns>Oggetto <see cref="T:System.Net.Sockets.SocketError" /> che rappresenta il risultato dell'operazione socket asincrona.</returns>
+    </member>
+    <member name="P:System.Net.Sockets.SocketAsyncEventArgs.UserToken">
+      <summary>Ottiene o imposta un oggetto utente o applicazione associato a questa operazione socket asincrona.</summary>
+      <returns>Oggetto che rappresenta l'oggetto utente o applicazione associato a questa operazione socket asincrona.</returns>
+    </member>
+    <member name="T:System.Net.Sockets.SocketAsyncOperation">
+      <summary>Tipo di operazione socket asincrona eseguita più di recente con questo oggetto di contesto.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Accept">
+      <summary>Operazione socket Accept. </summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Connect">
+      <summary>Operazione socket Connect.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.None">
+      <summary>Nessuna delle operazioni socket.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Receive">
+      <summary>Operazione socket Receive.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.ReceiveFrom">
+      <summary>Operazione socket ReceiveFrom.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.Send">
+      <summary>Operazione socket Send.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketAsyncOperation.SendTo">
+      <summary>Operazione socket SendTo.</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketShutdown">
+      <summary>Definisce le costanti utilizzate dal metodo <see cref="M:System.Net.Sockets.Socket.Shutdown(System.Net.Sockets.SocketShutdown)" />.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Both">
+      <summary>Disabilita un <see cref="T:System.Net.Sockets.Socket" /> per l'invio e la ricezione.Il campo è costante.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Receive">
+      <summary>Disabilita un <see cref="T:System.Net.Sockets.Socket" /> per la ricezione.Il campo è costante.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketShutdown.Send">
+      <summary>Disabilita un <see cref="T:System.Net.Sockets.Socket" /> per l'invio.Il campo è costante.</summary>
+    </member>
+    <member name="T:System.Net.Sockets.SocketType">
+      <summary>Specifica il tipo di socket rappresentato da un'istanza della classe <see cref="T:System.Net.Sockets.Socket" />.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Dgram">
+      <summary>Supporta datagrammi, che sono messaggi senza connessione, non affidabili di lunghezza massima fissa (generalmente piccola).I messaggi potrebbero essere persi o duplicati e potrebbero arrivare non nell'ordine corretto.Un oggetto <see cref="T:System.Net.Sockets.Socket" /> di tipo <see cref="F:System.Net.Sockets.SocketType.Dgram" /> non richiede alcuna connessione prima dell'invio e della ricezione dei dati ed è in grado di comunicare con più peer.<see cref="F:System.Net.Sockets.SocketType.Dgram" /> utilizza il Datagram Protocol (<see cref="F:System.Net.Sockets.ProtocolType.Udp" />) e l'oggetto <see cref="F:System.Net.Sockets.AddressFamily.InterNetwork" /><see cref="T:System.Net.Sockets.AddressFamily" />.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Stream">
+      <summary>Supporta flussi di byte affidabili, a due vie e orientati alla connessione senza la duplicazione di dati e senza la conservazione dei limiti.Un oggetto Socket di questo tipo comunica con un unico peer e richiede una connessione all'host remoto prima di poter avviare una comunicazione.<see cref="F:System.Net.Sockets.SocketType.Stream" /> utilizza il Transmission Control Protocol (<see cref="F:System.Net.Sockets.ProtocolType.Tcp" />) <see cref="T:System.Net.Sockets.ProtocolType" /> e l'oggetto InterNetwork<see cref="T:System.Net.Sockets.AddressFamily" />.</summary>
+    </member>
+    <member name="F:System.Net.Sockets.SocketType.Unknown">
+      <summary>Specifica un tipo di Socket sconosciuto.</summary>
+    </member>
+  </members>
+</doc>                                                                                                                                                                                                                     INDX( 	 <�            (   `  �        -                   �     X F     �     � 'F���-c)F���-c)F���� 'F���                        d e s �     X F     �     �'.F����'.F����'.F����'.F���                        e s s �     X F     �     ��2F���hS5F���hS5F�����2F���                        f r s �     X F     �     ��7F���F:F���F:F�����7F���                        i t s �     X F     �     i�>F����@AF����@AF���i�>F���                        j a s �     X F     �     oFF���oFF���oFF���oFF���                        k o s �     X F     �     �gHF����JF����JF����gHF���                        r u s �     � n     �     *<"F��� �1� 7��]y�	��*<"F��� �      h�               S y s t e m . N e t . S o c k e t s . d l l   �     � n     �     ��$F��� �1� 7���y�	����$F��� �      �               S y s t e m . N e t . S o c k e t s . x m l   �     ` P     �     ɎOF���ɎOF���ɎOF���ɎOF���                        z h  h a n s �     ` P     �     2�TF���2�TF���2�TF���2�TF���                        z h - h a n t                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  /> или <paramref name="pattern" /> имеет значение null. </exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+      <summary>Указывает, обнаружено ли в указанной входной строке соответствие заданному регулярному выражению, используя указанные параметры сопоставления.</summary>
+      <returns>Значение true, если регулярное выражение обнаруживает соответствие; в противном случае — значение false.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <param name="options">Побитовая комбинация значений перечисления, предоставляющая параметры для сопоставления. </param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.Text.RegularExpressions.RegexOptions" />.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.IsMatch(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)">
+      <summary>Указывает, обнаружено ли в указанной входной строке соответствие заданному регулярному выражению, с помощью указанных параметров сопоставления и интервала времени ожидания.</summary>
+      <returns>Значение true, если регулярное выражение обнаруживает соответствие; в противном случае — значение false.</returns>
+      <param name="input">Строка для поиска соответствия.</param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления.</param>
+      <param name="options">Побитовая комбинация значений перечисления, предоставляющая параметры для сопоставления.</param>
+      <param name="matchTimeout">Интервал времени ожидания или <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout" />, чтобы указать, что метод не должен превышать время ожидания.</param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимым значением <see cref="T:System.Text.RegularExpressions.RegexOptions" />.-или-Значение <paramref name="matchTimeout" /> отрицательно, равно нулю или больше приблизительно 24 дней.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.</exception>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Match(System.String)">
+      <summary>Ищет в указанной входной строке первое вхождение регулярного выражения, указанного в конструкторе <see cref="T:System.Text.RegularExpressions.Regex" />.</summary>
+      <returns>Объект, содержащий сведения о совпадении.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Match(System.String,System.Int32)">
+      <summary>Ищет во входной строке первое вхождение регулярного выражения, начиная с указанной начальной позиции.</summary>
+      <returns>Объект, содержащий сведения о совпадении.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="startat">Отсчитываемая от нуля позиция символа, с которой начинается поиск. </param>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="startat" /> меньше нуля или больше длины параметра <paramref name="input" />.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Match(System.String,System.Int32,System.Int32)">
+      <summary>Ищет во входной строке первое вхождение регулярного выражения, начиная с указанной начальной позиции и выполняя поиск только по указанному количеству символов.</summary>
+      <returns>Объект, содержащий сведения о совпадении.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="beginning">Отсчитываемая от нуля позиция символа во входной строке, определяющая самую левую позицию диапазона поиска. </param>
+      <param name="length">Количество символов в подстроке для включения в поиск. </param>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="beginning" /> меньше нуля или больше длины параметра <paramref name="input" />.-или-Значение параметра <paramref name="length" /> меньше нуля или больше длины параметра <paramref name="input" />.-или-<paramref name="beginning" />+<paramref name="length" />– 1 identifies a position that is outside the range of <paramref name="input" />.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Match(System.String,System.String)">
+      <summary>Ищет в указанной входной строке первое вхождение заданного регулярного выражения.</summary>
+      <returns>Объект, содержащий сведения о совпадении.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+      <summary>Ищет во входной строке первое вхождение заданного регулярного выражения, используя указанные параметры сопоставления.</summary>
+      <returns>Объект, содержащий сведения о совпадении.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <param name="options">Побитовая комбинация значений перечисления, предоставляющая параметры для сопоставления. </param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимой битовой комбинацией значений <see cref="T:System.Text.RegularExpressions.RegexOptions" />.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Match(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)">
+      <summary>Ищет во входной строке первое вхождение заданного регулярного выражения, используя указанные параметры сопоставления и интервал времени ожидания.</summary>
+      <returns>Объект, содержащий сведения о совпадении.</returns>
+      <param name="input">Строка для поиска соответствия.</param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления.</param>
+      <param name="options">Побитовая комбинация значений перечисления, предоставляющая параметры для сопоставления.</param>
+      <param name="matchTimeout">Интервал времени ожидания или <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout" />, чтобы указать, что метод не должен превышать время ожидания.</param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимой битовой комбинацией значений <see cref="T:System.Text.RegularExpressions.RegexOptions" />.-или-Значение <paramref name="matchTimeout" /> отрицательно, равно нулю или больше приблизительно 24 дней.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Matches(System.String)">
+      <summary>Ищет в указанной входной строке все вхождения регулярного выражения.</summary>
+      <returns>Коллекция объектов <see cref="T:System.Text.RegularExpressions.Match" />, найденных при поиске.Если соответствующие объекты не найдены, метод возвращает пустой объект коллекции.</returns>
+      <param name="input">Строка для поиска соответствия.</param>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение null.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Matches(System.String,System.Int32)">
+      <summary>Ищет в указанной входной строке все вхождения регулярного выражения, начиная с указанной начальной позиции.</summary>
+      <returns>Коллекция объектов <see cref="T:System.Text.RegularExpressions.Match" />, найденных при поиске.Если соответствующие объекты не найдены, метод возвращает пустой объект коллекции.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="startat">Позиция символа во входной строке, с которой необходимо начать поиск. </param>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="startat" /> меньше нуля или больше длины параметра <paramref name="input" />.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Matches(System.String,System.String)">
+      <summary>Ищет в указанной входной строке все вхождения заданного регулярного выражения.</summary>
+      <returns>Коллекция объектов <see cref="T:System.Text.RegularExpressions.Match" />, найденных при поиске.Если соответствующие объекты не найдены, метод возвращает пустой объект коллекции.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+      <summary>Ищет в указанной входной строке все вхождения заданного регулярного выражения, используя указанные параметры сопоставления.</summary>
+      <returns>Коллекция объектов <see cref="T:System.Text.RegularExpressions.Match" />, найденных при поиске.Если соответствующие объекты не найдены, метод возвращает пустой объект коллекции.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <param name="options">Побитовая комбинация значений перечисления, задающая параметры для сопоставления. </param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимой битовой комбинацией значений <see cref="T:System.Text.RegularExpressions.RegexOptions" />.</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Matches(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)">
+      <summary>Ищет в указанной входной строке все вхождения заданного регулярного выражения, используя указанные параметры сопоставления и интервал времени ожидания.</summary>
+      <returns>Коллекция объектов <see cref="T:System.Text.RegularExpressions.Match" />, найденных при поиске.Если соответствующие объекты не найдены, метод возвращает пустой объект коллекции.</returns>
+      <param name="input">Строка для поиска соответствия.</param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления.</param>
+      <param name="options">Побитовая комбинация значений перечисления, задающая параметры для сопоставления.</param>
+      <param name="matchTimeout">Интервал времени ожидания или <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout" />, чтобы указать, что метод не должен превышать время ожидания.</param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимой битовой комбинацией значений <see cref="T:System.Text.RegularExpressions.RegexOptions" />.-или-Значение <paramref name="matchTimeout" /> отрицательно, равно нулю или больше приблизительно 24 дней.</exception>
+    </member>
+    <member name="P:System.Text.RegularExpressions.Regex.MatchTimeout">
+      <summary>Получает интервал времени ожидания текущего экземпляра.</summary>
+      <returns>Максимальный интервал времени, который может пройти в операции сравнения с шаблоном, прежде чем возникнет исключение <see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" />, или <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout" />, если контроль времени ожидания отключен.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.Regex.Options">
+      <summary>Получает параметр, которые были переданы в конструктор <see cref="T:System.Text.RegularExpressions.Regex" />.</summary>
+      <returns>Один или несколько членов перечисления <see cref="T:System.Text.RegularExpressions.RegexOptions" />, представляющих параметры, переданные в конструктор <see cref="T:System.Text.RegularExpressions.Regex" /></returns>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String)">
+      <summary>В указанной входной строке заменяет все строки, соответствующие шаблону регулярного выражения, указанной строкой замены. </summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если в текущем экземпляре нет соответствия шаблону регулярных выражений, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="replacement">Строка замены. </param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="replacement" /> имеет значение null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Int32)">
+      <summary>В указанной входной строке заменяет указанное максимальное количество строк, соответствующих шаблону регулярного выражения, указанной строкой замены. </summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если в текущем экземпляре нет соответствия шаблону регулярных выражений, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="replacement">Строка замены. </param>
+      <param name="count">Максимальное количество возможных случаев замены. </param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="replacement" /> имеет значение null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Int32,System.Int32)">
+      <summary>В указанной входной подстроке заменяет указанное максимальное количество строк, соответствующих шаблону регулярного выражения, указанной строкой замены. </summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если в текущем экземпляре нет соответствия шаблону регулярных выражений, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="replacement">Строка замены. </param>
+      <param name="count">Максимальное возможное количество случаев замены. </param>
+      <param name="startat">Позиция символа во входной строке, с которой начинается поиск. </param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="replacement" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="startat" /> меньше нуля или больше длины параметра <paramref name="input" />.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String)">
+      <summary>В указанной входной строке заменяет все строки, соответствующие указанному регулярному выражению, указанной строкой замены. </summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если для <paramref name="pattern" /> не найдено соответствия в текущем экземпляре, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <param name="replacement">Строка замены. </param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="input" />, <paramref name="pattern" /> или <paramref name="replacement" /> — null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+      <summary>В указанной входной строке заменяет все строки, соответствующие указанному регулярному выражению, указанной строкой замены.Указанные параметры изменяют операцию сопоставления.</summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если для <paramref name="pattern" /> не найдено соответствия в текущем экземпляре, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <param name="replacement">Строка замены. </param>
+      <param name="options">Побитовая комбинация значений перечисления, предоставляющая параметры для сопоставления. </param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="input" />, <paramref name="pattern" /> или <paramref name="replacement" /> — null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимой битовой комбинацией значений <see cref="T:System.Text.RegularExpressions.RegexOptions" />.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)">
+      <summary>В указанной входной строке заменяет все строки, соответствующие указанному регулярному выражению, указанной строкой замены.Дополнительные параметры определяют параметры, которые изменяют соответствующую операцию и интервал времени ожидания, если совпадение не найдено.</summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если для <paramref name="pattern" /> не найдено соответствия в текущем экземпляре, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия.</param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления.</param>
+      <param name="replacement">Строка замены.</param>
+      <param name="options">Побитовая комбинация значений перечисления, предоставляющая параметры для сопоставления.</param>
+      <param name="matchTimeout">Интервал времени ожидания или <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout" />, чтобы указать, что метод не должен превышать время ожидания.</param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="input" />, <paramref name="pattern" /> или <paramref name="replacement" /> — null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимой битовой комбинацией значений <see cref="T:System.Text.RegularExpressions.RegexOptions" />.-или-Значение <paramref name="matchTimeout" /> отрицательно, равно нулю или больше приблизительно 24 дней.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator)">
+      <summary>В указанной входной строке заменяет все строки, соответствующие указанному регулярному выражению, строкой, возвращенной делегатом <see cref="T:System.Text.RegularExpressions.MatchEvaluator" />.</summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если для <paramref name="pattern" /> не найдено соответствия в текущем экземпляре, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <param name="evaluator">Пользовательский метод, анализирующий каждое совпадение и возвращающий либо исходную строку с совпадениями, либо строку замены.</param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="input" />, <paramref name="pattern" /> или <paramref name="evaluator" /> — null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)">
+      <summary>В указанной входной строке заменяет все строки, соответствующие указанному регулярному выражению, строкой, возвращенной делегатом <see cref="T:System.Text.RegularExpressions.MatchEvaluator" />.Указанные параметры изменяют операцию сопоставления.</summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если для <paramref name="pattern" /> не найдено соответствия в текущем экземпляре, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <param name="evaluator">Пользовательский метод, анализирующий каждое совпадение и возвращающий либо исходную строку с совпадениями, либо строку замены. </param>
+      <param name="options">Побитовая комбинация значений перечисления, предоставляющая параметры для сопоставления. </param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="input" />, <paramref name="pattern" /> или <paramref name="evaluator" /> — null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимой битовой комбинацией значений <see cref="T:System.Text.RegularExpressions.RegexOptions" />.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)">
+      <summary>В указанной входной строке заменяет все подстроки, соответствующие указанному регулярному выражению, строкой, возвращенной делегатом <see cref="T:System.Text.RegularExpressions.MatchEvaluator" />.Дополнительные параметры определяют параметры, которые изменяют соответствующую операцию и интервал времени ожидания, если совпадение не найдено.</summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если для <paramref name="pattern" /> не найдено соответствия в текущем экземпляре, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия.</param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления.</param>
+      <param name="evaluator">Пользовательский метод, анализирующий каждое совпадение и возвращающий либо исходную строку с совпадениями, либо строку замены.</param>
+      <param name="options">Побитовая комбинация значений перечисления, предоставляющих параметры для сопоставления.</param>
+      <param name="matchTimeout">Интервал времени ожидания или <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout" />, чтобы указать, что метод не должен превышать время ожидания.</param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="input" />, <paramref name="pattern" /> или <paramref name="evaluator" /> — null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимой битовой комбинацией значений <see cref="T:System.Text.RegularExpressions.RegexOptions" />.-или-Значение <paramref name="matchTimeout" /> отрицательно, равно нулю или больше приблизительно 24 дней.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.Text.RegularExpressions.MatchEvaluator)">
+      <summary>В указанной входной строке заменяет все строки, соответствующие указанному регулярному выражению, строкой, возвращенной делегатом <see cref="T:System.Text.RegularExpressions.MatchEvaluator" />. </summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если в текущем экземпляре нет соответствия шаблону регулярных выражений, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="evaluator">Пользовательский метод, анализирующий каждое совпадение и возвращающий либо исходную строку с совпадениями, либо строку замены.</param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="evaluator" /> имеет значение null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.Text.RegularExpressions.MatchEvaluator,System.Int32)">
+      <summary>В указанной входной строке заменяется указанное максимальное количество строк, соответствующих шаблону регулярного выражения, строкой, возвращенной делегатом <see cref="T:System.Text.RegularExpressions.MatchEvaluator" />. </summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если в текущем экземпляре нет соответствия шаблону регулярных выражений, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="evaluator">Пользовательский метод, анализирующий каждое совпадение и возвращающий либо исходную строку с совпадениями, либо строку замены.</param>
+      <param name="count">Максимальное количество возможных случаев замены. </param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="evaluator" /> имеет значение null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Replace(System.String,System.Text.RegularExpressions.MatchEvaluator,System.Int32,System.Int32)">
+      <summary>В указанной входной подстроке заменяется указанное максимальное количество строк, соответствующих шаблону регулярного выражения, строкой, возвращенной делегатом <see cref="T:System.Text.RegularExpressions.MatchEvaluator" />. </summary>
+      <returns>Новая строка, идентичная входной строке, за исключением того что строка замены занимает место каждой соответствующей строки.Если в текущем экземпляре нет соответствия шаблону регулярных выражений, метод возвращает текущий экземпляр без изменений.</returns>
+      <param name="input">Строка для поиска соответствия. </param>
+      <param name="evaluator">Пользовательский метод, анализирующий каждое совпадение и возвращающий либо исходную строку с совпадениями, либо строку замены.</param>
+      <param name="count">Максимальное количество возможных случаев замены. </param>
+      <param name="startat">Позиция символа во входной строке, с которой начинается поиск. </param>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="evaluator" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="startat" /> меньше нуля или больше длины параметра <paramref name="input" />.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="P:System.Text.RegularExpressions.Regex.RightToLeft">
+      <summary>Получает значение, указывающее на то, выполняется ли регулярным выражением поиск справа налево.</summary>
+      <returns>Значение true, если регулярное выражение выполняет поиск справа налево; в противном случае — значение false.</returns>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Split(System.String)">
+      <summary>Разделяет входную строку в массив подстрок в позициях, определенных шаблоном регулярного выражения, указанным в конструкторе <see cref="T:System.Text.RegularExpressions.Regex" />.</summary>
+      <returns>Массив строк.</returns>
+      <param name="input">Строка для разделения. </param>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Split(System.String,System.Int32)">
+      <summary>Разделяет входную строку указанное максимальное количество раз в массив подстрок в позициях, определенных регулярным выражением, указанным в конструкторе <see cref="T:System.Text.RegularExpressions.Regex" />.</summary>
+      <returns>Массив строк.</returns>
+      <param name="input">Строка для разделения. </param>
+      <param name="count">Максимальное количество возможных случаев разделения. </param>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Split(System.String,System.Int32,System.Int32)">
+      <summary>Разделяет входную строку указанное максимальное количество раз в массив подстрок в позициях, определенных регулярным выражением, указанным в конструкторе <see cref="T:System.Text.RegularExpressions.Regex" />.Поиск шаблона регулярного выражения начинается с указанной позиции элемента во входной строке.</summary>
+      <returns>Массив строк.</returns>
+      <param name="input">Строка для разделения. </param>
+      <param name="count">Максимальное количество возможных случаев разделения. </param>
+      <param name="startat">Позиция символа во входной строке, с которой начинается поиск. </param>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="input" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Значение параметра <paramref name="startat" /> меньше нуля или больше длины параметра <paramref name="input" />.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Split(System.String,System.String)">
+      <summary>Разделяет входную строку в массив подстрок в позициях, определенных шаблоном регулярного выражения.</summary>
+      <returns>Массив строк.</returns>
+      <param name="input">Строка для разделения. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Split(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+      <summary>Разделяет входную строку в массив подстрок в позициях, определенных указанным шаблоном регулярного выражения.Указанные параметры изменяют операцию сопоставления.</summary>
+      <returns>Массив строк.</returns>
+      <param name="input">Строка для разделения. </param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления. </param>
+      <param name="options">Побитовая комбинация значений перечисления, предоставляющая параметры для сопоставления. </param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимой битовой комбинацией значений <see cref="T:System.Text.RegularExpressions.RegexOptions" />.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+      <PermissionSet>
+        <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Unrestricted="true" />
+        <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="ControlEvidence" />
+      </PermissionSet>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Split(System.String,System.String,System.Text.RegularExpressions.RegexOptions,System.TimeSpan)">
+      <summary>Разделяет входную строку в массив подстрок в позициях, определенных указанным шаблоном регулярного выражения.Дополнительные параметры определяют параметры, которые изменяют соответствующую операцию и интервал времени ожидания, если совпадение не найдено.</summary>
+      <returns>Массив строк.</returns>
+      <param name="input">Строка для разделения.</param>
+      <param name="pattern">Шаблон регулярного выражения для сопоставления.</param>
+      <param name="options">Побитовая комбинация значений перечисления, предоставляющая параметры для сопоставления.</param>
+      <param name="matchTimeout">Интервал времени ожидания или <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout" />, чтобы указать, что метод не должен превышать время ожидания.</param>
+      <exception cref="T:System.ArgumentException">Произошла ошибка синтаксического анализа регулярного выражения.</exception>
+      <exception cref="T:System.ArgumentNullException">Параметр <paramref name="input" /> или <paramref name="pattern" /> имеет значение null.</exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">Параметр <paramref name="options" /> не является допустимой битовой комбинацией значений <see cref="T:System.Text.RegularExpressions.RegexOptions" />.-или-Значение <paramref name="matchTimeout" /> отрицательно, равно нулю или больше приблизительно 24 дней.</exception>
+      <exception cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException">Возникло время ожидания.Дополнительные сведения о времени ожидания см. в разделе "Заметки".</exception>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.ToString">
+      <summary>Возвращает шаблон регулярного выражения, который был передан в конструктор Regex.</summary>
+      <returns>Параметр <paramref name="pattern" />, который был передан в конструктор Regex.</returns>
+    </member>
+    <member name="M:System.Text.RegularExpressions.Regex.Unescape(System.String)">
+      <summary>Преобразует все escape-символы во входной строке обратно в символы.</summary>
+      <returns>Строка символов с любыми преобразованными символами, приведенными в их непреобразованную форму.</returns>
+      <param name="str">Входная строка, содержащая текст для преобразования. </param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="str" /> включает нераспознанную escape-последовательность.</exception>
+      <exception cref="T:System.ArgumentNullException">Свойство <paramref name="str" /> имеет значение null.</exception>
+    </member>
+    <member name="T:System.Text.RegularExpressions.RegexMatchTimeoutException">
+      <summary>Исключение, которое возникает, если время выполнения метода сопоставления шаблонов регулярного выражения превышает его интервал времени ожидания.</summary>
+    </member>
+    <member name="M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" />, используя системное сообщение.</summary>
+    </member>
+    <member name="M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" /> указанной строкой сообщения.</summary>
+      <param name="message">Строка, описывающая исключение.</param>
+    </member>
+    <member name="M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.Exception)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" /> с указанным сообщением об ошибке и ссылкой на внутреннее исключение, вызвавшее это исключение.</summary>
+      <param name="message">Строка, описывающая исключение.</param>
+      <param name="inner">Исключение, которое вызвало текущее исключение.</param>
+    </member>
+    <member name="M:System.Text.RegularExpressions.RegexMatchTimeoutException.#ctor(System.String,System.String,System.TimeSpan)">
+      <summary>Инициализирует новый экземпляр класса <see cref="T:System.Text.RegularExpressions.RegexMatchTimeoutException" /> сведениями о шаблоне регулярного выражения, входном тексте и интервалом времени ожидания.</summary>
+      <param name="regexInput">Входной текст, обработанный обработчиком регулярных выражений, если истекло время ожидания.</param>
+      <param name="regexPattern">Шаблон, используемый обработчиком регулярных выражений, если истекло время ожидания.</param>
+      <param name="matchTimeout">Интервал времени ожидания.</param>
+    </member>
+    <member name="P:System.Text.RegularExpressions.RegexMatchTimeoutException.Input">
+      <summary>Получает входной текст, который обрабатывался обработчиком регулярных выражений, когда истекло время ожидания.</summary>
+      <returns>Входной текст регулярного выражения.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.RegexMatchTimeoutException.MatchTimeout">
+      <summary>Получает интервал времени для сравнения регулярного выражения.</summary>
+      <returns>Интервал времени ожидания.</returns>
+    </member>
+    <member name="P:System.Text.RegularExpressions.RegexMatchTimeoutException.Pattern">
+      <summary>Получает шаблон регулярного выражения, который использовался в операции сравнения, когда истекло время ожидания.</summary>
+      <returns>Шаблон регулярного выражения.</returns>
+    </member>
+    <member name="T:System.Text.RegularExpressions.RegexOptions">
+      <summary>Предоставляет перечисленные значения для использования при задании параметров регулярных выражений.</summary>
+    </member>
+    <member name="F:System.Text.RegularExpressions.RegexOptions.Compiled">
+      <summary>Указывает, что регулярное выражение скомпилировано в сборку.Это дает более быстрое исполнение, но увеличивает время запуска.Это значение не следует назначать свойству <see cref="P:System.Text.RegularExpressions.RegexCompilationInfo.Options" /> при вызове метода <see cref="M:System.Text.RegularExpressions.Regex.CompileToAssembly(System.Text.RegularExpressions.RegexCompilationInfo[],System.Reflection.AssemblyName)" />.Дополнительные сведения содержатся в подразделе "Компилированные регулярные выражения" раздела Параметры регулярных выражений.</summary>
+    </member>
+    <member name="F:System.Text.RegularExpressions.RegexOptions.CultureInvariant">
+      <summary>Указывает игнорирование региональных языковых различий.Дополнительные сведения содержатся в подразделе "Сравнение с использованием инвариантного языка и региональных параметров" раздела Параметры регулярных выражений.</summary>
+    </member>
+    <member name="F:System.Text.RegularExpressions.RegexOptions.ECMAScript">
+      <summary>Включает ECMAScript-совместимое поведение для выражения.Это значение может быть использовано только вместе со значениями <see cref="F:System.Text.RegularExpressions.RegexOptions.IgnoreCase" />, <see cref="F:System.Text.RegularExpressions.RegexOptions.Multiline" /> и <see cref="F:System.Text.RegularExpressions.RegexOptions.Compiled" />.Использование этого значения вместе с любыми другими приводит к исключению.Дополнительные сведения о параметре <see cref="F:System.Text.RegularExpressions.RegexOptions.ECMAScript" /> содержатся в подразделе "Поведение сопоставления ECMAScript" раздела Параметры регулярных выражений. </summary>
+    </member>
+    <member name="F:System.Text.RegularExpressions.RegexOptions.ExplicitCapture">
+      <summary>Указывает, что единственные допустимые записи являются явно поименованными или пронумерованными группами в форме (?&lt;name&gt;…).Это позволяет использовать непоименованные круглые скобки в качестве незахватываемых групп, тем самым не допуская синтаксической громоздкости выражения (?:…).Дополнительные сведения содержатся в подразделе "Только явные захваты" раздела Параметры регулярных выражений.</summary>
+    </member>
+    <member name="F:System.Text.RegularExpressions.RegexOptions.IgnoreCase">
+      <summary>Указывает соответствие, не учитывающее регистр.Дополнительные сведения содержатся в подразделе "Соответствие без учета регистра" раздела Параметры регулярных выражений.</summary>
+    </member>
+    <member name="F:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace">
+      <summary>Устраняет из шаблона разделительные символы без escape-последовательности и включает комментарии, помеченные символом "#".Однако это значение не затрагивает и не устраняет пробелы в классах символов, числовых квантификаторах или токенах, отмечающих начало отдельных языковых элементов регулярных выражений..  Дополнительные сведения содержатся в подразделе "Игнорирование пробелов" раздела Параметры регулярных выражений.</summary>
+    </member>
+    <member name="F:System.Text.RegularExpressions.RegexOptions.Multiline">
+      <summary>Многострочный режим.Изменяет значение символов "^" и "$" так, что они совпадают, соответственно, в начале и конце любой строки, а не только в начале и конце целой строки.Дополнительные сведения содержатся в подразделе "Многострочный режим" раздела Параметры регулярных выражений.</summary>
+    </member>
+    <member name="F:System.Text.RegularExpressions.RegexOptions.None">
+      <summary>Указывает на отсутствие заданных параметров.Дополнительные сведения о поведении по умолчанию обработчика регулярных выражений содержатся в подразделе "Параметры по умолчанию" раздела Параметры регулярных выражений.</summary>
+    </member>
+    <member name="F:System.Text.RegularExpressions.RegexOptions.RightToLeft">
+      <summary>Указывает, что поиск будет выполнен в направлении справа налево, а не слева направо.Дополнительные сведения содержатся в подразделе "Режим справа налево" раздела Параметры регулярных выражений.</summary>
+    </member>
+    <member name="F:System.Text.RegularExpressions.RegexOptions.Singleline">
+      <summary>Указывает однострочный режим.Изменяет значение точки (.) так, что она соответствует любому символу (вместо любого символа, кроме "\n").Дополнительные сведения содержатся в подразделе "Однострочный режим" раздела Параметры регулярных выражений.</summary>
+    </member>
+  </members>
+</doc>
