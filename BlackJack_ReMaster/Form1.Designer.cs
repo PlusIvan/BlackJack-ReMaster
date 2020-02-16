@@ -93,6 +93,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel_multiplayer = new System.Windows.Forms.Panel();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.dealer_speak = new MetroSet_UI.Controls.MetroSetLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.online_player_balance = new System.Windows.Forms.Label();
             this.online_pot_player = new System.Windows.Forms.Label();
@@ -117,7 +119,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.under_over = new MetroSet_UI.Controls.MetroSetSwitch();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.dealer_speak = new MetroSet_UI.Controls.MetroSetLabel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.top_player = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.form_close)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form_min)).BeginInit();
@@ -148,6 +151,7 @@
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel_multiplayer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.online_display.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.online_player_card_1)).BeginInit();
@@ -291,6 +295,7 @@
             this.label2.Size = new System.Drawing.Size(78, 38);
             this.label2.TabIndex = 2;
             this.label2.Text = "PLAY";
+            this.label2.Click += new System.EventHandler(this.menu_play_Click);
             // 
             // pictureBox2
             // 
@@ -301,6 +306,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(64, 64);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.menu_play_Click);
             // 
             // menu_multiplayer
             // 
@@ -326,6 +332,7 @@
             this.label3.Size = new System.Drawing.Size(186, 38);
             this.label3.TabIndex = 2;
             this.label3.Text = "MULTIPLAYER";
+            this.label3.Click += new System.EventHandler(this.menu_multiplayer_Click);
             // 
             // pictureBox3
             // 
@@ -336,6 +343,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(64, 64);
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.menu_multiplayer_Click);
             // 
             // panel5
             // 
@@ -412,6 +420,7 @@
             this.label4.Size = new System.Drawing.Size(139, 38);
             this.label4.TabIndex = 2;
             this.label4.Text = "SETTINGS";
+            this.label4.Click += new System.EventHandler(this.menu_settings_Click);
             // 
             // pictureBox4
             // 
@@ -422,6 +431,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(64, 64);
             this.pictureBox4.TabIndex = 2;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.menu_settings_Click);
             // 
             // panel_play
             // 
@@ -1317,6 +1327,9 @@
             this.panel_multiplayer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel_multiplayer.Controls.Add(this.top_player);
+            this.panel_multiplayer.Controls.Add(this.label11);
+            this.panel_multiplayer.Controls.Add(this.pictureBox5);
             this.panel_multiplayer.Controls.Add(this.dealer_speak);
             this.panel_multiplayer.Controls.Add(this.groupBox2);
             this.panel_multiplayer.Controls.Add(this.online_display);
@@ -1327,6 +1340,32 @@
             this.panel_multiplayer.Name = "panel_multiplayer";
             this.panel_multiplayer.Size = new System.Drawing.Size(1254, 641);
             this.panel_multiplayer.TabIndex = 2;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureBox5.Image = global::BlackJack_ReMaster.Properties.Resources.crown;
+            this.pictureBox5.Location = new System.Drawing.Point(309, 33);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(64, 64);
+            this.pictureBox5.TabIndex = 33;
+            this.pictureBox5.TabStop = false;
+            // 
+            // dealer_speak
+            // 
+            this.dealer_speak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.dealer_speak.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.dealer_speak.Location = new System.Drawing.Point(299, 141);
+            this.dealer_speak.Name = "dealer_speak";
+            this.dealer_speak.Size = new System.Drawing.Size(937, 36);
+            this.dealer_speak.Style = MetroSet_UI.Design.Style.Light;
+            this.dealer_speak.StyleManager = this.styleManager1;
+            this.dealer_speak.TabIndex = 41;
+            this.dealer_speak.Text = "-";
+            this.dealer_speak.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dealer_speak.ThemeAuthor = "Narwin";
+            this.dealer_speak.ThemeName = "MetroLite";
+            this.dealer_speak.TextChanged += new System.EventHandler(this.dealer_speak_TextChanged);
             // 
             // groupBox2
             // 
@@ -1518,7 +1557,7 @@
             this.metroSetTabControl1.AnimateTime = 200;
             this.metroSetTabControl1.Controls.Add(this.metroSetTabPage1);
             this.metroSetTabControl1.Controls.Add(this.metroSetTabPage2);
-            this.metroSetTabControl1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroSetTabControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.metroSetTabControl1.ItemSize = new System.Drawing.Size(100, 38);
             this.metroSetTabControl1.Location = new System.Drawing.Point(7, 9);
             this.metroSetTabControl1.Name = "metroSetTabControl1";
@@ -1652,7 +1691,8 @@
             // 
             // players_online
             // 
-            this.players_online.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.players_online.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.players_online.BorderColor = System.Drawing.Color.LightGray;
             this.players_online.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.players_online.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
@@ -1751,21 +1791,31 @@
             this.pictureBox12.TabIndex = 24;
             this.pictureBox12.TabStop = false;
             // 
-            // dealer_speak
+            // label11
             // 
-            this.dealer_speak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dealer_speak.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.dealer_speak.Location = new System.Drawing.Point(299, 141);
-            this.dealer_speak.Name = "dealer_speak";
-            this.dealer_speak.Size = new System.Drawing.Size(937, 36);
-            this.dealer_speak.Style = MetroSet_UI.Design.Style.Light;
-            this.dealer_speak.StyleManager = null;
-            this.dealer_speak.TabIndex = 41;
-            this.dealer_speak.Text = "-";
-            this.dealer_speak.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.dealer_speak.ThemeAuthor = "Narwin";
-            this.dealer_speak.ThemeName = "MetroLite";
-            this.dealer_speak.TextChanged += new System.EventHandler(this.dealer_speak_TextChanged);
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label11.Location = new System.Drawing.Point(375, 33);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(135, 32);
+            this.label11.TabIndex = 36;
+            this.label11.Tag = "none";
+            this.label11.Text = "Top Player";
+            // 
+            // top_player
+            // 
+            this.top_player.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.top_player.AutoSize = true;
+            this.top_player.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.top_player.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.top_player.Location = new System.Drawing.Point(375, 65);
+            this.top_player.Name = "top_player";
+            this.top_player.Size = new System.Drawing.Size(25, 32);
+            this.top_player.TabIndex = 42;
+            this.top_player.Tag = "none";
+            this.top_player.Text = "-";
             // 
             // Main
             // 
@@ -1827,6 +1877,8 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel_multiplayer.ResumeLayout(false);
+            this.panel_multiplayer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.online_display.ResumeLayout(false);
@@ -1935,6 +1987,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel online_display;
         private MetroSet_UI.Controls.MetroSetLabel dealer_speak;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label top_player;
+        private System.Windows.Forms.Label label11;
     }
 }
 
