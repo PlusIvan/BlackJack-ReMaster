@@ -1,4 +1,5 @@
 ﻿using Bunifu.Framework.UI;
+using Microsoft.VisualBasic;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using Quobject.SocketIoClientDotNet.Client;
 using System;
@@ -6,24 +7,25 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Threading;
 using System.Windows.Forms;
 namespace BlackJack_ReMaster
 {
+
     public partial class Main : Form
     {
 
 
 
 
-
-
+        Dictionary<string, int> deck = new Dictionary<string, int>();
+        Random rand = new Random();
         WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
         Memory game = new Memory();
         Soundtrack soundtrack = new Soundtrack();
         Logic logic = new Logic();
-        
-
+        Websocks ws = new Websocks();
 
         protected override CreateParams CreateParams
         {
@@ -38,7 +40,360 @@ namespace BlackJack_ReMaster
         public Main()
         {
             InitializeComponent();
+
+
+            var socket = IO.Socket($"http://{ws.ServerIP}:{ws.ServerPort}");
+            socket.On(Socket.EVENT_CONNECT, () =>
+            {
+                Invoke(new Action(() =>
+                {
+                    websocket_st.Text = $"Connected to {ws.ServerIP}";
+                    panel_multiplayer.Enabled = true;
+                }));
+
+            });
+            socket.On(Socket.EVENT_DISCONNECT, () =>
+            {
+                Invoke(new Action(() =>
+                {
+                    websocket_st.Text = $"Failed to connect to server";
+                    panel_multiplayer.Enabled = false;
+                    ws.PlayerRegistered = false;
+                    online_dealer_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_dealer_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_player_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_player_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_dealer_pts.Text = $"0";
+                    online_player_pts.Text = $"0";
+                    online_dealer_pts.Update();
+                    online_player_pts.Update();
+                    this.UpdateStyles();
+                }));
+            });
+            socket.On(Socket.EVENT_RECONNECT, () =>
+            {
+                Invoke(new Action(() =>
+                {
+                    websocket_st.Text = $"Re connecting to {ws.ServerIP}";
+                    panel_multiplayer.Enabled = false;
+                    ws.PlayerRegistered = false;
+                    online_dealer_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_dealer_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_player_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_player_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_dealer_pts.Text = $"0";
+                    online_player_pts.Text = $"0";
+                    online_dealer_pts.Update();
+                    online_player_pts.Update();
+                    this.UpdateStyles();
+                }));
+            });
+            socket.On(Socket.EVENT_RECONNECTING, () =>
+            {
+                Invoke(new Action(() =>
+                {
+                    websocket_st.Text = $"...Re connecting to {ws.ServerIP}";
+                    panel_multiplayer.Enabled = false;
+                    ws.PlayerRegistered = false;
+                    online_dealer_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_dealer_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_player_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_player_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_dealer_pts.Text = $"0";
+                    online_player_pts.Text = $"0";
+                    online_dealer_pts.Update();
+                    online_player_pts.Update();
+                    this.UpdateStyles();
+                }));
+            });
+            socket.On(Socket.EVENT_CONNECT_TIMEOUT, () =>
+            {
+                Invoke(new Action(() =>
+                {
+                    websocket_st.Text = $"...Time out connection...";
+                    panel_multiplayer.Enabled = false;
+                    ws.PlayerRegistered = false;
+                    online_dealer_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_dealer_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_player_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_player_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                    online_dealer_pts.Text = $"0";
+                    online_player_pts.Text = $"0";
+                    online_dealer_pts.Update();
+                    online_player_pts.Update();
+                    this.UpdateStyles();
+                }));
+            });
+            socket.On("intro", (data) =>
+            {
+                //Intro, game starting
+                Invoke(new Action(() =>
+                {
+                    dealer_speak.Text = $"Next hand starts in {data}";
+                    online_controller.Visible = false;
+                    online_display.Visible = false;
+
+                }));
+            });
+            socket.On("dealer_wait_for_pots", (data) =>
+            {
+                //Intro, game starting
+                Invoke(new Action(() =>
+                {
+
+                }));
+            });
+            socket.On("dealer_takes_pot", (data) =>
+            {
+                //Intro, game starting
+                Invoke(new Action(() =>
+                {
+
+                }));
+            });
+
+            socket.On("dealer_dist_cards", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    dealer_speak.Text = $"Dealing cards for {data}";
+                    if(data.ToString() == ws.PlayerUsername)
+                    {
+                        online_display.Visible = true;
+                        online_controller.Visible = true;
+                        deal_own_cards();
+                    }
+                }));
+            });
+            socket.On("dealer_wait_for_commands", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    //TODO, DISPLAY PLAYER CARDS AND DEALER
+                    dealer_speak.Text = $"You have {data} to decide";
+                }));
+            });
+            socket.On("dealer_close_commands", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    //Dealer closing hands, dealer turn
+                    online_controller.Visible = false;
+                }));
+            });
+            socket.On("dealer_show_first_card", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    show_first_d_card(data.ToString());
+                }));
+            });
+            socket.On("dealer_show_second_card", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    dealer_speak.Text = $"Calculating winners/lossers, please wait";
+                    show_second_d_card(data.ToString());
+                }));
+            });
+
+            socket.On("dealer_get_player_pts", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    socket.Emit("player_pts", ws.PlayerPoints, ws.PlayerCommand);
+                }));
+            });
+            socket.On("dealer_shame_players", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    socket.Emit("player_pts", ws.PlayerPoints, ws.PlayerCommand);
+                }));
+            });
+
+            socket.On("dealer_cards_showoff", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    dealer_card(data.ToString());
+                    Console.WriteLine(data);
+                }));
+            });
+            socket.On("online_players", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    Console.WriteLine(data);
+                    update_playerlist(data.ToString());
+
+                }));
+            });
+            socket.On("chat", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    online_chat.Text += $"\n{data}";
+                    Console.WriteLine(data);
+                }));
+            });
+            socket.On("username?", (data) =>
+            {
+                Invoke(new Action(() =>
+                { //did player setup
+                    if (ws.PlayerUsername != "" && ws.PlayerRegistered == false)
+                    {
+                        socket.Emit("username!", ws.PlayerUsername);
+                        ws.PlayerRegistered = true;
+                    }
+                }));
+            });
+            socket.On("new_game_in", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    dealer_speak.Visible = true;
+                    dealer_speak.Text = $"NEXT GAME: {data}s";
+                }));
+            });
+            socket.On("new_game", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+
+                    dealer_speak.Visible = true;
+                    dealer_speak.Text = $"{data}";
+                }));
+            });
+            socket.On("game_my_cards", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    split_cards(data.ToString());
+                    Console.WriteLine(data);
+                }));
+            });
+            socket.On("place_bets", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    //online_chip_panel.Visible = true;
+                }));
+            });
+            socket.On("dealer_wait", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+
+
+
+                }));
+            });
+            socket.On("message?", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    if (ws.PlayerChatMessage != "" && ws.PlayerRegistered == true)
+                    {
+                        socket.Emit("message!", ws.PlayerUsername, ws.PlayerChatMessage);
+                        ws.PlayerChatMessage = "";
+                    }
+                }));
+            });
+            socket.On("your_command", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    socket.Emit("my_command", ws.PlayerCommand);
+                }));
+            });
+            socket.On("dealer_say", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    dealer_speak.Text = data.ToString();
+                }));
+            });
         }
+        private void dealer_card(string data)
+        {
+            ws.DealerCards.Add(data.Split('/')[0].ToString(),Convert.ToInt32(data.Split('/')[1]));
+        }
+        private void set_message_hub_Click(object sender, EventArgs e)
+        {
+            ws.PlayerChatMessage = message_hub.Text;
+            message_hub.Text = "";
+        }
+        private void split_cards(string data)
+        {
+            ws.PlayerCards.Add(data.Split('/')[0], Convert.ToInt32(data.Split('/')[1]));
+        }
+        private void show_first_d_card(string data)
+        {
+            online_dealer_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"{data.Split('/')[0].ToString()}");
+            online_dealer_pts.Text = $"{data.Split('/')[1].ToString()}";
+            online_dealer_pts.Update();
+            this.UpdateStyles();
+        }
+        private void show_second_d_card(string data)
+        {
+            online_dealer_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"{data.Split('/')[0].ToString()}");
+            online_dealer_pts.Text = $"{Convert.ToInt32(online_dealer_pts.Text)+Convert.ToInt32(data.Split('/')[1])}";
+            online_dealer_pts.Update();
+            this.UpdateStyles();
+        }
+        private void deal_own_cards()
+        {
+         string[] cards = { "A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2" };
+       string[] suits = { "s", "c", "d", "h" };
+
+            
+
+            deck.Clear();
+            foreach (string card in cards)
+            {
+                foreach (string suit in suits)
+                {
+                    int value = 0;
+                    if (card == "A")
+                        value = 11;
+                    else if (card == "K" || card == "Q" || card == "J")
+                        value = 10;
+                    else
+                        value = Convert.ToInt32(card);
+                    deck.Add(card + suit, value);
+                }
+            }
+
+            List<string> keyList = new List<string>(deck.Keys);
+            Dictionary<string, int> deck_aux = new Dictionary<string, int>();
+
+            while (deck.Count > 0)
+            {
+                string randomKey = keyList[rand.Next(keyList.Count)];
+                deck_aux.Add(randomKey, deck[randomKey]);
+                deck.Remove(randomKey);
+                keyList.Remove(randomKey);
+            }
+            deck = deck_aux;
+            online_player_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"{deck.First().Key}");
+            online_player_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"{deck.Last().Key}");
+            online_player_pts.Text = $"{deck.First().Value+deck.Last().Value}";
+            ws.PlayerPoints = deck.First().Value + deck.Last().Value;
+        }
+        private void update_playerlist(string data)
+        {
+            int count = data.Split('/').Length - 1;
+            players_online.Clear();
+            for (int x = 0; x < count; x++)
+            {
+                players_online.AddItem($"{data.Split('/')[x]}");
+            }
+
+        }
+
+
+
         private void Main_Shown(object sender, EventArgs e)
         {
             /*  int def_pos_play = menu_play.Location.Y;
@@ -72,18 +427,20 @@ namespace BlackJack_ReMaster
         }
 
         Boolean server_status_ = false;
-        Websocks ws = new Websocks();
+        //Websocks ws = new Websocks();
         private void connect_server_Click(object sender, EventArgs e)
         {
 
 
-
-          /*  if (websocket_username.Text.Length < 6 || websocket_ip.Text.Length < 7)
+         /*   if (websocket_username.Text.Length < 6 || websocket_ip.Text.Length < 7)
             {
                 MessageBox.Show("Fix params");
                 return;
             }
+            */
 
+
+/*
             if (ws.isConnected == false)
             {
                 ws.Establish_Connection();
@@ -128,6 +485,8 @@ namespace BlackJack_ReMaster
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            //  Interaction.InputBox("BLYAT USERNAME", "Identify your self", "username");
+
             label_balance.Text = $"Balance: {game.Balance.ToString()}";
             panel_default.Visible = true;
             panel_play.Visible = false;
@@ -631,6 +990,17 @@ namespace BlackJack_ReMaster
 
         private void menu_multiplayer_Click(object sender, EventArgs e)
         {
+            if (online_PlayerUsername.Text.Length < 4 || online_PlayerUsername.Text.Length > 18)
+            {
+
+                MessageBox.Show("Your username length must be between 4 & 18 to play online");
+                panel_default.Visible = false;
+                panel_play.Visible = false;
+                panel_settings.Visible = true;
+                panel_multiplayer.Visible = false;
+                return;
+            }
+
             panel_default.Visible = false;
             panel_play.Visible = false;
             panel_settings.Visible = false;
@@ -639,7 +1009,7 @@ namespace BlackJack_ReMaster
 
         private void server_status_TextChanged(object sender, EventArgs e)
         {
-            if (server_status.Text.ToLower() == "connected")
+           /* if (server_status.Text.ToLower() == "connected")
             {
                 server_joingame.Visible = true;
                 server_joingame.Enabled = false;
@@ -649,7 +1019,58 @@ namespace BlackJack_ReMaster
             {
                 return;
             }
+            */
+        }
 
+        private void set_OnlineUsername_Click(object sender, EventArgs e)
+        {
+            if (online_PlayerUsername.Text.Length < 4 || online_PlayerUsername.Text.Length > 18)
+            {
+                MessageBox.Show($"Username must be between 4 & 18 length");
+                online_PlayerUsername.Text = "";
+                return;
+            }
+            ws.PlayerUsername = online_PlayerUsername.Text;
+            label_currentName.Text = $"Current name: {ws.PlayerUsername}";
+        }
+
+
+
+        private void under_over_Click(object sender, EventArgs e)
+        {
+            if(under_over.Switched == true)
+            {
+                ws.PlayerCommand = "over";
+            }
+            else
+            {
+                ws.PlayerCommand = "under";
+            }
+        }
+
+        private void under_over_SwitchedChanged(object sender)
+        {
+            if (under_over.Switched == true)
+            {
+                ws.PlayerCommand = "over";
+            }
+            else
+            {
+                ws.PlayerCommand = "under";
+            }
+            Console.WriteLine(ws.PlayerCommand);
+        }
+
+        private void dealer_speak_TextChanged(object sender, EventArgs e)
+        {
+            if(dealer_speak.Text == "Next hand starting soon...")
+            {
+                online_dealer_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                online_dealer_pts.Text = $"0";
+                online_dealer_card_2.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
+                online_dealer_pts.Update();
+                this.UpdateStyles();
+            }
         }
     }
 }
