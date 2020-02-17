@@ -9,13 +9,21 @@ const room = {
 }
 const table = {
     dealer_pts: 0,
-    dealer:[],
-    status:"intro"//dealer_wait_for_pots, dealer_takes_pot, dealer_dist_cards, dealer_wait_for_commands, intro
+    dealer:[]
+};
+const top_player = {
+    username: "",
+    strikes: 0
+};
+const top_exp = {
+    username: "",
+    exp: 0
 };
 io.on('connection', function(socket){
     console.log('[+] Client Connected');
 
     socket.on('disconnect', (reason) => {
+        console.log('[+] Client Disconnected');
             room.players.forEach(function(item, index, object) {
                 if (item.socket === socket.id){
                     object.splice(index, 1);
@@ -51,9 +59,7 @@ io.on('connection', function(socket){
             card_points:0,
             move:"",
             exp: 0,
-            wins: 0,
-            losses: 0,
-            streak: 0
+            strikes: 0
         });
     io.emit('chat',`[SERVER] Player ${player} joined the game`);
     });
@@ -67,15 +73,10 @@ io.on('connection', function(socket){
         });
         io.emit('online_players', to_send);
     });
-
-
     socket.on('my_command', function(cmd){
         room.players.forEach(element => {
             element.move = cmd;
-            
-
         });
-        //io.emit('chat',`[${player}] ${msg}`);
     });
 });
 
@@ -95,8 +96,13 @@ setInterval(() => {
     io.emit('message?');
 }, 1000);
 
+setInterval(() => {
+    io.emit('top_player', `${top_player.username} - ${top_player.strikes}`);
+}, 5000);
 
-
+setInterval(() => {
+    io.emit('top_exp', `${top_exp.username} - ${top_exp.exp}`);
+}, 5000);
 
 setInterval(() => {
     newFunction();
@@ -106,12 +112,12 @@ http.listen(3000, function(){
   console.log('listening on *:3000');
 });
 function newFunction() {
-        if(room.players.length < 1){
+    let players = room.players;
+        if(players.length < 1){
             // io.emit('dealer', 'Not enough players');
              return;
          }
          console.log(`Starting game`);
-         let players = room.players;
          table.dealer = [];
          table.dealer_pts = 0;
          let deck = {
@@ -186,30 +192,51 @@ function newFunction() {
                  console.log('Dealer pts: '+table.dealer_pts);
          players.forEach(function(item, index, object) {
              io.emit('dealer_say',`Looking at ${item.username}`);
+             if(item.card_points == 0)
+                return;
+             
              if(item.move == "under"){
                  if(item.card_points < table.dealer_pts){
+                     item.strikes++;
                      item.exp += item.card_points;
+                     item.wins++;
                      io.emit('chat',`[${item.username}] Win ${item.card_points} exp`);
                  }else if(item.card_points == 22){
                      io.emit('chat',`[${item.username}] DOUBLE ACE WIN, 1000 EXP`);
                      item.exp += 1000;
+                     item.strikes++;
+                     item.wins++;
                  }else{
-                     io.emit('chat',`[${item.username}] Lost`);
                      item.losses++;
+                     item.strikes = 0;
+                 }
+                 if(item.strikes > top_player.strikes){
+                     top_player.username = item.username;
+                     top_player.strikes = item.strikes;
                  }
              }
              if(item.move == "over"){
                  if(item.card_points > table.dealer_pts){
-                     item.exp += item.card_points;
+                    item.strikes++;
+                    item.exp += item.card_points;
                      io.emit('chat',`[${item.username}] Win ${item.card_points} exp`);
                  }else if(item.card_points == 22){
                      io.emit('chat',`[${item.username}] DOUBLE ACE WIN, 1000 EXP`);
                      item.exp += 1000;
+                     item.strikes++;
                  }else{
-                     io.emit('chat',`[${item.username}] Lost`);
-                     item.losses++;
+                     item.strikes = 0;
                  }
              }
+             if(item.strikes > top_player.strikes){
+                top_player.username = item.username;
+                top_player.strikes = item.strikes;
+            }
+            if(item.exp > top_exp.exp){
+                top_exp.username = item.username;
+                top_exp.exp = item.exp;
+            }
+             io.to(`${item.socket}`).emit('my_stats', `${item.exp}/${item.strikes}`);
              wait.for.time(1);
          });
      

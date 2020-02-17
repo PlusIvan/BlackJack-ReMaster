@@ -385,5 +385,35 @@
   <ItemGroup>
     <None Include="Resources\crown.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editor-1s-24px1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\name.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\online-game.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playing-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\router.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -47,7 +47,8 @@ namespace BlackJack_ReMaster
             {
                 Invoke(new Action(() =>
                 {
-                    websocket_st.Text = $"Connected to {ws.ServerIP}";
+                    websocket_st.Text = $"CONNECTED";
+                    websocket_st.ForeColor = Color.LimeGreen;
                     panel_multiplayer.Enabled = true;
                 }));
 
@@ -56,7 +57,8 @@ namespace BlackJack_ReMaster
             {
                 Invoke(new Action(() =>
                 {
-                    websocket_st.Text = $"Failed to connect to server";
+                    websocket_st.Text = $"SERVER OFFLINE";
+                    websocket_st.ForeColor = Color.Red;
                     panel_multiplayer.Enabled = false;
                     ws.PlayerRegistered = false;
                     online_dealer_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
@@ -74,7 +76,8 @@ namespace BlackJack_ReMaster
             {
                 Invoke(new Action(() =>
                 {
-                    websocket_st.Text = $"Re connecting to {ws.ServerIP}";
+                    websocket_st.Text = $"RE CONNECTING";
+                    websocket_st.ForeColor = Color.Yellow;
                     panel_multiplayer.Enabled = false;
                     ws.PlayerRegistered = false;
                     online_dealer_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
@@ -92,7 +95,8 @@ namespace BlackJack_ReMaster
             {
                 Invoke(new Action(() =>
                 {
-                    websocket_st.Text = $"...Re connecting to {ws.ServerIP}";
+                    websocket_st.Text = $"...RE CONNECTING";
+                    websocket_st.ForeColor = Color.Yellow;
                     panel_multiplayer.Enabled = false;
                     ws.PlayerRegistered = false;
                     online_dealer_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
@@ -110,7 +114,8 @@ namespace BlackJack_ReMaster
             {
                 Invoke(new Action(() =>
                 {
-                    websocket_st.Text = $"...Time out connection...";
+                    websocket_st.Text = $"TIME OUT";
+                    websocket_st.ForeColor = Color.DarkRed;
                     panel_multiplayer.Enabled = false;
                     ws.PlayerRegistered = false;
                     online_dealer_card_1.Image = (Image)Properties.Resources.ResourceManager.GetObject($"poker");
@@ -135,23 +140,6 @@ namespace BlackJack_ReMaster
 
                 }));
             });
-            socket.On("dealer_wait_for_pots", (data) =>
-            {
-                //Intro, game starting
-                Invoke(new Action(() =>
-                {
-
-                }));
-            });
-            socket.On("dealer_takes_pot", (data) =>
-            {
-                //Intro, game starting
-                Invoke(new Action(() =>
-                {
-
-                }));
-            });
-
             socket.On("dealer_dist_cards", (data) =>
             {
                 Invoke(new Action(() =>
@@ -170,7 +158,7 @@ namespace BlackJack_ReMaster
                 Invoke(new Action(() =>
                 {
                     //TODO, DISPLAY PLAYER CARDS AND DEALER
-                    dealer_speak.Text = $"You have {data} to decide";
+                    dealer_speak.Text = $"Next card in {data}";
                 }));
             });
             socket.On("dealer_close_commands", (data) =>
@@ -204,22 +192,6 @@ namespace BlackJack_ReMaster
                     socket.Emit("player_pts", ws.PlayerPoints, ws.PlayerCommand);
                 }));
             });
-            socket.On("dealer_shame_players", (data) =>
-            {
-                Invoke(new Action(() =>
-                {
-                    socket.Emit("player_pts", ws.PlayerPoints, ws.PlayerCommand);
-                }));
-            });
-
-            socket.On("dealer_cards_showoff", (data) =>
-            {
-                Invoke(new Action(() =>
-                {
-                    dealer_card(data.ToString());
-                    Console.WriteLine(data);
-                }));
-            });
             socket.On("online_players", (data) =>
             {
                 Invoke(new Action(() =>
@@ -229,12 +201,33 @@ namespace BlackJack_ReMaster
 
                 }));
             });
+            socket.On("top_player", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    top_player.Text = $"{data.ToString()}";
+                }));
+            });
+            socket.On("top_exp", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    top_exp.Text = $"{data.ToString()}";
+                }));
+            });
             socket.On("chat", (data) =>
             {
                 Invoke(new Action(() =>
                 {
-                    online_chat.Text += $"\n{data}";
+                    online_chat.Items.Insert(0, data.ToString());
                     Console.WriteLine(data);
+                }));
+            });
+            socket.On("my_stats", (data) =>
+            {
+                Invoke(new Action(() =>
+                {
+                    update_stats(data.ToString());
                 }));
             });
             socket.On("username?", (data) =>
@@ -246,47 +239,6 @@ namespace BlackJack_ReMaster
                         socket.Emit("username!", ws.PlayerUsername);
                         ws.PlayerRegistered = true;
                     }
-                }));
-            });
-            socket.On("new_game_in", (data) =>
-            {
-                Invoke(new Action(() =>
-                {
-                    dealer_speak.Visible = true;
-                    dealer_speak.Text = $"NEXT GAME: {data}s";
-                }));
-            });
-            socket.On("new_game", (data) =>
-            {
-                Invoke(new Action(() =>
-                {
-
-                    dealer_speak.Visible = true;
-                    dealer_speak.Text = $"{data}";
-                }));
-            });
-            socket.On("game_my_cards", (data) =>
-            {
-                Invoke(new Action(() =>
-                {
-                    split_cards(data.ToString());
-                    Console.WriteLine(data);
-                }));
-            });
-            socket.On("place_bets", (data) =>
-            {
-                Invoke(new Action(() =>
-                {
-                    //online_chip_panel.Visible = true;
-                }));
-            });
-            socket.On("dealer_wait", (data) =>
-            {
-                Invoke(new Action(() =>
-                {
-
-
-
                 }));
             });
             socket.On("message?", (data) =>
@@ -327,6 +279,11 @@ namespace BlackJack_ReMaster
         private void split_cards(string data)
         {
             ws.PlayerCards.Add(data.Split('/')[0], Convert.ToInt32(data.Split('/')[1]));
+        }
+        private void update_stats(string data)
+        {
+            player_exp.Text = $"Exp: {data.Split('/')[0]}";
+            player_strikes.Text = $"Strikes: {data.Split('/')[1]}";
         }
         private void show_first_d_card(string data)
         {
@@ -962,7 +919,11 @@ namespace BlackJack_ReMaster
             string cmd = (sender as BunifuFlatButton).Tag.ToString();
 
             if (cmd == "play")
+            {
                 soundtrack.Play();
+                music_playing.Text = $"Music: {combo_musics.SelectedItem.ToString()}";
+            }
+
             if (cmd == "pause")
                 soundtrack.Pause();
             if (cmd == "previous")
@@ -990,7 +951,7 @@ namespace BlackJack_ReMaster
 
         private void menu_multiplayer_Click(object sender, EventArgs e)
         {
-            if (online_PlayerUsername.Text.Length < 4 || online_PlayerUsername.Text.Length > 18)
+            if (ws.PlayerUsername.Length < 4 || ws.PlayerUsername.Length > 18)
             {
 
                 MessageBox.Show("Your username length must be between 4 & 18 to play online");
@@ -1071,6 +1032,17 @@ namespace BlackJack_ReMaster
                 online_dealer_pts.Update();
                 this.UpdateStyles();
             }
+        }
+
+        private void online_chat_TextChanged(object sender)
+        {
+            int l = online_chat.Items.Count;
+
+            if(l < 5)
+                return;
+            online_chat.Items.RemoveAt(0);
+
+
         }
     }
 }

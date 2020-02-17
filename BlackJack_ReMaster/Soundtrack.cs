@@ -31,6 +31,7 @@ namespace BlackJack_ReMaster
 
         public void Play()
         {
+            wplayer.URL = $@"{SoundTrack_Path}\{file.ToString()}";
             wplayer.controls.play();
         }
 
