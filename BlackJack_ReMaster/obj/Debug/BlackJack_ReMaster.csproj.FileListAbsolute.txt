@@ -74,3 +74,8 @@ C:\Users\Ivan\Desktop\projeto\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.ex
 C:\Users\Ivan\Desktop\projeto\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.pdb
 C:\Users\Ivan\Desktop\projeto\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.Main.resources
 C:\Users\Ivan\Desktop\projeto\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.csprojAssemblyReference.cache
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\bin\Debug\BlackJack_ReMaster.exe.manifest
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\bin\Debug\BlackJack_ReMaster.application
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.TrustInfo.xml
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.exe.manifest
+C:\Users\Ivan\Documents\GitHub\BlackJack-ReMaster\BlackJack_ReMaster\obj\Debug\BlackJack_ReMaster.application
