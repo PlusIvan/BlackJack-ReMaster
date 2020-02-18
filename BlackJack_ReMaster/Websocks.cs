@@ -10,8 +10,8 @@ namespace BlackJack_ReMaster
 {
     class Websocks
     {
-        private static string server_ip = "95.93.15.87";
-        private static string server_port = "3000";
+        private static string server_ip = "";
+        private static string server_port = "";
         private static int player_balance = 1000;
         private static int players_card_pts = 0;
         private static string player_username = "";
